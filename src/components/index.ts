@@ -9,15 +9,19 @@ export * from './buttons/SecondaryButton';
 export * from './images/Image';
 
 //TextBase
-export * from './texts/TextBase';
+export * from './typography/TextBase';
 
 //Headings
 
-export * from './texts/Headings';
+export * from './typography/H1';
+export * from './typography/H2';
+export * from './typography/H3';
+export * from './typography/H4';
+export * from './typography/H5';
 
 //Texts
 
-export * from './texts/Texts';
+export * from './typography/Texts';
 
 // Wrappers
 

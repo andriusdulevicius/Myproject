@@ -1,5 +1,5 @@
 //Landing page
 
-import car_image from '../assets/images/car.jpg';
+import ellipse_mobile from 'assets/images/ellipse_mobile.png';
 
-export const images: Record<string, string> = { car_image };
+export const images: Record<string, string> = { ellipse_mobile };

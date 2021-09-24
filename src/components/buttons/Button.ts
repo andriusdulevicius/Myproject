@@ -8,7 +8,7 @@ interface Styles {
   maxWidth?: string;
   minWidth?: string;
   width?: string;
-  background?: string;
+  backgroundColor?: string;
   border?: string;
   borderRadius?: string;
   fontSize?: string;
@@ -18,15 +18,15 @@ interface Styles {
 export const Button = styled.button<Styles>`
   display: ${({ display }) => display || 'inline-block'};
   margin: ${({ margin }) => margin || 'auto'};
-  padding: ${({ padding }) => padding || '0.8rem 1.5rem'};
+  padding: ${({ padding }) => padding || '0.94rem'};
   max-width: ${({ maxWidth }) => maxWidth || '9.4rem'};
   min-width: ${({ minWidth }) => minWidth || 'none'};
   width: ${({ width }) => width || 'none'};
-  background-color: ${({ background }) => background || 'transparent'};
+  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
   border: ${({ border }) => border || 'none'};
   border-radius: ${({ borderRadius }) => borderRadius || '2rem'};
   color: ${({ color }) => color || white};
-  font-size: ${({ fontSize }) => fontSize || '1rem'};
+  font-size: ${({ fontSize }) => fontSize || '0.9rem'};
   font-weight: ${({ fontWeight }) => fontWeight || 700};
   cursor: 'pointer';
 `;

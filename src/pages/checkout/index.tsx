@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 
-import { grey_white } from 'styles/colors';
+import { grey_white, orange, blue } from 'styles/colors';
 import {
   Button,
   PrimaryButton,
@@ -28,8 +28,9 @@ const Checkout = () => {
 
   return (
     <SectionWrapper>
-      <PrimaryButton> Checkout </PrimaryButton>
-      <SecondaryButton> Secondary </SecondaryButton>
+      <PrimaryButton colorProp={blue}> Male </PrimaryButton>
+      <PrimaryButton colorProp={orange}> Female</PrimaryButton>
+      <SecondaryButton colorProp={blue}> Female</SecondaryButton>
     </SectionWrapper>
   );
 };

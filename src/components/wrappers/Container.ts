@@ -2,10 +2,16 @@ import styled from 'styled-components';
 
 interface Styles {
   position?: string;
+  top?: string;
+  left?: string;
+  bottom?: string;
+  right?: string;
+  zIndex?: number;
   display?: string;
   margin?: string;
   padding?: string;
   maxWidth?: string;
+  width?: string;
 }
 
 export const Container = styled.div<Styles>`

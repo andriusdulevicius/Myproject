@@ -12,7 +12,7 @@ interface Styles {
 }
 
 export const FlexWrapper = styled.div<Styles>`
-  display: 'flex';
+  display: flex;
   justify-content: ${({ justifyContent }) => justifyContent || 'center'};
   align-items: ${({ alignItems }) => alignItems || 'center'};
   gap: ${({ gap }) => gap || '1rem'};

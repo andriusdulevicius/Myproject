@@ -7,6 +7,7 @@ export * from './buttons/SecondaryButton';
 //Images
 
 export * from './images/Image';
+export * from './images/Svg';
 
 //TextBase
 export * from './typography/TextBase';

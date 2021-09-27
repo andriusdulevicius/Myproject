@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Navigation } from 'layouts/navigations/Navigation';
+import { Footer } from 'layouts/footer/Footer';
+import { useQuery } from 'styles/breakpoints';
 import { blue, orange } from 'styles/colors';
 import {
   Image,
@@ -15,6 +17,8 @@ import {
 } from 'components';
 
 const Landing = () => {
+  const { isMobileS, isMobile } = useQuery();
+
   const handleQuiz = () => {
     console.log('handling quiz');
   };
@@ -23,13 +27,13 @@ const Landing = () => {
     <LandingPage>
       <Navigation />
 
-      <AbsoluteBox bottom='0rem' left='0' width='100%'>
+      <AbsoluteBox left='0' right='0' top={isMobileS ? '14rem' : '10rem'}>
         <Image src='ellipse_mobile' />
       </AbsoluteBox>
-      <AbsoluteBox top='8rem' right='2rem' left='2rem'>
+      <AbsoluteBox top='6rem' right={isMobile ? '2rem' : '4rem'} left={isMobile ? '2rem' : '4rem'} maxWidth='16rem'>
         <Image src='bgc_couple' />
       </AbsoluteBox>
-      <AbsoluteBox bottom='1rem'>
+      <AbsoluteBox bottom={!isMobileS ? '0' : '2rem'}>
         <Container>
           <H1Mobile textAlign='center'>Find your Inner Peace</H1Mobile>
           <H4Mobile textAlign='center'>Calm mind. Better sleep. Confidence.</H4Mobile>
@@ -48,6 +52,7 @@ const Landing = () => {
               Female
             </PrimaryButton>
           </FlexWrapper>
+          {!isMobileS && <Footer />}
         </Container>
       </AbsoluteBox>
     </LandingPage>

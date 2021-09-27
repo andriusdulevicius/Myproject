@@ -8,7 +8,5 @@ export const AbsoluteBox = styled(Container)`
   left: ${({ left }) => left || ''};
   bottom: ${({ bottom }) => bottom || ''};
   right: ${({ right }) => right || ''};
-  display: ${({ display }) => display || 'block'};
-  margin: auto;
   padding: ${({ padding }) => padding || '0rem'};
 `;

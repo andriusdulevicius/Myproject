@@ -42,6 +42,8 @@ export const Navigation: React.FC<RouteComponentProps> = () => {
 };
 
 const NavWrapper = styled.nav`
+  position: relative;
+  z-index: 10;
   background-color: ${white};
 
   a {

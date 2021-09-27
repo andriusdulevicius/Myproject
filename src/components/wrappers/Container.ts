@@ -15,6 +15,8 @@ interface Styles {
 }
 
 export const Container = styled.div<Styles>`
+  position: ${({ position }) => position || 'relative'};
+  z-index: ${({ zIndex }) => zIndex || ''};
   margin: ${({ margin }) => margin || '0 auto'};
   padding: ${({ padding }) => padding || '0 1rem'};
   max-width: ${({ maxWidth }) => maxWidth || '72rem'};

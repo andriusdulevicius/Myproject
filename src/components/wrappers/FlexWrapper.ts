@@ -12,6 +12,7 @@ interface Styles {
 }
 
 export const FlexWrapper = styled.div<Styles>`
+  position: relative;
   display: flex;
   justify-content: ${({ justifyContent }) => justifyContent || 'center'};
   align-items: ${({ alignItems }) => alignItems || 'center'};

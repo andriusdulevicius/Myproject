@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { white } from 'styles/colors';
 
 interface Styles {
   position?: string;
@@ -14,23 +15,23 @@ interface Styles {
   paddingTop?: string;
   maxWidth?: string;
   width?: string;
+  height?: string;
   textAlign?: string;
+  borderRadius?: string;
+  backgroundColor?: string;
 }
 
-export const Container = styled.div<Styles>`
+export const SmallCard = styled.div<Styles>`
   position: ${({ position }) => position || 'relative'};
   z-index: ${({ zIndex }) => zIndex || ''};
   margin: ${({ margin }) => margin || '0 auto'};
   margin-top: ${({ marginTop }) => marginTop || '0'};
-  padding: ${({ padding }) => padding || '0 1rem'};
+  padding: ${({ padding }) => padding || '1rem'};
   padding-top: ${({ paddingTop }) => paddingTop || '0'};
-  max-width: ${({ maxWidth }) => maxWidth || '72rem'};
-  text-align: ${({ textAlign }) => textAlign || 'left'};
-`;
-
-export const ContainerSmall = styled(Container)`
-  position: ${({ position }) => position || 'relative'};
-  display: ${({ display }) => display || 'block'};
-
-  padding: ${({ padding }) => padding || '0 1rem'};
+  max-width: ${({ maxWidth }) => maxWidth || '24rem'};
+  width: ${({ width }) => width || '100%'};
+  height: ${({ height }) => height || '100%'};
+  text-align: ${({ textAlign }) => textAlign || 'center'};
+  border-radius: ${({ borderRadius }) => borderRadius || '2rem'};
+  background-color: ${({ backgroundColor }) => backgroundColor || white};
 `;

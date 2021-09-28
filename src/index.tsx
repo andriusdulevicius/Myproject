@@ -5,16 +5,14 @@ import { MainNavigation } from 'layouts/navigations';
 
 const GlobalStyle = createGlobalStyle`
 * {
-    box-sizing: border-box;
-    margin: 0;
-    
+  box-sizing: border-box;
+  margin: 0;
 }
 body {
     overflow: hidden auto;
-    margin: 0;
 }
 html {
-    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
 }
 `;
 

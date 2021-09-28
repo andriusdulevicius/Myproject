@@ -30,6 +30,10 @@ export * from './wrappers/Container';
 export * from './wrappers/FlexWrapper';
 export * from './wrappers/AbsoluteBox';
 
+// Backgrounds
+
+export * from './backgrounds/QuizBackground';
+
 // Routes
 
 export * from './Route';

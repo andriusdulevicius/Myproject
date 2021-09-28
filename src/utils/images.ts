@@ -4,6 +4,7 @@ import ellipse_mobile from 'assets/images/ellipse_mobile.png';
 import ellipse_laptop from 'assets/images/ellipse_laptop.png';
 import bgc_couple from 'assets/images/bgc_couple.png';
 import bottom_cloud from 'assets/images/bottom_cloud.png';
+import bottom_cloud_small from 'assets/images/bottom_cloud_small.png';
 import bottom_cloud_laptop from 'assets/images/bottom_cloud_laptop.png';
 import top_cloud from 'assets/images/top_cloud.png';
 import top_cloud_laptop from 'assets/images/top_cloud_laptop.png';
@@ -21,6 +22,7 @@ export const images: Record<string, string> = {
   top_cloud,
   top_cloud_laptop,
   bottom_cloud,
+  bottom_cloud_small,
   bottom_cloud_laptop,
   intermission_pic,
   increased_stress,

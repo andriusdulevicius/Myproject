@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Navigation } from 'layouts/navigations/Navigation';
 import { Footer } from 'layouts/footer/Footer';
 import { useQuery } from 'styles/breakpoints';
-import { blue, orange } from 'styles/colors';
+import { blue, orange, grey_white } from 'styles/colors';
 import {
   Image,
   AbsoluteBox,
@@ -39,11 +39,27 @@ const Landing = () => {
     <LandingPage>
       <Navigation />
 
-      <AbsoluteBox left={isMobile ? '0' : '14rem'} right='0' bottom={isMobile ? '0' : '-7rem'}>
+      {!isMobile && (
+        <AbsoluteBox left='0' top='3rem' zIndex={3}>
+          <Image src='top_cloud_laptop' />
+        </AbsoluteBox>
+      )}
+      {!isMobile && (
+        <AbsoluteBox bottom='0' right='0' zIndex={3} width='10rem'>
+          <Image src='bottom_cloud_laptop' width='' />
+        </AbsoluteBox>
+      )}
+      <AbsoluteBox left={isMobile ? '0' : ''} right='0' bottom={isMobile ? '0' : '-7rem'}>
         <Image src={isMobile ? 'ellipse_mobile' : 'ellipse_laptop'} />
       </AbsoluteBox>
       <Container maxWidth='75rem'>
-        <FlexWrapper padding='0' flexDirection={isMobile ? 'column' : 'row-reverse'} flexWrap='no-wrap' gap='3rem'>
+        <FlexWrapper
+          flexDirection={isMobile ? 'column' : 'row-reverse'}
+          flexWrap='no-wrap'
+          gap='3rem'
+          padding='0'
+          margin='6rem 0 0 0'
+        >
           <Container margin='4rem 0 0 0' padding='0' maxWidth={isMobile ? '18rem' : '37rem'}>
             <Image src='bgc_couple' />
           </Container>
@@ -78,6 +94,8 @@ const Landing = () => {
 export default Landing;
 
 const LandingPage = styled.div`
+  width: 100%;
+  background-color: ${grey_white + '25'};
   position: 'relative';
   padding: 0;
   margin: 0 auto;

@@ -19,5 +19,7 @@ export const Footer: React.FC = () => {
 };
 
 const StyledFooter = styled.footer`
-  margin-top: 3rem;
+  position: relative;
+  z-index: 5;
+  margin-top: 5rem;
 `;

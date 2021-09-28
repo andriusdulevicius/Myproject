@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { navigate } from '@reach/router';
 import styled from 'styled-components';
 import { IntermissionCard } from './sections/IntermissionCard';
 import { AnswerCard } from './elements/AnswerCard';
@@ -8,13 +9,16 @@ import {
   Image,
   Svg,
   AbsoluteBox,
+  QuizBackground,
   TextBase,
   Container,
+  H2,
   H3Mobile,
   TextBaseBold,
   FlexWrapper,
   PrimaryButton,
   SmallTextMobile,
+  RegularText,
 } from 'components';
 import { StatementCard } from './sections/StatementCard';
 
@@ -39,7 +43,7 @@ export interface DataTypes {
 }
 
 const Quiz: React.FC<DataTypes> = () => {
-  const { isMobileS, isMobile, isLaptop } = useQuery();
+  const { isMobile } = useQuery();
   const [questions, setQuestions] = useState<[]>([]);
   const [question, setQuestion] = useState<number>(1);
 
@@ -54,62 +58,51 @@ const Quiz: React.FC<DataTypes> = () => {
     })();
   }, []);
 
-  const handleQuiz = () => {
-    setQuestion(question + 1);
+  const renderNextQuestion = () => {
+    if (question <= 9) setQuestion(question + 1);
+    if (question > 9) navigate('/calculating/');
   };
 
   return (
     <QuizPage>
-      <AbsoluteBox left='0rem' top='-3rem' zIndex={1}>
-        <Image src='top_cloud' />
-      </AbsoluteBox>
-      <AbsoluteBox bottom='-1rem' right='-1rem' zIndex={1}>
-        <Image src='bottom_cloud' />
-      </AbsoluteBox>
-
+      <QuizBackground />
       {questions &&
         questions.slice(question - 1, question).map((q: DataTypes, index: number) => {
           const { type, key, label, custom, options } = q;
           return (
             <Container key={key} zIndex={2}>
-              <FlexWrapper justifyContent='space-between'>
+              <FlexWrapper justifyContent='space-between' padding='1rem 0 0 0'>
                 <Svg src='go_back' onClick={() => setQuestion(question - 1)} />
                 <TextBaseBold>
                   {question} of {questions.length}
                 </TextBaseBold>
               </FlexWrapper>
-
-              {type === 'intermission' && <IntermissionCard />}
-              {label && <H3Mobile>{label}</H3Mobile>}
-              {custom && custom.sublabel && <SmallTextMobile>{custom.sublabel}</SmallTextMobile>}
-              {options && (
-                <FlexWrapper gap='0.6rem' padding='0rem'>
-                  {options.map(({ label, value }) => (
-                    <AnswerCard
-                      key={value}
-                      labelProp={label}
-                      type={type}
-                      question={question}
-                      setQuestion={setQuestion}
-                    />
+              <Container paddingTop={isMobile ? '0' : '6rem'} maxWidth='35rem' textAlign={isMobile ? 'left' : 'center'}>
+                {type === 'intermission' && <IntermissionCard renderNextQuestion={renderNextQuestion} />}
+                {label && isMobile ? <H3Mobile>{label}</H3Mobile> : <H2>{label}</H2>}
+                {custom &&
+                  custom.sublabel &&
+                  (isMobile ? (
+                    <SmallTextMobile>{custom.sublabel}</SmallTextMobile>
+                  ) : (
+                    <RegularText>{custom.sublabel}</RegularText>
                   ))}
-                </FlexWrapper>
-              )}
-              {type === 'statement' && (
-                <StatementCard statementKey={key} custom={custom} question={question} setQuestion={setQuestion} />
-              )}
-              {(type === 'multiple' || type === 'intermission') && (
-                <PrimaryButton colorProp={blue} minWidth='100%' margin='1rem 0' onClick={handleQuiz}>
-                  Continue
-                </PrimaryButton>
-              )}
-              {type === 'intermission' && (
-                <TextBase margin='5rem 0 0 0' fontSize='0.85rem'>
-                  Disclaimer: Scores on the DASS-21 do not indicate a diagnosis. They simply provide a measure of
-                  severity based on the three assessed domains. To determine any potential diagnosis, discuss your
-                  results with your doctor or a qualified mental health provider.
-                </TextBase>
-              )}
+                {options && (
+                  <FlexWrapper gap='0.6rem' padding='0rem'>
+                    {options.map(({ label, value }) => (
+                      <AnswerCard key={value} labelProp={label} type={type} renderNextQuestion={renderNextQuestion} />
+                    ))}
+                  </FlexWrapper>
+                )}
+                {type === 'statement' && (
+                  <StatementCard statementKey={key} custom={custom} renderNextQuestion={renderNextQuestion} />
+                )}
+                {type === 'multiple' && (
+                  <PrimaryButton colorProp={blue} minWidth='100%' margin='1rem 0' onClick={renderNextQuestion}>
+                    Continue
+                  </PrimaryButton>
+                )}
+              </Container>
             </Container>
           );
         })}

@@ -1,5 +1,6 @@
-import React, { Dispatch, SetStateAction } from 'react';
-import { Container, FlexWrapper, Image, RegularTextMobile, PrimaryButton } from 'components';
+import React from 'react';
+import { useQuery } from 'styles/breakpoints';
+import { Container, FlexWrapper, Image, RegularTextMobile, RegularText, PrimaryButton } from 'components';
 import { blue, orange } from 'styles/colors';
 
 interface IProps {
@@ -9,25 +10,26 @@ interface IProps {
     stressor?: string;
     text?: string;
   };
-  question: number;
-  setQuestion: Dispatch<SetStateAction<number>>;
+  renderNextQuestion: () => void;
 }
 
-export const StatementCard: React.FC<IProps> = ({ statementKey, custom, question, setQuestion }) => {
-  const handlePageRender = () => {
-    setQuestion(question + 1);
-  };
-
+export const StatementCard: React.FC<IProps> = ({ statementKey, custom, renderNextQuestion }) => {
+  const { isMobile } = useQuery();
   return (
     <Container>
       <Image src={statementKey} />
 
-      {custom && <RegularTextMobile>{custom.text}</RegularTextMobile>}
+      {custom &&
+        (isMobile ? (
+          <RegularTextMobile>{custom.text}</RegularTextMobile>
+        ) : (
+          <RegularText textAlign='center'>{custom.text}</RegularText>
+        ))}
       <FlexWrapper flexWrap='no-wrap'>
-        <PrimaryButton colorProp={orange} minWidth='50%' onClick={handlePageRender}>
+        <PrimaryButton colorProp={orange} minWidth='50%' onClick={renderNextQuestion}>
           No
         </PrimaryButton>
-        <PrimaryButton colorProp={blue} minWidth='50%' onClick={handlePageRender}>
+        <PrimaryButton colorProp={blue} minWidth='50%' onClick={renderNextQuestion}>
           Yes
         </PrimaryButton>
       </FlexWrapper>

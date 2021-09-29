@@ -14,6 +14,7 @@ interface Styles {
 export const FlexWrapper = styled.div<Styles>`
   position: relative;
   display: flex;
+  flex-grow: 1;
   justify-content: ${({ justifyContent }) => justifyContent || 'center'};
   align-items: ${({ alignItems }) => alignItems || 'center'};
   gap: ${({ gap }) => gap || '1rem'};

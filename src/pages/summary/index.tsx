@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StatisticsSummary } from './sections/StatisticsSummary';
+import { PersonalSummary } from './sections/PersonalSummary';
 import {
   H1Mobile,
   H3Mobile,
@@ -20,6 +21,7 @@ const Summary = () => {
   return (
     <StyledSummary>
       <StatisticsSummary />
+      <PersonalSummary />
     </StyledSummary>
   );
 };

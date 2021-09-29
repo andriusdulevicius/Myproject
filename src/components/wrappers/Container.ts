@@ -24,7 +24,7 @@ export const Container = styled.div<Styles>`
   margin-top: ${({ marginTop }) => marginTop || '0'};
   padding: ${({ padding }) => padding || '0 1rem'};
   padding-top: ${({ paddingTop }) => paddingTop || '0'};
-  max-width: ${({ maxWidth }) => maxWidth || '72rem'};
+  max-width: ${({ maxWidth }) => maxWidth || '80rem'};
   text-align: ${({ textAlign }) => textAlign || 'left'};
 `;
 

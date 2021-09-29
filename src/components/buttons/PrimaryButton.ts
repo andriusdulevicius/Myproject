@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Button } from './Button';
-import { blue, dark_blue, blue_shadow, disabled } from 'styles/colors';
+import { blue, disabled } from 'styles/colors';
 
 export const PrimaryButton = styled(Button)<{ colorProp?: string }>`
   background-color: ${({ colorProp }) => colorProp || blue};

@@ -16,6 +16,8 @@ import financial_troubles from 'assets/images/statement_4.png';
 import credits from 'assets/images/statement_5.png';
 import feel_less_drained from 'assets/images/feel_less_drained.png';
 import quality_of_life from 'assets/images/quality_of_life.png';
+import increased_stress_levels from 'assets/images/increased_stress_levels.png';
+import panic_attack from 'assets/images/panic_attack.png';
 
 export const images: Record<string, string> = {
   ellipse_mobile,
@@ -34,4 +36,6 @@ export const images: Record<string, string> = {
   credits,
   feel_less_drained,
   quality_of_life,
+  increased_stress_levels,
+  panic_attack,
 };

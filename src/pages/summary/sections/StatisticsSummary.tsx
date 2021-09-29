@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import {
   H1Mobile,
+  H1,
+  H2Mobile,
+  H2,
   H3Mobile,
   RegularTextMobile,
   SmallTextMobile,
@@ -13,16 +16,22 @@ import {
   ContainerSmall,
   CaptionTextMobile,
   Container,
+  RegularText,
+  PrimaryButton,
 } from 'components';
-import { green, light_text, orange } from 'styles/colors';
+import { green, light_text, orange, blue } from 'styles/colors';
 
 export const StatisticsSummary = () => {
   const { isMobileS, isMobile } = useQuery();
   return (
     <>
-      <H1Mobile>Fresh mind starts here</H1Mobile>
-      <RegularTextMobile>According to your answers, you may...</RegularTextMobile>
-      <Container maxWidth='51rem'>
+      {isMobile ? <H1Mobile>Fresh mind starts here</H1Mobile> : <H1 textAlign='center'>Are you up for this?</H1>}
+      {isMobile ? (
+        <RegularTextMobile>According to your answers, you may...</RegularTextMobile>
+      ) : (
+        <RegularText textAlign='center'>According to your answers, you may...</RegularText>
+      )}
+      <Container maxWidth='51rem' textAlign={isMobile ? 'left' : 'center'}>
         <FlexWrapper padding='0'>
           <SmallCard padding='0' textAlign='left'>
             <ContainerSmall>
@@ -49,7 +58,7 @@ export const StatisticsSummary = () => {
           </SmallCard>
           <SmallCard>
             <RegularTextMobile margin='2rem 0'>
-              Are <BoldedText>Anxietless methods</BoldedText> safe for you?{' '}
+              Are <BoldedText>Anxietless methods</BoldedText> safe for you?
             </RegularTextMobile>
             <ContainerSmall textAlign='center'>
               <Svg src='heart_rate' />
@@ -67,6 +76,30 @@ export const StatisticsSummary = () => {
             </SmallCard>
           </FlexWrapper>
         </FlexWrapper>
+        {isMobile ? (
+          <H2Mobile>A natural way to reduce your anxiety</H2Mobile>
+        ) : (
+          <H2 textAlign='center'>A natural way to reduce your anxiety</H2>
+        )}
+        <StyledUl>
+          <FlexWrapper justifyContent={isMobile ? 'flex-start' : 'center'} padding='0'>
+            <StyledLi>
+              <StyledFlexWrapper>
+                <Svg src='green_check_circle' />
+                <RegularTextMobile margin='0'>No expensive treatments</RegularTextMobile>
+              </StyledFlexWrapper>
+            </StyledLi>
+            <StyledLi>
+              <StyledFlexWrapper>
+                <Svg src='green_check_circle' />
+                <RegularTextMobile margin='0'>No harmful side effects</RegularTextMobile>
+              </StyledFlexWrapper>
+            </StyledLi>
+          </FlexWrapper>
+        </StyledUl>
+        <PrimaryButton colorProp={blue} maxWidth='24rem' margin='1.5rem 0'>
+          Claim your fresh mind back
+        </PrimaryButton>
       </Container>
     </>
   );
@@ -75,3 +108,15 @@ export const StatisticsSummary = () => {
 const BoldedText = styled.span`
   font-weight: bold;
 `;
+
+const StyledUl = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+const StyledLi = styled.li``;
+
+const StyledFlexWrapper = styled(FlexWrapper).attrs({
+  flexWrap: 'no-wrap',
+  padding: '0',
+})``;

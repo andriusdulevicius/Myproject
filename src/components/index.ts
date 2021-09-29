@@ -30,6 +30,7 @@ export * from './wrappers/Container';
 export * from './wrappers/FlexWrapper';
 export * from './wrappers/AbsoluteBox';
 export * from './wrappers/SmallCard';
+export * from './wrappers/SmallWrapper';
 
 // Backgrounds
 

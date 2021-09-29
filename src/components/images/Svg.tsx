@@ -7,7 +7,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
 }
 
 export const Svg: React.FC<Props> = ({ src, onClick, ...props }) => {
-  const Icon: React.FC<React.SVGProps<SVGSVGElement>> = icons[src];
+  const Icon = icons[src];
 
   return !Icon ? null : <Icon {...props} onClick={onClick}></Icon>;
 };

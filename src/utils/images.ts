@@ -22,6 +22,8 @@ import nyc from 'assets/images/nyc.png';
 import bi from 'assets/images/bi.png';
 import healthline from 'assets/images/healthline.png';
 import bbc from 'assets/images/bbc.png';
+import amelia_marrow from 'assets/images/amelia_marrow.png';
+import amelia_signature from 'assets/images/amelia_signature.png';
 
 export const images: Record<string, string> = {
   ellipse_mobile,
@@ -46,4 +48,6 @@ export const images: Record<string, string> = {
   bi,
   healthline,
   bbc,
+  amelia_marrow,
+  amelia_signature,
 };

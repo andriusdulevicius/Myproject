@@ -16,7 +16,7 @@ import hospital from 'assets/icons/hospital.svg';
 import woman from 'assets/icons/woman.svg';
 import pill from 'assets/icons/pill.svg';
 
-export const icons = {
+export const icons: Record<string, React.FunctionComponent<React.SVGProps<SVGSVGElement>>> = {
   anxietless_logo,
   burger_menu,
   go_back,

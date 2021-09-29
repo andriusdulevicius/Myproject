@@ -3,20 +3,8 @@ import styled from 'styled-components';
 import { StatisticsSummary } from './sections/StatisticsSummary';
 import { PersonalSummary } from './sections/PersonalSummary';
 import { PersonalFacts } from './sections/PersonalFacts';
-import {
-  H1Mobile,
-  H3Mobile,
-  RegularTextMobile,
-  SmallTextMobile,
-  FlexWrapper,
-  Image,
-  SmallCard,
-  Svg,
-  ContainerSmall,
-  TextBaseBold,
-  CaptionTextMobile,
-} from 'components';
-import { green, grey_white, light_text, orange } from 'styles/colors';
+import { OurPromise } from './sections/OurPromise';
+import { grey_white } from 'styles/colors';
 
 const Summary = () => {
   return (
@@ -24,6 +12,7 @@ const Summary = () => {
       <StatisticsSummary />
       <PersonalSummary />
       <PersonalFacts />
+      <OurPromise />
     </StyledSummary>
   );
 };

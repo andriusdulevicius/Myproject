@@ -55,7 +55,7 @@ const Landing = () => {
       <Container maxWidth='75rem'>
         <FlexWrapper
           flexDirection={isMobile ? 'column' : 'row-reverse'}
-          flexWrap='no-wrap'
+          flexWrap='nowrap'
           gap='3rem'
           padding='0'
           margin='6rem 0 0 0'
@@ -75,7 +75,7 @@ const Landing = () => {
             <TextBaseBold fontSize='0.9rem' textAlign={isMobile ? 'center' : 'left'}>
               {caption}
             </TextBaseBold>
-            <FlexWrapper flexWrap='no-wrap' padding='0rem' gap='0.5rem' justifyContent={isMobile ? 'center' : 'start'}>
+            <FlexWrapper flexWrap='nowrap' padding='0rem' gap='0.5rem' justifyContent={isMobile ? 'center' : 'start'}>
               <PrimaryButton colorProp={blue} margin='0' width='50%' onClick={handleQuiz}>
                 Male
               </PrimaryButton>

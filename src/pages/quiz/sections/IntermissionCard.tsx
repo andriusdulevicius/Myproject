@@ -35,7 +35,7 @@ export const IntermissionCard: React.FC<IProps> = ({ renderNextQuestion }) => {
 
   return (
     <Container maxWidth='25rem'>
-      <FlexWrapper flexWrap='no-wrap' padding='0'>
+      <FlexWrapper flexWrap='nowrap' padding='0'>
         <Image src={imgSrc} />
         {isMobile ? <H4Mobile>{title}</H4Mobile> : <H4>{title}</H4>}
       </FlexWrapper>

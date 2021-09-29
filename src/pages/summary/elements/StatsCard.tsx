@@ -27,7 +27,7 @@ export const StatsCard: React.FC<Props> = ({ title, icon, subtitle }) => {
   const { isMobile } = useQuery();
   return (
     <SmallCard margin='0'>
-      <FlexWrapper flexWrap='no-wrap'>
+      <FlexWrapper flexWrap='nowrap'>
         <Svg src={icon} />
         <SmallWrapper>
           {isMobile ? <H5Mobile>{title}</H5Mobile> : <H5>{title}</H5>}

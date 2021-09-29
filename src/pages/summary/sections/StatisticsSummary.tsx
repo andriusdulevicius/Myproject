@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
+import ClaimButton from '../elements/ClaimButton';
 import {
   H1Mobile,
   H1,
@@ -65,7 +66,7 @@ export const StatisticsSummary = () => {
             </ContainerSmall>
             <H1Mobile color={orange}>Yes</H1Mobile>
           </SmallCard>
-          <FlexWrapper flexWrap='no-wrap' padding='0'>
+          <FlexWrapper flexWrap='nowrap' padding='0'>
             <SmallCard width={isMobile ? '50%' : '100%'} textAlign='left'>
               <H1Mobile color={green}>57%</H1Mobile>
               <CaptionTextMobile>Of our members have started with the same anxiety level as you.</CaptionTextMobile>
@@ -97,9 +98,7 @@ export const StatisticsSummary = () => {
             </StyledLi>
           </FlexWrapper>
         </StyledUl>
-        <PrimaryButton colorProp={blue} maxWidth='24rem' margin='1.5rem 0'>
-          Claim your fresh mind back
-        </PrimaryButton>
+        <ClaimButton />
       </Container>
     </>
   );
@@ -117,6 +116,6 @@ const StyledUl = styled.ul`
 const StyledLi = styled.li``;
 
 const StyledFlexWrapper = styled(FlexWrapper).attrs({
-  flexWrap: 'no-wrap',
+  flexWrap: 'nowrap',
   padding: '0',
 })``;

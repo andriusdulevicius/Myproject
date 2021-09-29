@@ -9,6 +9,7 @@ interface Styles {
   flexWrap?: string;
   margin?: string;
   padding?: string;
+  maxWidth?: string;
 }
 
 export const FlexWrapper = styled.div<Styles>`
@@ -22,4 +23,5 @@ export const FlexWrapper = styled.div<Styles>`
   flex-wrap: ${({ flexWrap }) => flexWrap || 'wrap'};
   margin: ${({ margin }) => margin || 'auto'};
   padding: ${({ padding }) => padding || '0 1rem'};
+  max-width: ${({ maxWidth }) => maxWidth || '50rem'};
 `;

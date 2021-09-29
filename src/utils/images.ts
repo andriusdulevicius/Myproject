@@ -18,6 +18,10 @@ import feel_less_drained from 'assets/images/feel_less_drained.png';
 import quality_of_life from 'assets/images/quality_of_life.png';
 import increased_stress_levels from 'assets/images/increased_stress_levels.png';
 import panic_attack from 'assets/images/panic_attack.png';
+import nyc from 'assets/images/nyc.png';
+import bi from 'assets/images/bi.png';
+import healthline from 'assets/images/healthline.png';
+import bbc from 'assets/images/bbc.png';
 
 export const images: Record<string, string> = {
   ellipse_mobile,
@@ -38,4 +42,8 @@ export const images: Record<string, string> = {
   quality_of_life,
   increased_stress_levels,
   panic_attack,
+  nyc,
+  bi,
+  healthline,
+  bbc,
 };

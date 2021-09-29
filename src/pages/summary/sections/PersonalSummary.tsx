@@ -106,19 +106,19 @@ export const PersonalSummary: React.FC = () => {
                     {info}
                   </SmallText>
                 )}
-                {modalOpen && (
-                  <AbsoluteBox left='-1rem' right='-1rem' top='-10rem'>
-                    <SmallCard>
-                      <FlexWrapper justifyContent='space-between' padding='0'>
-                        <H5Mobile>{info}</H5Mobile>
-                        <Svg src='close' onClick={handleModal} />
-                      </FlexWrapper>
-
-                      <SmallTextMobile>{answer}</SmallTextMobile>
-                    </SmallCard>
-                  </AbsoluteBox>
-                )}
               </FlexWrapper>
+            )}
+            {info && modalOpen && (
+              <AbsoluteBox left='-0.5rem' right='-0.5rem' top='8rem'>
+                <SmallCard maxWidth='25rem' padding='1rem'>
+                  <FlexWrapper justifyContent='space-between' padding='0'>
+                    <H5Mobile>{info}</H5Mobile>
+                    <Svg src='close' onClick={handleModal} />
+                  </FlexWrapper>
+
+                  <SmallTextMobile>{answer}</SmallTextMobile>
+                </SmallCard>
+              </AbsoluteBox>
             )}
           </SmallCard>
         ))}

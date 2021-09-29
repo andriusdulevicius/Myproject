@@ -11,6 +11,10 @@ import severe_icon from 'assets/icons/severe_icon.svg';
 import mild_icon from 'assets/icons/mild_icon.svg';
 import info from 'assets/icons/info.svg';
 import close from 'assets/icons/close.svg';
+import us_flag from 'assets/icons/us_flag.svg';
+import hospital from 'assets/icons/hospital.svg';
+import woman from 'assets/icons/woman.svg';
+import pill from 'assets/icons/pill.svg';
 
 export const icons = {
   anxietless_logo,
@@ -26,4 +30,8 @@ export const icons = {
   mild_icon,
   info,
   close,
+  us_flag,
+  hospital,
+  woman,
+  pill,
 };

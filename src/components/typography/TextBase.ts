@@ -12,7 +12,7 @@ interface Styles {
 }
 
 export const TextBase = styled.p<Styles>`
-  margin: ${({ margin }) => margin || '1rem auto'};
+  margin: ${({ margin }) => margin || '1rem 0'};
   font-size: ${({ fontSize }) => fontSize || '1rem'};
   font-weight: ${({ fontWeight }) => fontWeight || 400};
   color: ${({ color }) => color || dark_text};

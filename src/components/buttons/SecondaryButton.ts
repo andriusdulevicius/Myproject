@@ -14,6 +14,6 @@ export const SecondaryButton = styled(Button)<{ colorProp?: string }>`
 
   :disabled {
     background-color: transparent;
-    border: 1px solid ${disabled};
+    border: 0.0625rem solid ${disabled};
   }
 `;

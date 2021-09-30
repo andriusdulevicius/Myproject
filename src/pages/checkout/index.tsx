@@ -26,13 +26,7 @@ const Checkout = () => {
 
   // Linka naudojam renderyje, useRouteri naudojame funkcijose
 
-  return (
-    <SectionWrapper>
-      <PrimaryButton colorProp={blue}> Male </PrimaryButton>
-      <PrimaryButton colorProp={orange}> Female</PrimaryButton>
-      <SecondaryButton colorProp={blue}> Female</SecondaryButton>
-    </SectionWrapper>
-  );
+  return <SectionWrapper></SectionWrapper>;
 };
 
 export default Checkout;

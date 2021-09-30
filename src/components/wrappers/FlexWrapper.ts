@@ -21,7 +21,7 @@ export const FlexWrapper = styled.div<Styles>`
   gap: ${({ gap }) => gap || '1rem'};
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
   flex-wrap: ${({ flexWrap }) => flexWrap || 'wrap'};
-  margin: ${({ margin }) => margin || 'auto'};
-  padding: ${({ padding }) => padding || '0 1rem'};
+  margin: ${({ margin }) => margin || '0'};
+  padding: ${({ padding }) => padding || '0'};
   max-width: ${({ maxWidth }) => maxWidth || '50rem'};
 `;

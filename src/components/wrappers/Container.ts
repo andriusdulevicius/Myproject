@@ -22,7 +22,7 @@ export const Container = styled.div<Styles>`
   z-index: ${({ zIndex }) => zIndex || ''};
   margin: ${({ margin }) => margin || '0 auto'};
   margin-top: ${({ marginTop }) => marginTop || '0'};
-  padding: ${({ padding }) => padding || '0 1rem'};
+  padding: ${({ padding }) => padding || '0'};
   padding-top: ${({ paddingTop }) => paddingTop || '0'};
   max-width: ${({ maxWidth }) => maxWidth || '80rem'};
   text-align: ${({ textAlign }) => textAlign || 'left'};
@@ -31,6 +31,5 @@ export const Container = styled.div<Styles>`
 export const ContainerSmall = styled(Container)`
   position: ${({ position }) => position || 'relative'};
   display: ${({ display }) => display || 'block'};
-
-  padding: ${({ padding }) => padding || '0 1rem'};
+  padding: ${({ padding }) => padding || '0'};
 `;

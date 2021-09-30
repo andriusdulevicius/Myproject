@@ -21,13 +21,13 @@ export const Navigation: React.FC<RouteComponentProps> = () => {
 
   return (
     <NavWrapper>
-      <Container>
-        <FlexWrapper justifyContent='space-between' padding='0.5rem 0'>
+      <Container padding='0 1rem'>
+        <FlexWrapper justifyContent='space-between' padding='0.5rem 0' maxWidth='80rem'>
           <Svg src='anxietless_logo' />
           {isMobile ? (
             <Svg src='burger_menu' />
           ) : (
-            <FlexWrapper padding='0'>
+            <FlexWrapper justifyContent='flex-end'>
               {PAGES_LINKS.map((p, index: number) => (
                 <Link to={p.link} key={index}>
                   {p.title}
@@ -48,6 +48,7 @@ const NavWrapper = styled.nav`
 
   a {
     text-decoration: none;
+    padding-left: 1rem;
     color: ${dark_text};
     font-size: 0.9rem;
   }

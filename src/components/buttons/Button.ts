@@ -8,9 +8,10 @@ interface Styles {
   maxWidth?: string;
   minWidth?: string;
   width?: string;
-  backgroundColor?: string;
   border?: string;
   borderRadius?: string;
+  backgroundColor?: string;
+  color?: string;
   fontSize?: string;
   fontWeight?: number;
 }
@@ -22,9 +23,9 @@ export const Button = styled.button<Styles>`
   max-width: ${({ maxWidth }) => maxWidth || '9.4rem'};
   min-width: ${({ minWidth }) => minWidth || 'none'};
   width: ${({ width }) => width || '100%'};
-  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
   border: ${({ border }) => border || 'none'};
   border-radius: ${({ borderRadius }) => borderRadius || '2rem'};
+  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
   color: ${({ color }) => color || white};
   font-size: ${({ fontSize }) => fontSize || '1rem'};
   font-weight: ${({ fontWeight }) => fontWeight || 700};

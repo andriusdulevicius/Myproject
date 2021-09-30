@@ -21,7 +21,7 @@ const Img = styled.img<Styles>`
   margin: ${({ margin }) => margin || ''};
   padding: ${({ padding }) => padding || ''};
   max-width: ${({ maxWidth }) => maxWidth || ''};
-  max-width: ${({ minWidth }) => minWidth || ''};
+  min-width: ${({ minWidth }) => minWidth || ''};
   width: ${({ width }) => width || '100%'};
   height: ${({ height }) => height || '100%'};
 `;

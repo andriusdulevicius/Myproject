@@ -26,9 +26,9 @@ export * from './typography/Texts';
 
 // Wrappers
 
+export * from './wrappers/AbsoluteBox';
 export * from './wrappers/Container';
 export * from './wrappers/FlexWrapper';
-export * from './wrappers/AbsoluteBox';
 export * from './wrappers/SmallCard';
 export * from './wrappers/SmallWrapper';
 export * from './wrappers/TextWrapper';

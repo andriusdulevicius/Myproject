@@ -1,18 +1,20 @@
 import React from 'react';
-import { RegularTextMobile, H3Mobile, Svg, TextBaseBold, SmallTextMobile, ContainerSmall, SmallCard } from 'components';
+import { RegularText, H3, Svg, TextBaseBold, SmallText, ContainerSmall, SmallCard } from 'components';
+import { useQuery } from 'styles/breakpoints';
 
-export const LoadingCard = () => {
+export const LoadingCard: React.FC = () => {
+  const { isMobile } = useQuery();
   const dynamicNumber = 12;
 
   return (
-    <SmallCard margin='3rem auto' width='70%'>
-      <H3Mobile>Calculating your results</H3Mobile>
-      <RegularTextMobile>Here is breathing exercise while you wait.</RegularTextMobile>
-      <ContainerSmall padding='4rem 0' textAlign='center'>
+    <SmallCard padding='1rem' width={isMobile ? '90%' : '70%'} textAlign='center'>
+      <H3>Calculating your results</H3>
+      <RegularText>Here is breathing exercise while you wait.</RegularText>
+      <ContainerSmall padding='3.5rem 0' textAlign='center'>
         <Svg src='seed_of_life' />
       </ContainerSmall>
       <TextBaseBold>{dynamicNumber}%</TextBaseBold>
-      <SmallTextMobile>Calculating..</SmallTextMobile>
+      <SmallText>Calculating..</SmallText>
     </SmallCard>
   );
 };

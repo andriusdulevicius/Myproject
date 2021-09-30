@@ -1,27 +1,19 @@
 import React, { useState } from 'react';
+import { useQuery } from 'styles/breakpoints';
 import { StatsCard } from '../elements/StatsCard';
 import {
+  AbsoluteBox,
   Container,
-  H2Mobile,
-  H2,
-  H5,
-  H4,
-  H4Mobile,
-  H5Mobile,
-  RegularText,
-  RegularTextMobile,
   FlexWrapper,
   SmallCard,
-  Svg,
-  SmallWrapper,
-  CaptionTextMobile,
-  CaptionText,
-  Image,
-  SmallTextMobile,
+  H2,
+  H4,
+  H5,
+  RegularText,
   SmallText,
-  AbsoluteBox,
+  Svg,
+  Image,
 } from 'components';
-import { useQuery } from 'styles/breakpoints';
 import { yellow, blue } from 'styles/colors';
 
 const PERSONAL_SUMMARY = {
@@ -74,49 +66,38 @@ export const PersonalSummary: React.FC = () => {
 
   return (
     <Container textAlign={isMobile ? 'left' : 'center'} padding='0'>
-      {isMobile ? <H2Mobile>{title}</H2Mobile> : <H2>{title}</H2>}
-      {isMobile ? <RegularTextMobile>{stats_label}</RegularTextMobile> : <RegularText>{stats_label}</RegularText>}
+      <H2>{title}</H2>
+      <RegularText>{stats_label}</RegularText>
       <FlexWrapper flexDirection={isMobile ? 'column' : 'row'} justifyContent='center' gap='1rem' padding='0'>
         {stats.map(({ icon, title, subtitle }) => (
           <StatsCard icon={icon} title={title} subtitle={subtitle} />
         ))}
       </FlexWrapper>
-      {isMobile ? <RegularTextMobile>{sublabel1}</RegularTextMobile> : <RegularText>{sublabel1}</RegularText>}
-      {isMobile ? <RegularTextMobile>{sublabel2}</RegularTextMobile> : <RegularText>{sublabel2}</RegularText>}
+      <RegularText>{sublabel1}</RegularText>
+      <RegularText>{sublabel2}</RegularText>
       <FlexWrapper flexDirection={isMobile ? 'column' : 'row'}>
         {results.map(({ imgSrc, indication, result, info, answer }) => (
           <SmallCard margin='0'>
             <Image src={imgSrc} />
-            {indication &&
-              (isMobile ? (
-                <SmallTextMobile color={yellow}>Your results indicate that</SmallTextMobile>
-              ) : (
-                <SmallText color={yellow}>Your results indicate that</SmallText>
-              ))}
-            {isMobile ? <H4Mobile>{result}</H4Mobile> : <H4>{result}</H4>}
+            {indication && <SmallText color={yellow}>Your results indicate that</SmallText>}
+            <H4>{result}</H4>
             {info && (
               <FlexWrapper onClick={handleModal} justifyContent='start' gap='0.4rem' padding='0' margin='0.5rem 0'>
                 <Svg src='info' />
-                {isMobile ? (
-                  <SmallTextMobile color={blue} margin='0'>
-                    {info}
-                  </SmallTextMobile>
-                ) : (
-                  <SmallText color={blue} margin='0'>
-                    {info}
-                  </SmallText>
-                )}
+                <SmallText color={blue} margin='0'>
+                  {info}
+                </SmallText>
               </FlexWrapper>
             )}
             {info && modalOpen && (
               <AbsoluteBox left='-0.5rem' right='-0.5rem' top='8rem'>
                 <SmallCard maxWidth='25rem' padding='1rem'>
                   <FlexWrapper justifyContent='space-between' padding='0'>
-                    <H5Mobile>{info}</H5Mobile>
+                    <H5>{info}</H5>
                     <Svg src='close' onClick={handleModal} />
                   </FlexWrapper>
 
-                  <SmallTextMobile>{answer}</SmallTextMobile>
+                  <SmallText>{answer}</SmallText>
                 </SmallCard>
               </AbsoluteBox>
             )}

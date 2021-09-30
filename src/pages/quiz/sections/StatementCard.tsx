@@ -1,6 +1,5 @@
 import React from 'react';
-import { useQuery } from 'styles/breakpoints';
-import { Container, FlexWrapper, Image, RegularTextMobile, RegularText, PrimaryButton } from 'components';
+import { Container, FlexWrapper, Image, RegularText, PrimaryButton } from 'components';
 import { blue, orange } from 'styles/colors';
 
 interface IProps {
@@ -14,17 +13,10 @@ interface IProps {
 }
 
 export const StatementCard: React.FC<IProps> = ({ statementKey, custom, renderNextQuestion }) => {
-  const { isMobile } = useQuery();
   return (
     <Container>
       <Image src={statementKey} />
-
-      {custom &&
-        (isMobile ? (
-          <RegularTextMobile>{custom.text}</RegularTextMobile>
-        ) : (
-          <RegularText textAlign='center'>{custom.text}</RegularText>
-        ))}
+      <RegularText textAlign='center'>{custom.text}</RegularText>
       <FlexWrapper flexWrap='nowrap'>
         <PrimaryButton colorProp={orange} minWidth='50%' onClick={renderNextQuestion}>
           No

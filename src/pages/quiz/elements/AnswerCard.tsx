@@ -1,4 +1,4 @@
-import React, { useState, Dispatch, SetStateAction } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FlexWrapper, AbsoluteBox, Svg } from 'components';
 import { white, dark_text } from 'styles/colors';
@@ -24,7 +24,7 @@ export const AnswerCard: React.FC<IProps> = ({ labelProp, type, renderNextQuesti
             <Svg src='check_circle' />
           </AbsoluteBox>
         )}
-        <AbsoluteBox top='0.6rem'>{labelProp}</AbsoluteBox>
+        <AbsoluteBox top={isSelected ? '0.45rem' : '0.5rem'}>{labelProp}</AbsoluteBox>
       </FlexWrapper>
     </OptionCard>
   );
@@ -36,7 +36,6 @@ const OptionCard = styled.div<{ isSelected: boolean }>`
   height: 2.3rem;
   border: ${({ isSelected }) => (isSelected ? `1px solid ${dark_text}` : 'none')};
   border-radius: 2.3rem;
-  text-align: center;
   background-color: ${white};
   cursor: pointer;
 `;

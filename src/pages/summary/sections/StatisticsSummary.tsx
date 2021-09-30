@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ClaimButton from '../elements/ClaimButton';
+import { MembersStatsCard } from '../elements/MembersStatsCard';
 import { useQuery } from 'styles/breakpoints';
 import {
   Container,
@@ -25,8 +26,8 @@ export const StatisticsSummary = () => {
       <H1 textAlign={isMobile ? 'left' : 'center'}>{isMobile ? 'Fresh mind starts here' : 'Are you up for this?'}</H1>
       <RegularText textAlign={isMobile ? 'left' : 'center'}>According to your answers, you may...</RegularText>
       <Container maxWidth='51rem' textAlign={isMobile ? 'left' : 'center'}>
-        <FlexWrapper padding='0'>
-          <SmallCard padding='0' textAlign='left'>
+        <FlexWrapper>
+          <SmallCard textAlign='left'>
             <ContainerSmall padding='0 1rem'>
               <H3>Feel less drained</H3>
               <SmallText color={light_text}>Your anxiety level will drop in 28 days</SmallText>
@@ -43,31 +44,30 @@ export const StatisticsSummary = () => {
             </ContainerSmall>
           </SmallCard>
           <SmallCard padding='0 1rem'>
-            <ContainerSmall padding='3rem 1rem' textAlign='center'>
+            <ContainerSmall padding='2rem 1rem' textAlign='center'>
               <Svg src='zzz' />
+              <H3 margin='3rem 0 0'>Increase your sleep quality</H3>
+              <SmallText color={light_text}>Calm mind helps fall asleep easily.</SmallText>
             </ContainerSmall>
-            <H3 margin='0'>Increase your sleep quality</H3>
-            <SmallText color={light_text}>Calm mind helps fall asleep easily.</SmallText>
           </SmallCard>
-          <SmallCard padding='0 1rem'>
+          <SmallCard padding='0 1rem' textAlign='center'>
+            {!isMobile && (
+              <ContainerSmall textAlign='center' marginTop='2rem'>
+                <Svg src='heart_rate' />
+              </ContainerSmall>
+            )}
             <RegularText margin='2rem 0'>
               Are <BoldedText>Anxietless methods</BoldedText> safe for you?
             </RegularText>
-            <ContainerSmall textAlign='center'>
-              <Svg src='heart_rate' />
-            </ContainerSmall>
+            {isMobile && (
+              <ContainerSmall textAlign='center'>
+                <Svg src='heart_rate' />
+              </ContainerSmall>
+            )}
             <H1 color={orange}>Yes</H1>
           </SmallCard>
-          <FlexWrapper flexWrap='nowrap' padding='0'>
-            <SmallCard width={isMobile ? '50%' : '100%'} textAlign='left' padding='0 1rem'>
-              <H1 color={green}>57%</H1>
-              <CaptionText>Of our members have started with the same anxiety level as you.</CaptionText>
-            </SmallCard>
-            <SmallCard width={isMobile ? '50%' : '100%'} textAlign='left' padding='0 1rem'>
-              <H1 color={green}>96%</H1>
-              <CaptionText>Reduced their day-to-day anxiety and stress.</CaptionText>
-            </SmallCard>
-          </FlexWrapper>
+          <MembersStatsCard percent='57' text='Of our members have started with the same anxiety level as you.' />
+          <MembersStatsCard percent='96' text='Reduced their day-to-day anxiety and stress.' />
         </FlexWrapper>
         <H2 textAlign='center'>A natural way to reduce your anxiety</H2>
         <StyledUl>

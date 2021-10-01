@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { dark_text } from 'styles/colors';
+import { mobile } from 'styles/breakpoints';
 
 interface Styles {
   margin?: string;
@@ -24,4 +25,8 @@ export const TextBase = styled.p<Styles>`
 
 export const TextBaseBold = styled(TextBase).attrs(({ fontWeight }: Styles) => ({
   fontWeight: fontWeight || 900,
-}))``;
+}))`
+  @media ${mobile} {
+    font-weight: 700;
+  }
+`;

@@ -57,6 +57,7 @@ export const MonthlyPlanExplained: React.FC = () => {
 };
 
 const StyledSection = styled.section`
+  padding: 0 1rem;
   background-color: ${white};
 `;
 

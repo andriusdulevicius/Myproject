@@ -10,6 +10,7 @@ interface Styles {
   minWidth?: string;
   width?: string;
   height?: string;
+  objectFit?: string;
 }
 
 interface Props extends Styles {
@@ -24,6 +25,7 @@ const Img = styled.img<Styles>`
   min-width: ${({ minWidth }) => minWidth || ''};
   width: ${({ width }) => width || '100%'};
   height: ${({ height }) => height || '100%'};
+  object-fit: ${({ objectFit }) => objectFit || ''};
 `;
 
 export const Image: React.FC<Props> = ({ src }) => {

@@ -28,6 +28,8 @@ import healthline from 'assets/images/healthline.png';
 import bbc from 'assets/images/bbc.png';
 import amelia_marrow from 'assets/images/amelia_marrow.png';
 import amelia_signature from 'assets/images/amelia_signature.png';
+import checkout_heart from 'assets/images/checkout_heart.png';
+import checkout_heart_laptop from 'assets/images/checkout_heart_laptop.png';
 
 export const images: Record<string, string> = {
   ellipse_mobile,
@@ -58,4 +60,6 @@ export const images: Record<string, string> = {
   bbc,
   amelia_marrow,
   amelia_signature,
+  checkout_heart,
+  checkout_heart_laptop,
 };

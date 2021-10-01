@@ -34,15 +34,15 @@ export const PersonalSummary: React.FC = () => {
         <H2>{title}</H2>
         <RegularText>{stats_label}</RegularText>
         <FlexWrapper flexDirection={isMobile ? 'column' : 'row'} justifyContent='center' gap='1rem' maxWidth='80rem'>
-          {stats.map(({ icon, title, subtitle }) => (
-            <StatsCard icon={icon} title={title} subtitle={subtitle} />
+          {stats.map(({ icon, title, subtitle }, index: number) => (
+            <StatsCard icon={icon} title={title} subtitle={subtitle} key={index} />
           ))}
         </FlexWrapper>
         <RegularText>{sublabel1}</RegularText>
         <RegularText>{sublabel2}</RegularText>
         <FlexWrapper flexDirection={isMobile ? 'column' : 'row'} maxWidth='80rem'>
-          {results.map(({ imgSrc, indication, result, info, answer }) => (
-            <SmallCard margin='0'>
+          {results.map(({ imgSrc, indication, result, info, answer }, index: number) => (
+            <SmallCard key={index} margin='0'>
               <Image src={imgSrc} />
               <ContainerSmall position='relative' padding='0 1rem'>
                 {indication && <SmallText color={yellow}>Your results indicate that</SmallText>}

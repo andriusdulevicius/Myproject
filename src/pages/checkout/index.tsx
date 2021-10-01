@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { grey_white, orange, blue } from 'styles/colors';
+import { BreakFree } from './sections/BreakFree';
 import { MonthlyPlanExplained } from './sections/MonthlyPlanExplained';
 import { OptionSelection } from './sections/OptionSelection';
 
@@ -9,6 +10,7 @@ const Checkout = () => {
     <SectionWrapper>
       <MonthlyPlanExplained />
       <OptionSelection />
+      <BreakFree />
     </SectionWrapper>
   );
 };

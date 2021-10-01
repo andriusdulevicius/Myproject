@@ -28,7 +28,7 @@ export const BREAK_FREE_DATA = {
   journey_info: [
     {
       id: 1,
-      imgSrc: 'your_plan',
+      imgSrc: 'your_rules',
       title: 'Your plan - your rules',
       text: 'Complete tasks at your own pace. If you skip a day or need some time off, you can pick up  right where you left off.',
     },

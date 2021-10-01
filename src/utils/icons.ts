@@ -17,6 +17,7 @@ import woman from 'assets/icons/woman.svg';
 import pill from 'assets/icons/pill.svg';
 import orange_bulletpoint from 'assets/icons/orange_bulletpoint.svg';
 import purple_star from 'assets/icons/purple_star.svg';
+import green_check_outline from 'assets/icons/green_check_outline.svg';
 
 export const icons: Record<string, React.FunctionComponent<React.SVGProps<SVGSVGElement>>> = {
   anxietless_logo,
@@ -38,4 +39,5 @@ export const icons: Record<string, React.FunctionComponent<React.SVGProps<SVGSVG
   pill,
   orange_bulletpoint,
   purple_star,
+  green_check_outline,
 };

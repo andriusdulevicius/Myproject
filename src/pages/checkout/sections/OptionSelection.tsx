@@ -15,6 +15,7 @@ export interface DataTypes {
 
 export const OptionSelection: React.FC = () => {
   const [plans, setPlans] = useState<DataTypes[] | []>([]);
+  const { isMobile } = useQuery();
 
   useEffect(() => {
     (async () => {
@@ -23,7 +24,6 @@ export const OptionSelection: React.FC = () => {
     })();
   }, []);
 
-  const { isMobile } = useQuery();
   return (
     <StyledSection>
       {!isMobile && (

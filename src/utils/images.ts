@@ -31,6 +31,10 @@ import amelia_signature from 'assets/images/amelia_signature.png';
 import checkout_heart from 'assets/images/checkout_heart.png';
 import checkout_heart_laptop from 'assets/images/checkout_heart_laptop.png';
 import safe_checkout from 'assets/images/safe_checkout.png';
+import break_free from 'assets/images/break_free.png';
+import your_rules from 'assets/images/your_rules.png';
+import lifetime_results from 'assets/images/lifetime_results.png';
+import daily_guidance from 'assets/images/daily_guidance.png';
 
 export const images: Record<string, string> = {
   ellipse_mobile,
@@ -64,4 +68,8 @@ export const images: Record<string, string> = {
   checkout_heart,
   checkout_heart_laptop,
   safe_checkout,
+  break_free,
+  your_rules,
+  lifetime_results,
+  daily_guidance,
 };

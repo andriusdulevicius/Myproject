@@ -11,7 +11,7 @@ import {
   H1,
   H2,
   H3,
-  CaptionText,
+  TextWrapper,
   RegularText,
   SmallText,
   Image,
@@ -20,9 +20,9 @@ import {
 import { green, light_text, orange, blue } from 'styles/colors';
 
 export const StatisticsSummary = () => {
-  const { isMobileS, isMobile } = useQuery();
+  const { isMobile } = useQuery();
   return (
-    <>
+    <StyledSummary>
       <H1 textAlign={isMobile ? 'left' : 'center'}>{isMobile ? 'Fresh mind starts here' : 'Are you up for this?'}</H1>
       <RegularText textAlign={isMobile ? 'left' : 'center'}>According to your answers, you may...</RegularText>
       <Container maxWidth='51rem' textAlign={isMobile ? 'left' : 'center'}>
@@ -44,9 +44,9 @@ export const StatisticsSummary = () => {
             </ContainerSmall>
           </SmallCard>
           <SmallCard padding='0 1rem'>
-            <ContainerSmall padding='2rem 1rem' textAlign='center'>
+            <ContainerSmall padding='2rem 1rem 1.3rem' textAlign='center'>
               <Svg src='zzz' />
-              <H3 margin='3rem 0 0'>Increase your sleep quality</H3>
+              <H3 margin='1rem 0 0'>Increase your sleep quality</H3>
               <SmallText color={light_text}>Calm mind helps fall asleep easily.</SmallText>
             </ContainerSmall>
           </SmallCard>
@@ -57,7 +57,7 @@ export const StatisticsSummary = () => {
               </ContainerSmall>
             )}
             <RegularText margin='2rem 0'>
-              Are <BoldedText>Anxietless methods</BoldedText> safe for you?
+              Are <TextWrapper fontSize='1.2rem'> Anxietless methods</TextWrapper> safe for you?
             </RegularText>
             {isMobile && (
               <ContainerSmall textAlign='center'>
@@ -66,8 +66,10 @@ export const StatisticsSummary = () => {
             )}
             <H1 color={orange}>Yes</H1>
           </SmallCard>
-          <MembersStatsCard percent='57' text='Of our members have started with the same anxiety level as you.' />
-          <MembersStatsCard percent='96' text='Reduced their day-to-day anxiety and stress.' />
+          <FlexWrapper flexWrap='nowrap'>
+            <MembersStatsCard percent='57' text='Of our members have started with the same anxiety level as you.' />
+            <MembersStatsCard percent='96' text='Reduced their day-to-day anxiety and stress.' />
+          </FlexWrapper>
         </FlexWrapper>
         <H2 textAlign='center'>A natural way to reduce your anxiety</H2>
         <StyledUl>
@@ -88,12 +90,13 @@ export const StatisticsSummary = () => {
         </StyledUl>
         <ClaimButton />
       </Container>
-    </>
+    </StyledSummary>
   );
 };
 
-const BoldedText = styled.span`
-  font-weight: bold;
+const StyledSummary = styled.section`
+  position: relative;
+  z-index: 10;
 `;
 
 const StyledUl = styled.ul`

@@ -9,12 +9,12 @@ interface Props {
 }
 
 export const StatsCard: React.FC<Props> = ({ title, icon, subtitle }) => (
-  <SmallCard margin='0'>
+  <SmallCard padding='1rem' margin='0'>
     <FlexWrapper flexWrap='nowrap'>
       <Svg src={icon} />
       <SmallWrapper>
-        <H5>{title}</H5>
-        <CaptionText>{subtitle}</CaptionText>
+        <H5 margin='1rem 0 0.6rem '>{title}</H5>
+        <CaptionText margin='0'>{subtitle}</CaptionText>
       </SmallWrapper>
     </FlexWrapper>
   </SmallCard>

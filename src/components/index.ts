@@ -35,7 +35,9 @@ export * from './wrappers/TextWrapper';
 
 // Backgrounds
 
+export * from './backgrounds/HomeBackground';
 export * from './backgrounds/QuizBackground';
+export * from './backgrounds/SummaryBackground';
 
 // Routes
 

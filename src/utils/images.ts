@@ -7,6 +7,9 @@ import bgc_couple_laptop from 'assets/images/bgc_couple_laptop.png';
 import bottom_cloud from 'assets/images/bottom_cloud.png';
 import bottom_cloud_small from 'assets/images/bottom_cloud_small.png';
 import bottom_cloud_laptop from 'assets/images/bottom_cloud_laptop.png';
+import left_side_cloud from 'assets/images/left_side_cloud.png';
+import left_top_cloud from 'assets/images/left_top_cloud.png';
+import left_bottom_cloud from 'assets/images/left_bottom_cloud.png';
 import top_cloud from 'assets/images/top_cloud.png';
 import top_cloud_laptop from 'assets/images/top_cloud_laptop.png';
 import intermission_pic from 'assets/images/intermission_pic.png';
@@ -19,7 +22,7 @@ import feel_less_drained from 'assets/images/feel_less_drained.png';
 import quality_of_life from 'assets/images/quality_of_life.png';
 import increased_stress_levels from 'assets/images/increased_stress_levels.png';
 import panic_attack from 'assets/images/panic_attack.png';
-import nyc from 'assets/images/nyc.png';
+import nyt from 'assets/images/nyt.png';
 import bi from 'assets/images/bi.png';
 import healthline from 'assets/images/healthline.png';
 import bbc from 'assets/images/bbc.png';
@@ -36,6 +39,9 @@ export const images: Record<string, string> = {
   bottom_cloud,
   bottom_cloud_small,
   bottom_cloud_laptop,
+  left_side_cloud,
+  left_top_cloud,
+  left_bottom_cloud,
   intermission_pic,
   increased_stress,
   fear_of_loosing_job,
@@ -46,7 +52,7 @@ export const images: Record<string, string> = {
   quality_of_life,
   increased_stress_levels,
   panic_attack,
-  nyc,
+  nyt,
   bi,
   healthline,
   bbc,

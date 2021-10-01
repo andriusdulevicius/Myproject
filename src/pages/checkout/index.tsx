@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { grey_white, orange, blue } from 'styles/colors';
 import { BreakFree } from './sections/BreakFree';
 import { MonthlyPlanExplained } from './sections/MonthlyPlanExplained';
 import { OptionSelection } from './sections/OptionSelection';
+import { RealStories } from './sections/RealStories';
+import { grey_white, orange, blue } from 'styles/colors';
 
 const Checkout = () => {
   return (
@@ -11,6 +12,7 @@ const Checkout = () => {
       <MonthlyPlanExplained />
       <OptionSelection />
       <BreakFree />
+      <RealStories />
     </SectionWrapper>
   );
 };

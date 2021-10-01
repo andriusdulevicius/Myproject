@@ -58,7 +58,7 @@ export const BreakFree = () => {
   );
 };
 
-const GreenText = styled.span`
+export const GreenText = styled.span`
   color: ${dark_green};
 `;
 

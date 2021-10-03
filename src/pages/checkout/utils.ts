@@ -98,3 +98,28 @@ export const PLAN_PARTS = [
     text: 'Learn relaxation techniques.',
   },
 ];
+
+export const GENUINE_PART_DATA = {
+  name: 'Amelia Marrow',
+  job_title: 'Behavioral psychologist',
+  intro_text:
+    'I am a behavioural psychologist Amelia Morrow, and I will guide you through this entire journey. Together, we will manage to overcome any challenge that comes along the way.',
+  highlighted1: 'I will tailor small everyday tasks for you to help you feel better.',
+  middle_text:
+    'You will not get a one- size-fits-all template. Instead, this program will help you explore all the possible tools to manage your anxiety without medication.',
+  green_text:
+    'If you skip a day or need some time off, by all means, feel free to rest and recharge! You can pick up right where you left off.',
+  highlighted2: 'During this time, you should focus on the quality, not the quantity of the exercises.',
+  conclusion_text:
+    'I know that many things feel overwhelming right now, and it can be hard to get out of the current mindset. Don’t worry! We will figure this out together.',
+  farewell: 'I hope, to hear from you soon!',
+};
+
+export const YOU_WILL_DATA = [
+  { id: 1, text: 'Complete inspiring and practical anxiety-reducing exercises.' },
+  { id: 2, text: 'Gradually but effectively reduce your stress levels.' },
+  { id: 3, text: 'Identify the most common triggers for you.' },
+  { id: 4, text: 'Take back control of your thoughts, emotions, and decisions.' },
+  { id: 5, text: 'Build effective routines and habits to resolve anxiety episodes quickly.' },
+  { id: 6, text: 'Streamline your environment for a calm and enjoyable life.' },
+];

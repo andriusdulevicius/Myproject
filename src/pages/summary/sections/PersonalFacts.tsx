@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PersonalFactsCard } from '../elements/PersonalFactsCard';
-import { PERSONAL_FACTS } from './utils';
-import { PROMOTER_LOGOS } from './utils';
+import { PERSONAL_FACTS } from '../utils';
+import { PROMOTER_LOGOS } from '../utils';
 import { useQuery } from 'styles/breakpoints';
 import { FlexWrapper, H2, Container, H5, Image } from 'components';
 import { dark_text } from 'styles/colors';

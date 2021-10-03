@@ -17,7 +17,7 @@ import {
   Image,
 } from 'components';
 import { yellow, blue } from 'styles/colors';
-import { PERSONAL_SUMMARY } from './utils';
+import { PERSONAL_SUMMARY } from '../utils';
 
 export const PersonalSummary: React.FC = () => {
   const { isMobile } = useQuery();

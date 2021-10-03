@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import ClaimButton from '../elements/ClaimButton';
 import { useQuery } from 'styles/breakpoints';
-import { OUR_PROMISE_DATA } from './utils';
+import { OUR_PROMISE_DATA } from '../utils';
 import { FlexWrapper, H2, ContainerSmall, Image, RegularText, TextWrapper, CaptionText, SmallText } from 'components';
 import { light_text } from 'styles/colors';
+import { PsychologistPicture } from '../elements/PsychologistPicture';
 
-export const OurPromise = () => {
-  const { imgSrc, name, job_title, signature_src, texts, disclaimer } = OUR_PROMISE_DATA;
+export const OurPromise: React.FC = () => {
+  const { name, job_title, signature_src, texts, disclaimer } = OUR_PROMISE_DATA;
   const { isMobile } = useQuery();
 
   const SignatureSection = () => (
@@ -26,9 +27,7 @@ export const OurPromise = () => {
         <H2> Our promise </H2>
         <FlexWrapper flexDirection={isMobile ? 'column' : 'row'} alignItems='flex-start'>
           <ContainerSmall padding='0' margin='0' maxWidth='23rem'>
-            <StyledBox>
-              <Image src={imgSrc} />
-            </StyledBox>
+            <PsychologistPicture />
             {!isMobile && SignatureSection()}
           </ContainerSmall>
           <ContainerSmall padding='0' margin='0' maxWidth='23rem'>
@@ -61,7 +60,3 @@ const StyledFlexWrapper = styled(FlexWrapper).attrs({
   gap: '0',
   maxWidth: '80rem',
 })``;
-const StyledBox = styled(ContainerSmall).attrs({ maxWidth: '24rem', margin: '0', padding: '0' })`
-  border-radius: 1rem;
-  overflow: hidden;
-`;

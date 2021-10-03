@@ -4,7 +4,9 @@ import { BreakFree } from './sections/BreakFree';
 import { MonthlyPlanExplained } from './sections/MonthlyPlanExplained';
 import { OptionSelection } from './sections/OptionSelection';
 import { RealStories } from './sections/RealStories';
-import { grey_white, orange, blue } from 'styles/colors';
+import { GenuinePeople } from './sections/GenuinePeople';
+import { YouWill } from './sections/YouWill';
+import { grey_white } from 'styles/colors';
 
 const Checkout = () => {
   return (
@@ -13,6 +15,8 @@ const Checkout = () => {
       <OptionSelection />
       <BreakFree />
       <RealStories />
+      <GenuinePeople />
+      <YouWill />
     </SectionWrapper>
   );
 };

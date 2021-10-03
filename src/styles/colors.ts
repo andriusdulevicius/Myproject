@@ -7,7 +7,7 @@ export const dark_text = '#39353C';
 export const light_text = 'rgba(57,53,60,64)';
 export const white = '#FFFFFF';
 export const grey_white = '#F3F0EB';
-
+export const dark_green = '#00878A';
 export const blue = '#2C71F0';
 export const dark_blue = '#255FCA';
 export const blue_shadow = '#1033FB24';

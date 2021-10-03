@@ -15,6 +15,15 @@ import us_flag from 'assets/icons/us_flag.svg';
 import hospital from 'assets/icons/hospital.svg';
 import woman from 'assets/icons/woman.svg';
 import pill from 'assets/icons/pill.svg';
+import orange_bulletpoint from 'assets/icons/orange_bulletpoint.svg';
+import purple_star from 'assets/icons/purple_star.svg';
+import green_check_outline from 'assets/icons/green_check_outline.svg';
+import one from 'assets/icons/one.svg';
+import two from 'assets/icons/two.svg';
+import three from 'assets/icons/three.svg';
+import star from 'assets/icons/star.svg';
+import expand_less from 'assets/icons/expand_less.svg';
+import expand_more from 'assets/icons/expand_more.svg';
 
 export const icons: Record<string, React.FunctionComponent<React.SVGProps<SVGSVGElement>>> = {
   anxietless_logo,
@@ -34,4 +43,13 @@ export const icons: Record<string, React.FunctionComponent<React.SVGProps<SVGSVG
   hospital,
   woman,
   pill,
+  orange_bulletpoint,
+  purple_star,
+  green_check_outline,
+  one,
+  two,
+  three,
+  star,
+  expand_less,
+  expand_more,
 };

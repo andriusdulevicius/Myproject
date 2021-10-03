@@ -28,6 +28,16 @@ import healthline from 'assets/images/healthline.png';
 import bbc from 'assets/images/bbc.png';
 import amelia_marrow from 'assets/images/amelia_marrow.png';
 import amelia_signature from 'assets/images/amelia_signature.png';
+import checkout_heart from 'assets/images/checkout_heart.png';
+import checkout_heart_laptop from 'assets/images/checkout_heart_laptop.png';
+import safe_checkout from 'assets/images/safe_checkout.png';
+import break_free from 'assets/images/break_free.png';
+import your_rules from 'assets/images/your_rules.png';
+import lifetime_results from 'assets/images/lifetime_results.png';
+import daily_guidance from 'assets/images/daily_guidance.png';
+import real_stories_cloud from 'assets/images/real_stories_cloud.png';
+import flying_man from 'assets/images/flying_man.png';
+import christine_ellis from 'assets/images/christine_ellis.png';
 
 export const images: Record<string, string> = {
   ellipse_mobile,
@@ -58,4 +68,14 @@ export const images: Record<string, string> = {
   bbc,
   amelia_marrow,
   amelia_signature,
+  checkout_heart,
+  checkout_heart_laptop,
+  safe_checkout,
+  break_free,
+  your_rules,
+  lifetime_results,
+  daily_guidance,
+  real_stories_cloud,
+  flying_man,
+  christine_ellis,
 };

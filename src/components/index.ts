@@ -32,6 +32,7 @@ export * from './wrappers/FlexWrapper';
 export * from './wrappers/SmallCard';
 export * from './wrappers/SmallWrapper';
 export * from './wrappers/TextWrapper';
+export * from './wrappers/SmallBox';
 
 // Backgrounds
 

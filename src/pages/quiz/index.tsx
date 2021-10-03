@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { getQuizQuestions } from 'apis/fetch';
 import { navigate } from '@reach/router';
 import { IntermissionCard } from './sections/IntermissionCard';
 import { StatementCard } from './sections/StatementCard';
@@ -18,7 +19,7 @@ import {
   TextWrapper,
 } from 'components';
 
-export interface DataTypes {
+interface DataTypes {
   type: string;
   key: string;
   label?: string;
@@ -40,16 +41,13 @@ export interface DataTypes {
 
 const Quiz: React.FC<DataTypes> = () => {
   const { isMobile } = useQuery();
-  const [questions, setQuestions] = useState<DataTypes[]>([]);
+  const [questions, setQuestions] = useState<DataTypes[] | []>([]);
   const [question, setQuestion] = useState<number>(1);
 
   useEffect(() => {
     (async () => {
-      const data = await fetch(
-        'https://rnd.kilohealthservices.com/api/quizzes/main?api_token=d88ab57d-4cbe-4826-b593-2c1b2f8b657f'
-      );
-      const result = await data.json();
-      setQuestions(result.data.questions);
+      const result = await getQuizQuestions();
+      setQuestions(result);
     })();
   }, []);
 

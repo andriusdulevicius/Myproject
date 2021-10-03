@@ -56,7 +56,7 @@ export const REAL_STORIES_DATA = [
     age: 29,
     address: 'Los Angeles California',
     rating: 5,
-    journeyLength: 3,
+    journeyLength: '3rd',
     comment: '“My mentor Amelia is amazing. She helped me to understand my stress patterns. Now I’m in control”',
   },
   {
@@ -65,7 +65,7 @@ export const REAL_STORIES_DATA = [
     age: 37,
     address: 'Delaware New Jersey',
     rating: 5,
-    journeyLength: 7,
+    journeyLength: '7th',
     comment:
       '“Thank you! I admit, I was sceptical and even delayed starting the plan. Christine thought me simple techniques, which now even I’m teaching my teen daughter”',
   },
@@ -75,7 +75,7 @@ export const REAL_STORIES_DATA = [
     age: 26,
     address: 'Sydney New South Wales',
     rating: 5,
-    journeyLength: 6,
+    journeyLength: '6th',
     comment:
       '‘’I was very skeptical about this at first. Looked fake but I gave it a try anyway. The best choice I’ve made in a long time. I’ve been having anxiety issues and this was just what I need. If you follow steps it will surely help. It will feel funny but it is worth it. And if you don’t feel comfortable doing it with family or friends. This is the next best thing!! Give it a try ‘’',
   },

@@ -21,6 +21,7 @@ import green_check_outline from 'assets/icons/green_check_outline.svg';
 import one from 'assets/icons/one.svg';
 import two from 'assets/icons/two.svg';
 import three from 'assets/icons/three.svg';
+import star from 'assets/icons/star.svg';
 
 export const icons: Record<string, React.FunctionComponent<React.SVGProps<SVGSVGElement>>> = {
   anxietless_logo,
@@ -46,4 +47,5 @@ export const icons: Record<string, React.FunctionComponent<React.SVGProps<SVGSVG
   one,
   two,
   three,
+  star,
 };

@@ -1,21 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BREAK_FREE_DATA as data } from '../utils';
-import { useQuery, mobile } from 'styles/breakpoints';
-import {
-  Container,
-  ContainerSmall,
-  FlexWrapper,
-  H2,
-  H3,
-  H5,
-  Image,
-  SmallBox,
-  Svg,
-  SmallCard,
-  SmallText,
-} from 'components';
-import { dark_green } from 'styles/colors';
+import { StyledFlexWrapper, StyledH2, GreenText } from '../elements/Styles';
+import { useQuery } from 'styles/breakpoints';
+import { Container, ContainerSmall, FlexWrapper, H3, H5, Image, SmallBox, Svg, SmallCard, SmallText } from 'components';
 
 export const BreakFree = () => {
   const { isMobile } = useQuery();
@@ -58,18 +46,4 @@ export const BreakFree = () => {
   );
 };
 
-export const GreenText = styled.span`
-  color: ${dark_green};
-`;
-
-export const StyledH2 = styled(H2).attrs({ margin: '2rem 0' })``;
-
 const StyledContainerSmall = styled(ContainerSmall).attrs({ margin: '0', width: '50%' })``;
-
-export const StyledFlexWrapper = styled(FlexWrapper).attrs({ flexWrap: 'nowrap', maxWidth: '80rem' })`
-  flex-direction: row-reverse;
-
-  @media ${mobile} {
-    flex-direction: column;
-  }
-`;

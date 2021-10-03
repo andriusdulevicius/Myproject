@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DataTypes } from '../sections/OptionSelection';
+import { DataTypes } from '../sections/BillingSelection';
 import { H2, SmallCard, FlexWrapper, H5, Svg, TextWrapper, SmallText, PrimaryButton } from 'components';
 import { dark_text, green, purple, orange, blue } from 'styles/colors';
 

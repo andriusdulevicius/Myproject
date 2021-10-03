@@ -123,3 +123,37 @@ export const YOU_WILL_DATA = [
   { id: 5, text: 'Build effective routines and habits to resolve anxiety episodes quickly.' },
   { id: 6, text: 'Streamline your environment for a calm and enjoyable life.' },
 ];
+
+export const QUESTIONS_ANSWERS = [
+  {
+    id: 'q1',
+    question: 'I’m not sure what I’ll get',
+    answer: "I think after coding this project , I'll get a job!",
+  },
+  {
+    id: 'q2',
+    question: 'What happens after I order?',
+    answer:
+      'After you place your order, we get to work! Based on the questions you answered in the quiz, we’ll craft your plan to make sure it fits your exact personal requirements. All programs are double-verified — by the person making it and a supervisor. This way, you can be sure that the plan that you get is both effective and safe.',
+  },
+  {
+    id: 'q3',
+    question: 'Who will prepare my personalized program? ',
+    answer: 'Our best in the industry - kilo Health specialists',
+  },
+  {
+    id: 'q4',
+    question: 'What happens if I skip a day? Can I still continue my journey?',
+    answer: 'No skipping here! If you come here, you work your ass of to cure yourself from stress related problems!',
+  },
+  {
+    id: 'q5',
+    question: 'What happens once I complete my journey?',
+    answer: 'You become a stress free person, and enjoy your life!',
+  },
+  {
+    id: 'q6',
+    question: 'Is this a one-time payment?',
+    answer: 'It depends on the product witch you chose.',
+  },
+];

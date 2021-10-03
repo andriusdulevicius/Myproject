@@ -13,7 +13,7 @@ export interface DataTypes {
   original_price: number;
 }
 
-export const OptionSelection: React.FC = () => {
+export const BillingSelection: React.FC = () => {
   const [plans, setPlans] = useState<DataTypes[] | []>([]);
   const { isMobile } = useQuery();
 
@@ -33,7 +33,7 @@ export const OptionSelection: React.FC = () => {
       )}
       <Container margin='2rem auto' maxWidth='50rem'>
         {isMobile ? <H3>Chose your personal 3-month plan:</H3> : <H2>Select billing option</H2>}
-        <FlexWrapper justifyContent={isMobile ? 'column' : 'row'}>
+        <FlexWrapper flexDirection={isMobile ? 'column' : 'row'}>
           {plans.map((plan) => (
             <OptionCard {...plan} />
           ))}

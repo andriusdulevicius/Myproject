@@ -14,7 +14,7 @@ export const IntermissionCard: React.FC<IProps> = ({ renderNextQuestion }) => {
 
   return (
     <Container maxWidth='25rem'>
-      <FlexWrapper flexWrap='nowrap'>
+      <FlexWrapper>
         <Image src={imgSrc} />
         <H4>{title}</H4>
       </FlexWrapper>

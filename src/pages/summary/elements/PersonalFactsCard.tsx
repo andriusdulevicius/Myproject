@@ -11,7 +11,7 @@ export const PersonalFactsCard: React.FC<Props> = ({ fact }) => {
   const { isMobile } = useQuery();
   return (
     <ContainerSmall padding='1rem' maxWidth={isMobile ? '100%' : '24%'}>
-      <FlexWrapper flexWrap='nowrap' padding='0' gap='0.5rem' justifyContent='start'>
+      <FlexWrapper padding='0' gap='0.5rem' justifyContent='start'>
         <Svg src={icon} />
         <H4 textAlign='left'>{title}</H4>
       </FlexWrapper>

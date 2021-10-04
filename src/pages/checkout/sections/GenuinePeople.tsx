@@ -33,11 +33,7 @@ export const GenuinePeople: React.FC = () => {
           gap={isMobile ? '0' : '1rem'}
         >
           <StyledContainerSmall>
-            <FlexWrapper
-              flexDirection={isMobile ? 'row' : 'column'}
-              flexWrap='nowrap'
-              alignItems={isMobile ? 'center' : 'start'}
-            >
+            <FlexWrapper flexDirection={isMobile ? 'row' : 'column'} alignItems={isMobile ? 'center' : 'start'}>
               <PsychologistPicture />
               <SmallBox minWidth='60%'>
                 <TextWrapper>{name}</TextWrapper>

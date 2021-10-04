@@ -19,7 +19,7 @@ export const BreakFree = () => {
         </StyledContainerSmall>
         <StyledContainerSmall>
           {data.break_free_pros.map((p: string, index: number) => (
-            <FlexWrapper key={index} justifyContent='start' flexWrap='nowrap' maxWidth='22rem'>
+            <FlexWrapper key={index} justifyContent='start' maxWidth='22rem'>
               <SmallBox minWidth='1.25rem'>
                 <Svg src='green_check_outline' />
               </SmallBox>

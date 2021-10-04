@@ -17,7 +17,7 @@ export const StatementCard: React.FC<IProps> = ({ statementKey, custom, renderNe
     <Container>
       <Image src={statementKey} />
       <RegularText textAlign='center'>{custom.text}</RegularText>
-      <FlexWrapper flexWrap='nowrap'>
+      <FlexWrapper>
         <PrimaryButton colorProp={orange} minWidth='50%' onClick={renderNextQuestion}>
           No
         </PrimaryButton>

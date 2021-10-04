@@ -66,7 +66,7 @@ export const StatisticsSummary = () => {
             )}
             <H1 color={orange}>Yes</H1>
           </SmallCard>
-          <FlexWrapper flexWrap='nowrap'>
+          <FlexWrapper>
             <MembersStatsCard percent='57' text='Of our members have started with the same anxiety level as you.' />
             <MembersStatsCard percent='96' text='Reduced their day-to-day anxiety and stress.' />
           </FlexWrapper>

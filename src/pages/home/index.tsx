@@ -22,7 +22,7 @@ const Landing: React.FC = () => {
       <Navigation />
       <HomeBackground />
       <Container marginTop={isMobile ? '2rem' : '6rem'} padding='0 1rem'>
-        <FlexWrapper flexDirection={isMobile ? 'column' : 'row-reverse'} flexWrap='nowrap' gap='3rem' maxWidth='80rem'>
+        <FlexWrapper flexDirection={isMobile ? 'column' : 'row-reverse'} gap='3rem' maxWidth='80rem'>
           <Image src={isMobile ? 'bgc_couple' : 'bgc_couple_laptop'} />
           <Container maxWidth={isMobile ? '100%' : '50%'} textAlign={isMobile ? 'center' : 'left'}>
             <H1>{title}</H1>
@@ -31,7 +31,7 @@ const Landing: React.FC = () => {
             <TextBaseBold fontSize='0.9rem' textAlign={isMobile ? 'center' : 'left'}>
               {caption}
             </TextBaseBold>
-            <FlexWrapper flexWrap='nowrap' padding='0rem' gap='0.5rem' justifyContent={isMobile ? 'center' : 'start'}>
+            <FlexWrapper padding='0rem' gap='0.5rem' justifyContent={isMobile ? 'center' : 'start'}>
               <PrimaryButton colorProp={blue} margin='0' width='50%' onClick={handleQuizStart}>
                 Male
               </PrimaryButton>

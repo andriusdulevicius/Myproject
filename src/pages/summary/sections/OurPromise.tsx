@@ -11,8 +11,8 @@ export const OurPromise: React.FC = () => {
   const { name, job_title, signature_src, texts, disclaimer } = OUR_PROMISE_DATA;
   const { isMobile } = useQuery();
 
-  const SignatureSection = () => (
-    <FlexWrapper flexWrap='nowrap' padding='0'>
+  const SignatureSection = (
+    <FlexWrapper padding='0'>
       <FlexWrapper flexDirection='column' gap='0' alignItems='flex-start' padding='0'>
         <TextWrapper fontSize='1.3rem'>{name}</TextWrapper>
         <RegularText margin='0.5rem 0'>{job_title}</RegularText>
@@ -20,7 +20,6 @@ export const OurPromise: React.FC = () => {
       <Image src={signature_src} />
     </FlexWrapper>
   );
-
   return (
     <StyledSection>
       <StyledFlexWrapper>
@@ -28,7 +27,7 @@ export const OurPromise: React.FC = () => {
         <FlexWrapper flexDirection={isMobile ? 'column' : 'row'} alignItems='flex-start'>
           <ContainerSmall padding='0' margin='0' maxWidth='23rem'>
             <PsychologistPicture />
-            {!isMobile && SignatureSection()}
+            {!isMobile && SignatureSection}
           </ContainerSmall>
           <ContainerSmall padding='0' margin='0' maxWidth='23rem'>
             {texts.map((text: string, index: number) => (
@@ -37,7 +36,7 @@ export const OurPromise: React.FC = () => {
               </SmallText>
             ))}
           </ContainerSmall>
-          {isMobile && SignatureSection()}
+          {isMobile && SignatureSection}
         </FlexWrapper>
         <ClaimButton />
         <ContainerSmall maxWidth='50rem' textAlign={isMobile ? 'left' : 'center'}>

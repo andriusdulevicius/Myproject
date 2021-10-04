@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from 'styles/breakpoints';
 import { INTERMISSION_DATA } from './utils';
 import { Container, FlexWrapper, H4, Image, PrimaryButton, TextBase, RegularText } from 'components';
-import { blue } from 'styles/colors';
+import { blue, dark_text } from 'styles/colors';
 
 interface IProps {
   renderNextQuestion: () => void;
@@ -26,7 +26,7 @@ export const IntermissionCard: React.FC<IProps> = ({ renderNextQuestion }) => {
       </PrimaryButton>
 
       {isMobile && (
-        <TextBase margin='5rem 0 0 ' fontSize='0.85rem'>
+        <TextBase margin='5rem 0 0 ' fontSize='0.85rem' color={dark_text + '80'}>
           {disclaimer}
         </TextBase>
       )}

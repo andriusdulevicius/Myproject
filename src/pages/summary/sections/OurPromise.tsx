@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import ClaimButton from '../elements/ClaimButton';
+import { PsychologistPicture } from '../elements/PsychologistPicture';
+import { ClaimButton } from '../elements/ClaimButton';
 import { useQuery } from 'styles/breakpoints';
 import { OUR_PROMISE_DATA } from '../utils';
 import { FlexWrapper, H2, ContainerSmall, Image, RegularText, TextWrapper, CaptionText, SmallText } from 'components';
 import { light_text } from 'styles/colors';
-import { PsychologistPicture } from '../elements/PsychologistPicture';
 
 export const OurPromise: React.FC = () => {
   const { name, job_title, signature_src, texts, disclaimer } = OUR_PROMISE_DATA;
@@ -20,6 +20,7 @@ export const OurPromise: React.FC = () => {
       <Image src={signature_src} />
     </FlexWrapper>
   );
+
   return (
     <StyledSection>
       <StyledFlexWrapper>

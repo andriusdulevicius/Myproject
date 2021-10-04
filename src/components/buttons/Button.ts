@@ -29,5 +29,5 @@ export const Button = styled.button<Styles>`
   color: ${({ color }) => color || white};
   font-size: ${({ fontSize }) => fontSize || '1rem'};
   font-weight: ${({ fontWeight }) => fontWeight || 700};
-  cursor: 'pointer';
+  cursor: pointer;
 `;

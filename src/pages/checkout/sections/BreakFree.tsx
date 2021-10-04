@@ -5,7 +5,7 @@ import { StyledFlexWrapper, StyledH2, GreenText } from '../elements/Styles';
 import { useQuery } from 'styles/breakpoints';
 import { Container, ContainerSmall, FlexWrapper, H3, H5, Image, SmallBox, Svg, SmallCard, SmallText } from 'components';
 
-export const BreakFree = () => {
+export const BreakFree: React.FC = () => {
   const { isMobile } = useQuery();
 
   return (

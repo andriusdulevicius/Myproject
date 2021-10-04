@@ -14,14 +14,14 @@ const Landing: React.FC = () => {
   const { title, subtitle, text, caption } = LANDING_DATA;
 
   const handleQuizStart = () => {
-    navigate('/quiz/');
+    navigate('quiz');
   };
 
   return (
     <LandingPage>
       <Navigation />
       <HomeBackground />
-      <Container marginTop={isMobile ? '2rem' : '6rem'} padding='0 1rem'>
+      <Container zIndex={4} marginTop={isMobile ? '2rem' : '6rem'} padding='0 1rem'>
         <FlexWrapper flexDirection={isMobile ? 'column' : 'row-reverse'} gap='3rem' maxWidth='80rem'>
           <Image src={isMobile ? 'bgc_couple' : 'bgc_couple_laptop'} />
           <Container maxWidth={isMobile ? '100%' : '50%'} textAlign={isMobile ? 'center' : 'left'}>
@@ -49,4 +49,6 @@ const Landing: React.FC = () => {
 
 export default Landing;
 
-const LandingPage = styled.div``;
+const LandingPage = styled.div`
+  position: 'relative';
+`;

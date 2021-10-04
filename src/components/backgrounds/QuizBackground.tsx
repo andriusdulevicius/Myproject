@@ -8,10 +8,10 @@ export const QuizBackground = () => {
   const { isMobile } = useQuery();
   return (
     <StyledBackground>
-      <AbsoluteBox left={isMobile ? '-9rem' : '10rem'} top={isMobile ? '-1.5rem' : '6rem'} zIndex={1}>
+      <AbsoluteBox zIndex={1} left={isMobile ? '-9rem' : '10rem'} top={isMobile ? '-1.5rem' : '6rem'}>
         <Image src='top_cloud' />
       </AbsoluteBox>
-      <AbsoluteBox bottom='-1rem' right='-1rem' zIndex={1}>
+      <AbsoluteBox zIndex={1} bottom='0' right='-3rem'>
         <Image src={isMobile ? 'bottom_cloud_small' : 'bottom_cloud'} />
       </AbsoluteBox>
     </StyledBackground>

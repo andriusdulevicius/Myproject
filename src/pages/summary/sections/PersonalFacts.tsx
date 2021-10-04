@@ -1,19 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PersonalFactsCard } from '../elements/PersonalFactsCard';
-import { PERSONAL_FACTS } from '../utils';
-import { PROMOTER_LOGOS } from '../utils';
-import { useQuery } from 'styles/breakpoints';
+import { PERSONAL_FACTS, PROMOTER_LOGOS } from '../utils';
+import { useQuery, mobile } from 'styles/breakpoints';
 import { FlexWrapper, H2, Container, H5, Image } from 'components';
 import { dark_text } from 'styles/colors';
 
-export const PersonalFacts = () => {
+export const PersonalFacts: React.FC = () => {
   const { isMobile } = useQuery();
   return (
     <StyledSection>
       <Container textAlign={isMobile ? 'left' : 'center'} margin='2rem auto'>
         <H2>Personal facts</H2>
-        <StyledFlexWrapper isMobile={isMobile} maxWidth='80rem'>
+        <StyledFlexWrapper>
           {PERSONAL_FACTS.map((fact) => (
             <PersonalFactsCard key={fact.id} fact={fact} />
           ))}
@@ -34,10 +33,13 @@ const StyledSection = styled.section`
   z-index: 10;
 `;
 
-const StyledFlexWrapper = styled(FlexWrapper).attrs({ flexWrap: 'nowrap', alignItems: 'start' })<{
-  isMobile: boolean;
-}>`
-  flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
+const StyledFlexWrapper = styled(FlexWrapper).attrs({ gap: '1rem', alignItems: 'start' })`
+  max-width: 80rem;
   border: 0.0625rem solid ${dark_text + '15'};
   border-radius: 0.8rem;
+
+  @media ${mobile} {
+    flex-direction: column;
+    gap: 0;
+  }
 `;

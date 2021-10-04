@@ -1,4 +1,4 @@
-import { QuizBackground } from 'components';
+import { Container, QuizBackground } from 'components';
 import { LoadingCard } from './sections/LoadingCard';
 import React from 'react';
 import styled from 'styled-components';
@@ -8,7 +8,9 @@ const Calculating: React.FC = () => {
   return (
     <CalculatingSection>
       <QuizBackground />
-      <LoadingCard />
+      <Container paddingTop='3rem'>
+        <LoadingCard />
+      </Container>
     </CalculatingSection>
   );
 };
@@ -16,7 +18,7 @@ const Calculating: React.FC = () => {
 export default Calculating;
 
 const CalculatingSection = styled.div`
-  padding-top: 2rem;
+  position: relative;
   background-color: ${grey_white};
   height: 100vh;
 `;

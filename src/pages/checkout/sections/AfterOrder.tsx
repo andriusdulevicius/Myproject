@@ -5,7 +5,7 @@ import { CaptionText, H4 } from 'components';
 import { StyledContainer } from '../elements/Styles';
 import { dark_text } from 'styles/colors';
 
-export const AfterOrder = () => {
+export const AfterOrder: React.FC = () => {
   const { isMobile } = useQuery();
   return (
     <StyledContainer maxWidth='50rem'>

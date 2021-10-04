@@ -3,11 +3,16 @@ import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { HomeBackground } from 'components/backgrounds/HomeBackground';
 import { navigate } from '@reach/router';
-import { Navigation } from 'layouts/navigations/Navigation';
 import { Footer } from 'layouts/footer/Footer';
-import { LANDING_DATA } from './utils';
-import { blue, orange, grey_white } from 'styles/colors';
 import { Image, Container, H1, H4, RegularText, TextBaseBold, FlexWrapper, PrimaryButton } from 'components';
+import { blue, orange } from 'styles/colors';
+
+const LANDING_DATA = {
+  title: 'Find your Inner Peace',
+  subtitle: 'Calm mind. Better sleep. Confidence.',
+  text: 'It might be difficult times, but you’re not alone. Answer this simple quiz and take your life back, free of anxiety, depression & stress.',
+  caption: 'Start by selecting your gender',
+};
 
 const Landing: React.FC = () => {
   const { isMobileS, isMobile } = useQuery();
@@ -19,10 +24,9 @@ const Landing: React.FC = () => {
 
   return (
     <LandingPage>
-      <Navigation />
       <HomeBackground />
-      <Container marginTop={isMobile ? '2rem' : '6rem'} padding='0 1rem'>
-        <FlexWrapper flexDirection={isMobile ? 'column' : 'row-reverse'} flexWrap='nowrap' gap='3rem' maxWidth='80rem'>
+      <Container zIndex={4} marginTop={isMobile ? '2rem' : '6rem'} padding='0 1rem'>
+        <FlexWrapper flexDirection={isMobile ? 'column' : 'row-reverse'} gap='3rem' maxWidth='80rem'>
           <Image src={isMobile ? 'bgc_couple' : 'bgc_couple_laptop'} />
           <Container maxWidth={isMobile ? '100%' : '50%'} textAlign={isMobile ? 'center' : 'left'}>
             <H1>{title}</H1>
@@ -31,7 +35,7 @@ const Landing: React.FC = () => {
             <TextBaseBold fontSize='0.9rem' textAlign={isMobile ? 'center' : 'left'}>
               {caption}
             </TextBaseBold>
-            <FlexWrapper flexWrap='nowrap' padding='0rem' gap='0.5rem' justifyContent={isMobile ? 'center' : 'start'}>
+            <FlexWrapper padding='0rem' gap='0.5rem' justifyContent={isMobile ? 'center' : 'start'}>
               <PrimaryButton colorProp={blue} margin='0' width='50%' onClick={handleQuizStart}>
                 Male
               </PrimaryButton>
@@ -49,4 +53,6 @@ const Landing: React.FC = () => {
 
 export default Landing;
 
-const LandingPage = styled.div``;
+const LandingPage = styled.div`
+  position: 'relative';
+`;

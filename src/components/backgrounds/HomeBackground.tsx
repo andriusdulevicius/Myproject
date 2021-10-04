@@ -11,16 +11,16 @@ export const HomeBackground = () => {
   return (
     <StyledBackground>
       {!isMobile && (
-        <AbsoluteBox left='0' top='3rem' zIndex={3}>
+        <AbsoluteBox left='0' top='3rem' zIndex={1}>
           <Image src='top_cloud_laptop' />
         </AbsoluteBox>
       )}
       {!isMobile && (
-        <AbsoluteBox bottom='0' right='0' zIndex={3} width='10rem'>
+        <AbsoluteBox zIndex={2} right='0' bottom='0' width='10rem'>
           <Image src='bottom_cloud_laptop' width='' />
         </AbsoluteBox>
       )}
-      <AbsoluteBox left={isMobile ? '0' : ''} right='0' bottom={isMobile ? '0' : '-7rem'}>
+      <AbsoluteBox zIndex={1} bottom={isMobile ? '0' : '-15rem'} left={isMobile ? '0' : ''} right='0'>
         <Image src={isMobile ? 'ellipse_mobile' : 'ellipse_laptop'} />
       </AbsoluteBox>
     </StyledBackground>

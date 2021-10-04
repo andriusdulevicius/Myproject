@@ -8,16 +8,16 @@ import { Container, FlexWrapper } from 'components';
 import { Link } from 'gatsby';
 import { Svg } from 'components/images/Svg';
 
+const PAGES_LINKS = [
+  { title: 'FAQ', link: '/fax' },
+  { title: 'Contacts', link: '/contacts' },
+  { title: 'Privacy Policy', link: '/privacy-policy' },
+  { title: 'Terms & Conditions', link: '/t&c' },
+];
+
 export const Navigation: React.FC<RouteComponentProps> = () => {
   const [burgerState, setBurgerState] = useState<boolean>(false);
   const { isMobile } = useQuery();
-
-  const PAGES_LINKS = [
-    { title: 'FAQ', link: '/fax' },
-    { title: 'Contacts', link: '/contacts' },
-    { title: 'Privacy Policy', link: '/privacy-policy' },
-    { title: 'Terms & Conditions', link: '/t&c' },
-  ];
 
   return (
     <NavWrapper>
@@ -45,6 +45,7 @@ const NavWrapper = styled.nav`
   position: relative;
   z-index: 10;
   background-color: ${white};
+  box-shadow: 5px 5px 5px ${dark_text + '20'};
 
   a {
     text-decoration: none;

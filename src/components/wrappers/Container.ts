@@ -15,17 +15,19 @@ interface Styles {
   maxWidth?: string;
   width?: string;
   textAlign?: string;
+  backgroundColor?: string;
 }
 
 export const Container = styled.div<Styles>`
   position: ${({ position }) => position || 'relative'};
   z-index: ${({ zIndex }) => zIndex || ''};
   margin: ${({ margin }) => margin || '0 auto'};
-  margin-top: ${({ marginTop }) => marginTop || '0'};
+  margin-top: ${({ marginTop }) => marginTop || ''};
   padding: ${({ padding }) => padding || '0'};
-  padding-top: ${({ paddingTop }) => paddingTop || '0'};
+  padding-top: ${({ paddingTop }) => paddingTop || ''};
   max-width: ${({ maxWidth }) => maxWidth || '80rem'};
   text-align: ${({ textAlign }) => textAlign || 'left'};
+  background-color: ${({ backgroundColor }) => backgroundColor || ''};
 `;
 
 export const ContainerSmall = styled(Container)`

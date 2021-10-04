@@ -5,7 +5,7 @@ import { StyledFlexWrapper, StyledH2, GreenText } from '../elements/Styles';
 import { useQuery } from 'styles/breakpoints';
 import { Container, ContainerSmall, FlexWrapper, H3, H5, Image, SmallBox, Svg, SmallCard, SmallText } from 'components';
 
-export const BreakFree = () => {
+export const BreakFree: React.FC = () => {
   const { isMobile } = useQuery();
 
   return (
@@ -19,7 +19,7 @@ export const BreakFree = () => {
         </StyledContainerSmall>
         <StyledContainerSmall>
           {data.break_free_pros.map((p: string, index: number) => (
-            <FlexWrapper key={index} justifyContent='start' flexWrap='nowrap' maxWidth='22rem'>
+            <FlexWrapper key={index} justifyContent='start' maxWidth='22rem'>
               <SmallBox minWidth='1.25rem'>
                 <Svg src='green_check_outline' />
               </SmallBox>

@@ -14,10 +14,10 @@ interface IProps {
 
 export const StatementCard: React.FC<IProps> = ({ statementKey, custom, renderNextQuestion }) => {
   return (
-    <Container>
+    <Container maxWidth='36.7rem'>
       <Image src={statementKey} />
-      <RegularText textAlign='center'>{custom.text}</RegularText>
-      <FlexWrapper flexWrap='nowrap'>
+      <RegularText textAlign='center'>{custom && custom.text}</RegularText>
+      <FlexWrapper>
         <PrimaryButton colorProp={orange} minWidth='50%' onClick={renderNextQuestion}>
           No
         </PrimaryButton>

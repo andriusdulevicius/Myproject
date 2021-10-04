@@ -7,17 +7,7 @@ import { StatementCard } from './sections/StatementCard';
 import { AnswerCard } from './elements/AnswerCard';
 import { useQuery } from 'styles/breakpoints';
 import { blue, grey_white } from 'styles/colors';
-import {
-  Svg,
-  QuizBackground,
-  Container,
-  H2,
-  TextBaseBold,
-  FlexWrapper,
-  PrimaryButton,
-  RegularText,
-  TextWrapper,
-} from 'components';
+import { Svg, QuizBackground, Container, H2, FlexWrapper, PrimaryButton, RegularText, TextWrapper } from 'components';
 
 interface DataTypes {
   type: string;
@@ -52,9 +42,13 @@ const Quiz: React.FC<DataTypes> = () => {
   }, []);
 
   const renderNextQuestion = () => {
-    if (question <= 9) setQuestion(question + 1);
-    if (question > 9) navigate('/calculating/');
-    if (question < 1) navigate('/home/');
+    if (question < 9) setQuestion(question + 1);
+    if (question === 9) navigate('/loader/');
+  };
+
+  const renderPreviousQuestion = () => {
+    if (question > 1) setQuestion(question - 1);
+    if (question === 1) navigate('/home/');
   };
 
   return (
@@ -66,21 +60,21 @@ const Quiz: React.FC<DataTypes> = () => {
           return (
             <Container key={key} zIndex={2}>
               <FlexWrapper justifyContent='space-between' padding='1rem 0 0 0' maxWidth='80rem'>
-                <Svg src='go_back' onClick={() => setQuestion(question - 1)} />
+                <Svg src='go_back' onClick={renderPreviousQuestion} />
                 <TextWrapper fontWeight={isMobile ? 700 : 400}>
                   {question} of {questions.length}
                 </TextWrapper>
               </FlexWrapper>
               <Container
-                paddingTop={isMobile ? '1rem' : '6rem'}
-                maxWidth='35rem'
+                padding={isMobile ? '1rem 1rem' : '4rem 1rem'}
+                maxWidth='34rem'
                 textAlign={isMobile ? 'left' : 'center'}
               >
                 {type === 'intermission' && <IntermissionCard renderNextQuestion={renderNextQuestion} />}
                 {label && <H2>{label}</H2>}
                 {custom && custom.sublabel && <RegularText>{custom.sublabel}</RegularText>}
                 {options && (
-                  <FlexWrapper gap='0.6rem'>
+                  <FlexWrapper gap='0.6rem' flexWrap='wrap'>
                     {options.map(({ label, value }) => (
                       <AnswerCard key={value} labelProp={label} type={type} renderNextQuestion={renderNextQuestion} />
                     ))}
@@ -105,7 +99,7 @@ const Quiz: React.FC<DataTypes> = () => {
 export default Quiz;
 
 const QuizPage = styled.div`
-  background-color: ${grey_white};
+  position: relative;
   height: 100vh;
-  padding: 0 1rem;
+  background-color: ${grey_white};
 `;

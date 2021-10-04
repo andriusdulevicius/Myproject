@@ -21,7 +21,7 @@ export const RealStoryCard: React.FC<Story> = ({ story }) => {
         <TextWrapper> ({journeyLength} week of journey)</TextWrapper>
       </RegularText>
       <StyledRegularText>{comment}</StyledRegularText>
-      <FlexWrapper flexWrap='nowrap' justifyContent='start'>
+      <FlexWrapper justifyContent='start'>
         <SmallBox width='8rem'>
           <StyledSmallText fontSize='0.9rem'>{address}</StyledSmallText>
         </SmallBox>

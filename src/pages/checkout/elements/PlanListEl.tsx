@@ -9,7 +9,7 @@ interface Props {
 export const PlanListEl: React.FC<Props> = (props) => {
   const { isMobile } = useQuery();
   return (
-    <FlexWrapper maxWidth='25rem' justifyContent='start' flexWrap='nowrap' gap={isMobile ? '0.5rem' : '1rem'}>
+    <FlexWrapper maxWidth='25rem' justifyContent='start' gap={isMobile ? '0.5rem' : '1rem'}>
       <SmallBox margin='0' minWidth='0'>
         <Svg src='orange_bulletpoint' />
       </SmallBox>

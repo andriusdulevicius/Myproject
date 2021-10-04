@@ -7,11 +7,13 @@ import { PersonalFacts } from './sections/PersonalFacts';
 import { OurPromise } from './sections/OurPromise';
 import { grey_white } from 'styles/colors';
 import { useQuery } from 'styles/breakpoints';
+import { SecondaryNav } from 'layouts/navigations/SecondaryNav';
 
-const Summary = () => {
+const Summary: React.FC = () => {
   const { isMobile } = useQuery();
   return (
     <>
+      <SecondaryNav text='Start Now' />
       {!isMobile && <SummaryBackground />}
       <StyledSummary>
         <StatisticsSummary />
@@ -26,6 +28,6 @@ const Summary = () => {
 export default Summary;
 
 const StyledSummary = styled.section`
-  padding: 1rem;
+  padding: 3rem 1rem;
   background-color: ${grey_white};
 `;

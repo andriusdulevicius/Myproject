@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SecondaryNav } from 'layouts/navigations/SecondaryNav';
 import { BreakFree } from './sections/BreakFree';
 import { MonthlyPlanExplained } from './sections/MonthlyPlanExplained';
 import { BillingSelection } from './sections/BillingSelection';
@@ -10,25 +11,28 @@ import { Faq } from './sections/Faq';
 import { AfterOrder } from './sections/AfterOrder';
 import { grey_white } from 'styles/colors';
 
-const Checkout = () => {
+const Checkout: React.FC = () => {
   return (
-    <SectionWrapper>
-      <MonthlyPlanExplained />
-      <BillingSelection />
-      <BreakFree />
-      <RealStories />
-      <GenuinePeople />
-      <YouWill />
-      <Faq />
-      <BillingSelection />
-      <AfterOrder />
-    </SectionWrapper>
+    <>
+      <SecondaryNav text='Get my plan' />
+      <SectionWrapper>
+        <MonthlyPlanExplained />
+        <BillingSelection />
+        <BreakFree />
+        <RealStories />
+        <GenuinePeople />
+        <YouWill />
+        <Faq />
+        <BillingSelection />
+        <AfterOrder />
+      </SectionWrapper>
+    </>
   );
 };
 
 export default Checkout;
 
 const SectionWrapper = styled.section`
-  margin: 3rem 0;
+  padding: 3rem 0;
   background-color: ${grey_white + '15'};
 `;

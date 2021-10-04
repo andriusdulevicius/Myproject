@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { PERSONAL_SUMMARY } from '../utils';
 import { useQuery } from 'styles/breakpoints';
 import { StatsCard } from '../elements/StatsCard';
+import { ResultsCard } from '../elements/ResultsCard';
 import {
   AbsoluteBox,
   Container,
@@ -17,7 +19,6 @@ import {
   Image,
 } from 'components';
 import { yellow, blue } from 'styles/colors';
-import { PERSONAL_SUMMARY } from '../utils';
 
 export const PersonalSummary: React.FC = () => {
   const { isMobile } = useQuery();
@@ -33,42 +34,22 @@ export const PersonalSummary: React.FC = () => {
       <Container textAlign={isMobile ? 'left' : 'center'} margin='0 auto 2rem'>
         <H2>{title}</H2>
         <RegularText>{stats_label}</RegularText>
-        <FlexWrapper flexDirection={isMobile ? 'column' : 'row'} justifyContent='center' gap='1rem' maxWidth='80rem'>
+        <FlexWrapper
+          flexDirection={isMobile ? 'column' : 'row'}
+          justifyContent='center'
+          alignItems='stretch'
+          gap='1rem'
+          maxWidth='80rem'
+        >
           {stats.map(({ icon, title, subtitle }, index: number) => (
             <StatsCard icon={icon} title={title} subtitle={subtitle} key={index} />
           ))}
         </FlexWrapper>
         <RegularText>{sublabel1}</RegularText>
         <RegularText>{sublabel2}</RegularText>
-        <FlexWrapper flexDirection={isMobile ? 'column' : 'row'} maxWidth='80rem'>
-          {results.map(({ imgSrc, indication, result, info, answer }, index: number) => (
-            <SmallCard key={index} margin='0'>
-              <Image src={imgSrc} />
-              <ContainerSmall position='relative' padding='0 1rem'>
-                {indication && <SmallText color={yellow}>Your results indicate that</SmallText>}
-                <H4>{result}</H4>
-                {info && (
-                  <FlexWrapper onClick={handleModal} justifyContent='start' gap='0.4rem' padding='0' margin='0.5rem 0'>
-                    <Svg src='info' />
-                    <SmallText color={blue} margin='0'>
-                      {info}
-                    </SmallText>
-                  </FlexWrapper>
-                )}
-                {info && modalOpen && (
-                  <AbsoluteBox left='-0.5rem' right='-0.5rem' top='-12rem'>
-                    <SmallCard maxWidth='25rem' padding='1rem'>
-                      <FlexWrapper justifyContent='space-between' padding='0'>
-                        <H5>{info}</H5>
-                        <Svg src='close' onClick={handleModal} />
-                      </FlexWrapper>
-
-                      <SmallText>{answer}</SmallText>
-                    </SmallCard>
-                  </AbsoluteBox>
-                )}
-              </ContainerSmall>
-            </SmallCard>
+        <FlexWrapper flexDirection={isMobile ? 'column' : 'row'} alignItems='stretch' maxWidth='80rem'>
+          {results.map((result, index: number) => (
+            <ResultsCard key={index} resultObj={result} />
           ))}
         </FlexWrapper>
       </Container>

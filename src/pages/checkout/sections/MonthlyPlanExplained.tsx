@@ -16,7 +16,7 @@ export const MonthlyPlanExplained: React.FC = () => {
   return (
     <StyledSection>
       <Container margin='0 auto'>
-        <FlexWrapper flexWrap='nowrap' maxWidth='80rem' margin='2rem 0'>
+        <FlexWrapper maxWidth='80rem' margin='2rem 0'>
           <ContainerSmall margin='0'>
             <Image src={isMobile ? 'checkout_heart' : 'checkout_heart_laptop'} />
           </ContainerSmall>
@@ -41,10 +41,10 @@ export const MonthlyPlanExplained: React.FC = () => {
           Your <StyledWrapper>personal</StyledWrapper> 3-month Anxiety and Stress Reduction Plan
         </H4>
         <FlexWrapper
-          flexWrap='nowrap'
           flexDirection={isMobile ? 'column' : 'row'}
           alignItems='start'
           gap={isMobile ? '0' : '1rem'}
+          margin='1rem 0 2rem'
           maxWidth='80rem'
         >
           {isMobile && renderListInOneColumn(plan_array)}

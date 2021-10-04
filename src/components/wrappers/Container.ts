@@ -15,6 +15,7 @@ interface Styles {
   maxWidth?: string;
   width?: string;
   textAlign?: string;
+  backgroundColor?: string;
 }
 
 export const Container = styled.div<Styles>`
@@ -26,6 +27,7 @@ export const Container = styled.div<Styles>`
   padding-top: ${({ paddingTop }) => paddingTop || ''};
   max-width: ${({ maxWidth }) => maxWidth || '80rem'};
   text-align: ${({ textAlign }) => textAlign || 'left'};
+  background-color: ${({ backgroundColor }) => backgroundColor || ''};
 `;
 
 export const ContainerSmall = styled(Container)`

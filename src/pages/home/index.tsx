@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { HomeBackground } from 'components/backgrounds/HomeBackground';
 import { navigate } from '@reach/router';
-import { Navigation } from 'layouts/navigations/Navigation';
 import { Footer } from 'layouts/footer/Footer';
 import { Image, Container, H1, H4, RegularText, TextBaseBold, FlexWrapper, PrimaryButton } from 'components';
 import { blue, orange } from 'styles/colors';
@@ -20,12 +19,11 @@ const Landing: React.FC = () => {
   const { title, subtitle, text, caption } = LANDING_DATA;
 
   const handleQuizStart = () => {
-    navigate('/quiz');
+    navigate('/quiz/');
   };
 
   return (
     <LandingPage>
-      <Navigation />
       <HomeBackground />
       <Container zIndex={4} marginTop={isMobile ? '2rem' : '6rem'} padding='0 1rem'>
         <FlexWrapper flexDirection={isMobile ? 'column' : 'row-reverse'} gap='3rem' maxWidth='80rem'>

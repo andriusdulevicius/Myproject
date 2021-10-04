@@ -42,9 +42,13 @@ const Quiz: React.FC<DataTypes> = () => {
   }, []);
 
   const renderNextQuestion = () => {
-    if (question <= 9) setQuestion(question + 1);
-    if (question > 9) navigate('/calculating/');
-    if (question < 1) navigate('/home/');
+    if (question < 9) setQuestion(question + 1);
+    if (question === 9) navigate('/loader/');
+  };
+
+  const renderPreviousQuestion = () => {
+    if (question > 1) setQuestion(question - 1);
+    if (question === 1) navigate('/home/');
   };
 
   return (
@@ -56,7 +60,7 @@ const Quiz: React.FC<DataTypes> = () => {
           return (
             <Container key={key} zIndex={2}>
               <FlexWrapper justifyContent='space-between' padding='1rem 0 0 0' maxWidth='80rem'>
-                <Svg src='go_back' onClick={() => setQuestion(question - 1)} />
+                <Svg src='go_back' onClick={renderPreviousQuestion} />
                 <TextWrapper fontWeight={isMobile ? 700 : 400}>
                   {question} of {questions.length}
                 </TextWrapper>

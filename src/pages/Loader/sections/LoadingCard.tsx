@@ -1,9 +1,7 @@
 import React from 'react';
 import { RegularText, H3, Svg, TextBaseBold, SmallText, ContainerSmall, SmallCard } from 'components';
-import { useQuery } from 'styles/breakpoints';
 
 export const LoadingCard: React.FC = () => {
-  const { isMobile } = useQuery();
   const dynamicNumber = 12;
 
   return (

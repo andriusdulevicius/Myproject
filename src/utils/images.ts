@@ -39,6 +39,11 @@ import real_stories_cloud from 'assets/images/real_stories_cloud.png';
 import flying_man from 'assets/images/flying_man.png';
 import christine_ellis from 'assets/images/christine_ellis.png';
 import right_grey_cloud from 'assets/images/right_grey_cloud.png';
+import confetti from 'assets/images/confetti.png';
+import us_flag from 'assets/images/us_flag.png';
+import hospital from 'assets/images/hospital.png';
+import woman from 'assets/images/woman.png';
+import pill from 'assets/images/pill.png';
 
 export const images: Record<string, string> = {
   ellipse_mobile,
@@ -80,4 +85,9 @@ export const images: Record<string, string> = {
   flying_man,
   christine_ellis,
   right_grey_cloud,
+  confetti,
+  us_flag,
+  hospital,
+  woman,
+  pill,
 };

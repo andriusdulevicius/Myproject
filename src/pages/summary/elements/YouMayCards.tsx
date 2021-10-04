@@ -33,11 +33,11 @@ export const YouMayCards = () => {
         </FlexWrapper>
       </SmallCard>
       <SmallCard padding='0' textAlign='left'>
-        <ContainerSmall margin='2rem 0' padding='0 1rem'>
+        <ContainerSmall margin='0' padding='0 1rem'>
           <H3>Improve your overall mood</H3>
           <SmallText color={light_text}>Your mood will drastically improve</SmallText>
         </ContainerSmall>
-        <ContainerSmall maxWidth='12rem' margin='0 auto'>
+        <ContainerSmall maxWidth='12.7rem' margin='0 auto'>
           <Image src='quality_of_life' />
         </ContainerSmall>
       </SmallCard>

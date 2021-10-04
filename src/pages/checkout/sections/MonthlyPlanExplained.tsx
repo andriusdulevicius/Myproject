@@ -44,6 +44,7 @@ export const MonthlyPlanExplained: React.FC = () => {
           flexDirection={isMobile ? 'column' : 'row'}
           alignItems='start'
           gap={isMobile ? '0' : '1rem'}
+          margin='1rem 0 2rem'
           maxWidth='80rem'
         >
           {isMobile && renderListInOneColumn(plan_array)}

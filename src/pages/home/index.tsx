@@ -5,16 +5,22 @@ import { HomeBackground } from 'components/backgrounds/HomeBackground';
 import { navigate } from '@reach/router';
 import { Navigation } from 'layouts/navigations/Navigation';
 import { Footer } from 'layouts/footer/Footer';
-import { LANDING_DATA } from './utils';
-import { blue, orange, grey_white } from 'styles/colors';
 import { Image, Container, H1, H4, RegularText, TextBaseBold, FlexWrapper, PrimaryButton } from 'components';
+import { blue, orange } from 'styles/colors';
+
+const LANDING_DATA = {
+  title: 'Find your Inner Peace',
+  subtitle: 'Calm mind. Better sleep. Confidence.',
+  text: 'It might be difficult times, but you’re not alone. Answer this simple quiz and take your life back, free of anxiety, depression & stress.',
+  caption: 'Start by selecting your gender',
+};
 
 const Landing: React.FC = () => {
   const { isMobileS, isMobile } = useQuery();
   const { title, subtitle, text, caption } = LANDING_DATA;
 
   const handleQuizStart = () => {
-    navigate('quiz');
+    navigate('/quiz');
   };
 
   return (

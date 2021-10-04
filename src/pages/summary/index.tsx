@@ -8,7 +8,7 @@ import { OurPromise } from './sections/OurPromise';
 import { grey_white } from 'styles/colors';
 import { useQuery } from 'styles/breakpoints';
 
-const Summary = () => {
+const Summary: React.FC = () => {
   const { isMobile } = useQuery();
   return (
     <>

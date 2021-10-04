@@ -4,20 +4,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { grey_white } from 'styles/colors';
 
-const Calculating: React.FC = () => {
+const Loader: React.FC = () => {
   return (
-    <CalculatingSection>
+    <LoaderSection>
       <QuizBackground />
       <Container paddingTop='3rem'>
         <LoadingCard />
       </Container>
-    </CalculatingSection>
+    </LoaderSection>
   );
 };
 
-export default Calculating;
+export default Loader;
 
-const CalculatingSection = styled.div`
+const LoaderSection = styled.div`
   position: relative;
   background-color: ${grey_white};
   height: 100vh;

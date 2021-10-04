@@ -10,7 +10,7 @@ import { Faq } from './sections/Faq';
 import { AfterOrder } from './sections/AfterOrder';
 import { grey_white } from 'styles/colors';
 
-const Checkout = () => {
+const Checkout: React.FC = () => {
   return (
     <SectionWrapper>
       <MonthlyPlanExplained />

@@ -1,11 +1,22 @@
 import React from 'react';
+import { useRouter } from 'apis/history';
+import { useDispatch } from 'react-redux';
+import { setSelectedOption } from 'state/actions';
 import styled from 'styled-components';
 import { DataTypes } from '../sections/BillingSelection';
 import { H2, SmallCard, FlexWrapper, H5, Svg, TextWrapper, SmallText, PrimaryButton } from 'components';
 import { dark_text, green, purple, orange, blue } from 'styles/colors';
 
 export const OptionCard: React.FC<DataTypes> = ({ product_key, original_price, final_price, daily_price }) => {
+  const dispatch = useDispatch();
+  const { goToSuccess } = useRouter();
+
+  const handlePlanSelection = () => {
+    dispatch(setSelectedOption({ product_key, final_price }));
+    goToSuccess();
+  };
   const discount = 100 - (final_price / original_price) * 100;
+
   return (
     <SmallCard margin='1rem auto' padding='1rem' textAlign='center' key={product_key}>
       <FlexWrapper flexWrap='no-wrap' gap='0.5rem'>
@@ -34,7 +45,7 @@ export const OptionCard: React.FC<DataTypes> = ({ product_key, original_price, f
         <DiscountedPrice>{`$${final_price} `}</DiscountedPrice>
         {product_key.includes('1') ? 'billed every month' : 'One-time payment'}
       </SmallText>
-      <PrimaryButton maxWidth='100%' colorProp={blue}>
+      <PrimaryButton maxWidth='100%' colorProp={blue} onClick={handlePlanSelection}>
         Start now <TextWrapper fontWeight={400}>(Save {discount.toFixed()}%)</TextWrapper>
       </PrimaryButton>
     </SmallCard>

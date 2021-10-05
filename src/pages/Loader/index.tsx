@@ -8,11 +8,12 @@ import { grey_white } from 'styles/colors';
 
 const Loader: React.FC = () => {
   const { isMobile } = useQuery();
+
   return (
     <LoaderSection>
       {!isMobile && <TransparentNav align='left' />}
       <QuizBackground />
-      <Container paddingTop='3rem'>
+      <Container zIndex={2} padding='3rem 1rem' textAlign='center'>
         <LoadingCard />
       </Container>
     </LoaderSection>

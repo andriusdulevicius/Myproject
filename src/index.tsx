@@ -2,6 +2,8 @@ import React, { StrictMode } from 'react';
 import { WrapPageElementBrowserArgs } from 'gatsby';
 import { createGlobalStyle } from 'styled-components';
 import { MainNavigation } from 'layouts/navigations';
+import { Provider } from 'react-redux';
+import { storeConfig } from 'state/store';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -20,6 +22,6 @@ export const wrapRootElement: React.FC<WrapPageElementBrowserArgs> = ({ element 
   <StrictMode>
     <GlobalStyle />
     <MainNavigation />
-    {element}
+    <Provider store={storeConfig().store}>{element}</Provider>
   </StrictMode>
 );

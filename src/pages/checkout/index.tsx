@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Element } from 'react-scroll';
 import { SecondaryNav } from 'layouts/navigations/SecondaryNav';
 import { BreakFree } from './sections/BreakFree';
 import { MonthlyPlanExplained } from './sections/MonthlyPlanExplained';
@@ -17,7 +18,9 @@ const Checkout: React.FC = () => {
       <SecondaryNav text='Get my plan' />
       <SectionWrapper>
         <MonthlyPlanExplained />
-        <BillingSelection />
+        <Element name='billing'>
+          <BillingSelection />
+        </Element>
         <BreakFree />
         <RealStories />
         <GenuinePeople />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlexWrapper, ContainerSmall, Image, H4, TextWrapper, SmallText, SmallBox } from 'components';
+import { FlexWrapper, ContainerSmall, Svg, H4, TextWrapper, SmallText, SmallBox } from 'components';
 import { useQuery } from 'styles/breakpoints';
 
 interface Props {
@@ -11,9 +11,9 @@ export const PersonalFactsCard: React.FC<Props> = ({ fact }) => {
   const { isMobile } = useQuery();
   return (
     <ContainerSmall padding={isMobile ? '0 1rem' : '1rem'} maxWidth={isMobile ? '100%' : '24%'}>
-      <FlexWrapper padding='0' gap='0.5rem' justifyContent='start'>
+      <FlexWrapper padding='0' gap='0.5rem' justifyContent='start' alignItems='center'>
         <SmallBox minWidth='2rem'>
-          <Image src={imgSrc} />
+          <Svg src={imgSrc} />
         </SmallBox>
         <H4 textAlign='left'>{title}</H4>
       </FlexWrapper>

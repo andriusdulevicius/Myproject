@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Element, scroller } from 'react-scroll';
 import { RouteComponentProps } from '@reach/router';
 import { useQuery } from 'styles/breakpoints';
 import { white, dark_text, orange } from 'styles/colors';
-import { PrimaryButton, Container, FlexWrapper, SmallBox } from 'components';
+import { PrimaryButton, Container, FlexWrapper } from 'components';
 import { Svg } from 'components/images/Svg';
+import { navigate } from '@reach/router';
 
 interface Props {
   text: string;
@@ -12,6 +14,20 @@ interface Props {
 
 export const SecondaryNav: React.FC<Props> = ({ text }) => {
   const { isMobile } = useQuery();
+
+  const handleScroll = (section: string) => {
+    scroller.scrollTo(section, {
+      spy: true,
+      smooth: true,
+      duration: 800,
+    });
+  };
+
+  const navigateToNextPage = async () => {
+    text === 'Start Now' && handleScroll('page-end');
+    text === 'Get my plan' && handleScroll('billing');
+  };
+
   return (
     <NavWrapper>
       <Container padding='0 1rem'>
@@ -24,6 +40,7 @@ export const SecondaryNav: React.FC<Props> = ({ text }) => {
             width='auto'
             borderRadius='0.5rem'
             fontSize={isMobile ? '0.7rem' : '0.9rem'}
+            onClick={navigateToNextPage}
           >
             {text}
           </PrimaryButton>

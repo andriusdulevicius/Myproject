@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Element } from 'react-scroll';
 import { PsychologistPicture } from '../elements/PsychologistPicture';
 import { ClaimButton } from '../elements/ClaimButton';
 import { useQuery } from 'styles/breakpoints';
@@ -39,7 +40,9 @@ export const OurPromise: React.FC = () => {
           </ContainerSmall>
           {isMobile && SignatureSection}
         </FlexWrapper>
-        <ClaimButton />
+        <Element name='page-end'>
+          <ClaimButton />
+        </Element>
         <ContainerSmall maxWidth='50rem' textAlign={isMobile ? 'left' : 'center'}>
           <CaptionText color={light_text}>{disclaimer}</CaptionText>
         </ContainerSmall>

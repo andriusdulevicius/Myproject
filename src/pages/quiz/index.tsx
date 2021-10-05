@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'apis/history';
 import { getQuizQuestions } from 'apis/fetch';
-import { navigate } from '@reach/router';
 import { IntermissionCard } from './sections/IntermissionCard';
 import { StatementCard } from './sections/StatementCard';
 import { AnswerCard } from './elements/AnswerCard';
@@ -30,6 +30,7 @@ interface DataTypes {
 }
 
 const Quiz: React.FC<DataTypes> = () => {
+  const { goBack, goToLoader } = useRouter();
   const { isMobile } = useQuery();
   const [questions, setQuestions] = useState<DataTypes[] | []>([]);
   const [question, setQuestion] = useState<number>(1);
@@ -41,14 +42,14 @@ const Quiz: React.FC<DataTypes> = () => {
     })();
   }, []);
 
-  const renderNextQuestion = () => {
+  const renderNextQuestion = async () => {
     if (question < 9) setQuestion(question + 1);
-    if (question === 9) navigate('/loader/');
+    if (question === 9) goToLoader();
   };
 
-  const renderPreviousQuestion = () => {
+  const renderPreviousQuestion = async () => {
     if (question > 1) setQuestion(question - 1);
-    if (question === 1) navigate('/home/');
+    if (question === 1) goBack();
   };
 
   return (

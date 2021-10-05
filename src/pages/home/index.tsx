@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'apis/history';
 import { useQuery } from 'styles/breakpoints';
 import { HomeBackground } from 'components/backgrounds/HomeBackground';
-import { navigate } from '@reach/router';
 import { Footer } from 'layouts/footer/Footer';
 import { Image, Container, H1, H4, RegularText, TextBaseBold, FlexWrapper, PrimaryButton } from 'components';
 import { blue, orange } from 'styles/colors';
@@ -15,12 +15,9 @@ const LANDING_DATA = {
 };
 
 const Landing: React.FC = () => {
+  const { goToQuiz } = useRouter();
   const { isMobileS, isMobile } = useQuery();
   const { title, subtitle, text, caption } = LANDING_DATA;
-
-  const handleQuizStart = () => {
-    navigate('/quiz/');
-  };
 
   return (
     <LandingPage>
@@ -36,10 +33,10 @@ const Landing: React.FC = () => {
               {caption}
             </TextBaseBold>
             <FlexWrapper padding='0rem' gap='0.5rem' justifyContent={isMobile ? 'center' : 'start'}>
-              <PrimaryButton colorProp={blue} margin='0' width='50%' onClick={handleQuizStart}>
+              <PrimaryButton colorProp={blue} margin='0' width='50%' onClick={goToQuiz}>
                 Male
               </PrimaryButton>
-              <PrimaryButton colorProp={orange} margin='0' width='50%' onClick={handleQuizStart}>
+              <PrimaryButton colorProp={orange} margin='0' width='50%' onClick={goToQuiz}>
                 Female
               </PrimaryButton>
             </FlexWrapper>

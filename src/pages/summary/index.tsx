@@ -19,6 +19,7 @@ const Summary: React.FC = () => {
         <StatisticsSummary />
         <PersonalSummary />
         <PersonalFacts />
+
         <OurPromise />
       </StyledSummary>
     </>

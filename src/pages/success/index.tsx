@@ -19,7 +19,7 @@ import { TransparentNav } from 'layouts/navigations/TransparentNav';
 import { useSelector } from 'react-redux';
 import { checkoutOptionSelector } from 'state/reducers';
 import { Link } from 'gatsby';
-import { blue, dark_text, grey_white } from 'styles/colors';
+import { blue, dark_text, green, grey_white } from 'styles/colors';
 import { useQuery, mobile } from 'styles/breakpoints';
 
 const HOW_TO_START_DATA = {
@@ -46,7 +46,7 @@ const Success: React.FC = () => {
           </AbsoluteBox>
         </ContainerSmall>
         <SmallBox zIndex={5} padding={isMobile ? '4rem 1rem' : '7rem 0'} textAlign='center'>
-          <Svg src='green_check_circle' />
+          <StyledSvg src='check_circle' />
           <H2>Thank you for your order</H2>
         </SmallBox>
         <ContainerSmall padding={isMobile ? '1rem' : '5rem 0 3rem'}>
@@ -127,5 +127,11 @@ const StyledFlexWrapper = styled(FlexWrapper)`
     padding: 1rem 0;
     border-top: 1px solid ${dark_text + '20'};
     border-bottom: none;
+  }
+`;
+
+const StyledSvg = styled(Svg)`
+  path {
+    fill: ${green};
   }
 `;

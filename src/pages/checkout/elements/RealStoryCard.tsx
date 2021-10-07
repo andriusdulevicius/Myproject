@@ -5,7 +5,6 @@ import { GreenText } from './Styles';
 import { mobile } from 'styles/breakpoints';
 import { FlexWrapper, SmallBox, SmallCard, SmallText, RegularText, TextWrapper } from 'components';
 import { grey_white } from 'styles/colors';
-
 interface Story {
   story: { name: string; age: number; address: string; rating: number; journeyLength: string; comment: string };
 }
@@ -42,7 +41,7 @@ const StyledGreenText = styled(GreenText)`
   font-weight: 700;
 `;
 
-const StyledSmallCard = styled(SmallCard)`
+const StyledSmallCard = styled(SmallCard).attrs({ margin: '0' })`
   @media ${mobile} {
     :first-child {
       border-bottom-left-radius: 0rem;

@@ -12,7 +12,7 @@ interface Props {
 export const MembersStatsCard: React.FC<Props> = ({ percent, text }) => {
   const { isMobile } = useQuery();
   return (
-    <SmallCard>
+    <SmallCard margin='0'>
       <StyledFlexWrapper>
         <H1 color={green}>{percent}%</H1>
         <CaptionText margin={isMobile ? '0 0 1rem' : '0'}>{text}</CaptionText>

@@ -9,10 +9,12 @@ export const StyledContainer = styled(Container).attrs({ padding: '0 1rem', text
   }
 `;
 
-export const StyledFlexWrapper = styled(FlexWrapper).attrs({ flexWrap: 'nowrap', maxWidth: '80rem' })`
-  flex-direction: row-reverse;
-  align-items: stretch;
-
+export const StyledFlexWrapper = styled(FlexWrapper).attrs({
+  flexDirection: 'row-reverse',
+  alignItems: 'stretch',
+  flexWrap: 'nowrap',
+  maxWidth: '80rem',
+})`
   @media ${mobile} {
     flex-direction: column;
   }

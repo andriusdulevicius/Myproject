@@ -24,7 +24,7 @@ export const OptionCard: React.FC<DataTypes> = ({ product_key, original_price, f
           <>
             <H5>Monthly</H5>
             <BannerCard colorProp={purple}>
-              <Svg src='purple_star' />
+              <StyledSvg src='star' />
               <StyledTextWrapper color={purple}>Most popular</StyledTextWrapper>
             </BannerCard>
           </>
@@ -72,4 +72,12 @@ const DiscountedPrice = styled.span`
 
 const StyledTextWrapper = styled(TextWrapper)`
   margin-left: 0.3rem;
+`;
+
+const StyledSvg = styled(Svg)`
+  width: 0.85rem;
+  height: 0.85rem;
+  path {
+    fill: ${purple};
+  }
 `;

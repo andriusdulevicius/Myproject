@@ -21,7 +21,7 @@ export const YouMayCards = () => {
   const { isMobile } = useQuery();
   return (
     <FlexWrapper flexWrap='wrap' alignItems='stretch'>
-      <SmallCard textAlign='left'>
+      <SmallCard margin='0' textAlign='left'>
         <FlexWrapper flexDirection='column' alignItems='start'>
           <ContainerSmall margin='0' padding='0 1rem'>
             <H3>Feel less drained</H3>
@@ -32,7 +32,7 @@ export const YouMayCards = () => {
           </StyledSmallBox>
         </FlexWrapper>
       </SmallCard>
-      <SmallCard padding='0' textAlign='left'>
+      <SmallCard margin='0' padding='0' textAlign='left'>
         <ContainerSmall margin='0' padding='0 1rem'>
           <H3>Improve your overall mood</H3>
           <SmallText color={light_text}>Your mood will drastically improve</SmallText>
@@ -41,14 +41,14 @@ export const YouMayCards = () => {
           <Image src='quality_of_life' />
         </ContainerSmall>
       </SmallCard>
-      <SmallCard padding='0 1rem'>
+      <SmallCard margin='0' padding='0 1rem'>
         <ContainerSmall padding='2rem 1rem 1.3rem' textAlign='center'>
           <Svg src='zzz' />
           <H3 margin='1rem 0 0'>Increase your sleep quality</H3>
           <SmallText color={light_text}>Calm mind helps fall asleep easily.</SmallText>
         </ContainerSmall>
       </SmallCard>
-      <SmallCard padding='0 1rem' textAlign='center'>
+      <SmallCard margin='0' padding='0 1rem' textAlign='center'>
         {!isMobile && (
           <ContainerSmall textAlign='center' marginTop='2rem'>
             <Svg src='heart_rate' />

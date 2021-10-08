@@ -23,5 +23,5 @@ export const FlexWrapper = styled.div<Styles>`
   flex-wrap: ${({ flexWrap }) => flexWrap || 'nowrap'};
   margin: ${({ margin }) => margin || '0'};
   padding: ${({ padding }) => padding || '0'};
-  max-width: ${({ maxWidth }) => maxWidth || '50rem'};
+  max-width: ${({ maxWidth }) => maxWidth || '80rem'};
 `;

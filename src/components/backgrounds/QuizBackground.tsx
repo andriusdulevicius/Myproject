@@ -2,22 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { AbsoluteBox, Image } from 'components';
-import { grey_white } from 'styles/colors';
 
 export const QuizBackground = () => {
-  const { isMobile } = useQuery();
+  const { isTablet } = useQuery();
   return (
     <StyledBackground>
-      <AbsoluteBox zIndex={1} left={isMobile ? '-9rem' : '10rem'} top={isMobile ? '-1.5rem' : '6rem'}>
+      <AbsoluteBox zIndex={1} left={isTablet ? '-9rem' : '15rem'} top={isTablet ? '-1.5rem' : '6rem'} maxWidth='13rem'>
         <Image src='top_cloud' />
       </AbsoluteBox>
-      <AbsoluteBox zIndex={1} bottom='0' right='-3rem'>
-        <Image src={isMobile ? 'bottom_cloud_small' : 'bottom_cloud'} />
+      <AbsoluteBox zIndex={1} bottom='0' right='0' maxWidth={isTablet ? '8rem' : '18rem'}>
+        <Image src={isTablet ? 'bottom_cloud_small' : 'bottom_cloud'} />
       </AbsoluteBox>
     </StyledBackground>
   );
 };
 
 const StyledBackground = styled.div`
-  background-color: ${grey_white};
+  min-height: 100%;
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'apis/history';
 import { RegularText, H3, TextBaseBold, SmallText, SmallCard, PrimaryButton, FlexWrapper } from 'components';
@@ -7,15 +7,14 @@ import { blue, orange, dark_text } from 'styles/colors';
 export const LoadingCard: React.FC = () => {
   const { goToSummary } = useRouter();
   const [dynamicNumber, setDynamicNumber] = useState<number>(0);
+  const [breathIn, setBreathIn] = useState<boolean>(true);
 
-  setTimeout(frame, 500);
-  function frame() {
-    if (dynamicNumber < 99) setDynamicNumber((prevState: number) => prevState + 1);
-    else {
-      setDynamicNumber(100);
-      return;
+  useEffect(() => {
+    if (dynamicNumber < 100) {
+      setTimeout(() => setDynamicNumber((prevState: number) => prevState + 1), 50);
     }
-  }
+  }, [dynamicNumber]);
+  setTimeout(() => setBreathIn((prevState) => !prevState), 2500);
 
   return (
     <>
@@ -27,14 +26,11 @@ export const LoadingCard: React.FC = () => {
             : 'Here is breathing exercise while you wait.'}
         </RegularText>
         <StyledFlexWrapper>
-          <StyledCircle></StyledCircle>
-          <StyledCircle></StyledCircle>
-          <StyledCircle></StyledCircle>
-          <StyledCircle></StyledCircle>
-          <StyledCircle></StyledCircle>
-          <StyledCircle></StyledCircle>
+          {Array.from({ length: 6 }).map((_, index: number) => (
+            <StyledCircle key={index} />
+          ))}
         </StyledFlexWrapper>
-        <StyledSmallText>{dynamicNumber < 50 ? 'Breath in...' : 'Breath out..'}</StyledSmallText>
+        <StyledSmallText>{breathIn ? 'Breath in...' : 'Breath out..'}</StyledSmallText>
         <TextBaseBold>{dynamicNumber}%</TextBaseBold>
         <SmallText>{dynamicNumber === 100 ? 'Completed' : 'Calculating...'}</SmallText>
       </SmallCard>
@@ -55,13 +51,14 @@ const StyledSmallText = styled(SmallText)`
   color: ${dark_text + '80'};
 `;
 const StyledFlexWrapper = styled(FlexWrapper)`
-  min-height: 14rem;
-  width: 100%;
-  animation: pulse 5s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+  margin: 0 auto;
+  height: 13rem;
+  width: 8rem;
+  animation: pulse 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
 
   @keyframes pulse {
     0% {
-      transform: scale(0.7) rotate(0.5turn);
+      transform: scale(0.7);
     }
     100% {
       transform: scale(1);
@@ -70,35 +67,91 @@ const StyledFlexWrapper = styled(FlexWrapper)`
 `;
 
 const StyledCircle = styled.div`
-  border-radius: 50%;
-  height: 8rem;
   position: absolute;
+  height: 8rem;
   width: 8rem;
-  animation: circle 5s infinite alternate;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  transform: translate(0, 0);
+  animation: center 6s infinite;
 
   :nth-child(1) {
-    transform: rotate(-60deg) translate(4rem);
+    animation: circle-1 4s ease alternate infinite;
   }
   :nth-child(2) {
-    transform: rotate(0deg) translate(4rem);
+    animation: circle-2 4s ease alternate infinite;
   }
   :nth-child(3) {
-    transform: rotate(60deg) translate(4rem);
+    animation: circle-3 4s ease alternate infinite;
   }
   :nth-child(4) {
-    transform: rotate(120deg) translate(4rem);
+    animation: circle-4 4s ease alternate infinite;
   }
   :nth-child(5) {
-    transform: rotate(180deg) translate(4rem);
+    animation: circle-5 4s ease alternate infinite;
   }
   :nth-child(6) {
-    transform: rotate(240deg) translate(4rem);
+    animation: circle-6 4s ease alternate infinite;
   }
 
   :nth-child(odd) {
-    background: ${orange + '60'};
+    background: ${orange + '70'};
   }
   :nth-child(even) {
     background: ${orange + '80'};
+  }
+
+  @keyframes circle-1 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-35px, -50px);
+    }
+  }
+
+  @keyframes circle-2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(35px, 50px);
+    }
+  }
+
+  @keyframes circle-3 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-60px, 0);
+    }
+  }
+
+  @keyframes circle-4 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(60px, 0);
+    }
+  }
+
+  @keyframes circle-5 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-35px, 50px);
+    }
+  }
+
+  @keyframes circle-6 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(35px, -50px);
+    }
   }
 `;

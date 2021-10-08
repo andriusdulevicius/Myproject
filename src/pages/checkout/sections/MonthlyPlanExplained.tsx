@@ -17,9 +17,9 @@ export const MonthlyPlanExplained: React.FC = () => {
     <StyledSection>
       <Container margin='0 auto'>
         <FlexWrapper maxWidth='80rem' margin='2rem 0'>
-          <ContainerSmall margin='0'>
-            <Image src={isMobile ? 'checkout_heart' : 'checkout_heart_laptop'} />
-          </ContainerSmall>
+          <SmallBox margin='0' maxWidth={isMobile ? '7.3rem' : '17.6rem'}>
+            <Image src='checkout_heart_laptop' />
+          </SmallBox>
           <FlexWrapper
             flexDirection='column'
             gap={isMobile ? '0' : '1rem'}

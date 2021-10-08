@@ -37,9 +37,9 @@ export const YouMayCards = () => {
           <H3>Improve your overall mood</H3>
           <SmallText color={light_text}>Your mood will drastically improve</SmallText>
         </ContainerSmall>
-        <ContainerSmall maxWidth='12.7rem' margin='0 auto'>
+        <SmallBox maxWidth='15rem' margin='0 auto'>
           <Image src='quality_of_life' />
-        </ContainerSmall>
+        </SmallBox>
       </SmallCard>
       <SmallCard margin='0' padding='0 1rem'>
         <ContainerSmall padding='2rem 1rem 1.3rem' textAlign='center'>

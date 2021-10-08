@@ -5,9 +5,20 @@ import { getQuizQuestions } from 'apis/fetch';
 import { IntermissionCard } from './sections/IntermissionCard';
 import { StatementCard } from './sections/StatementCard';
 import { AnswerCard } from './elements/AnswerCard';
-import { useQuery } from 'styles/breakpoints';
+import { QuizFooter } from 'layouts/footer/QuizFooter';
+import { useQuery, mobile, tablet, laptop } from 'styles/breakpoints';
+import {
+  Svg,
+  Container,
+  H2,
+  FlexWrapper,
+  PrimaryButton,
+  RegularText,
+  TextWrapper,
+  AbsoluteBox,
+  Image,
+} from 'components';
 import { blue, grey_white } from 'styles/colors';
-import { Svg, QuizBackground, Container, H2, FlexWrapper, PrimaryButton, RegularText, TextWrapper } from 'components';
 
 interface DataTypes {
   type: string;
@@ -31,7 +42,7 @@ interface DataTypes {
 
 const Quiz: React.FC<DataTypes> = () => {
   const { goBack, goToLoader } = useRouter();
-  const { isMobile } = useQuery();
+  const { isMobile, isTablet, isLaptop } = useQuery();
   const [questions, setQuestions] = useState<DataTypes[] | []>([]);
   const [question, setQuestion] = useState<number>(1);
 
@@ -54,22 +65,27 @@ const Quiz: React.FC<DataTypes> = () => {
 
   return (
     <QuizPage>
-      <QuizBackground />
+      <AbsoluteBox zIndex={1} left={isTablet ? '-9rem' : '15rem'} top={isTablet ? '-1.5rem' : '6rem'} maxWidth='13rem'>
+        <Image src='top_cloud' />
+      </AbsoluteBox>
+      <AbsoluteBox zIndex={1} bottom='0' right='0' maxWidth={isTablet ? '8rem' : '18rem'}>
+        <Image src={isTablet ? 'bottom_cloud_small' : 'bottom_cloud'} />
+      </AbsoluteBox>
       {questions &&
         questions.slice(question - 1, question).map((q: DataTypes) => {
           const { type, key, label, custom, options } = q;
           return (
             <Container key={key} zIndex={2}>
-              <FlexWrapper justifyContent='space-between' padding='1rem 0 0 0' maxWidth='80rem'>
+              <FlexWrapper justifyContent='space-between' padding='1rem' maxWidth='80rem'>
                 <Svg src='go_back' onClick={renderPreviousQuestion} />
-                <TextWrapper fontWeight={isMobile ? 700 : 400}>
+                <TextWrapper fontWeight={isLaptop ? 700 : 400}>
                   {question} of {questions.length}
                 </TextWrapper>
               </FlexWrapper>
               <Container
-                padding={isMobile ? '1rem 1rem' : '4rem 1rem'}
-                maxWidth='34rem'
-                textAlign={isMobile ? 'left' : 'center'}
+                padding={isLaptop ? '1rem' : '1.4rem 1rem'}
+                maxWidth='35rem'
+                textAlign={isLaptop ? 'left' : 'center'}
               >
                 {type === 'intermission' && <IntermissionCard renderNextQuestion={renderNextQuestion} />}
                 {label && <H2>{label}</H2>}
@@ -93,6 +109,7 @@ const Quiz: React.FC<DataTypes> = () => {
             </Container>
           );
         })}
+      {!isLaptop && <QuizFooter />}
     </QuizPage>
   );
 };
@@ -101,6 +118,6 @@ export default Quiz;
 
 const QuizPage = styled.div`
   position: relative;
-  height: 100vh;
+  min-height: 100%;
   background-color: ${grey_white};
 `;

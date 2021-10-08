@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, FlexWrapper, Image, RegularText, PrimaryButton } from 'components';
+import { useQuery } from 'styles/breakpoints';
+import { Container, FlexWrapper, Image, RegularText, PrimaryButton, SmallBox } from 'components';
 import { blue, orange } from 'styles/colors';
 
 interface IProps {
@@ -13,9 +14,12 @@ interface IProps {
 }
 
 export const StatementCard: React.FC<IProps> = ({ statementKey, custom, renderNextQuestion }) => {
+  const { isTablet } = useQuery();
   return (
-    <Container maxWidth='36.7rem'>
-      <Image src={statementKey} />
+    <Container maxWidth={isTablet ? '28rem' : '36rem'}>
+      <SmallBox>
+        <Image src={statementKey} />
+      </SmallBox>
       <RegularText textAlign='center'>{custom && custom.text}</RegularText>
       <FlexWrapper>
         <PrimaryButton colorProp={orange} minWidth='50%' onClick={renderNextQuestion}>

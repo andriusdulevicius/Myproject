@@ -5,12 +5,22 @@ import { PsychologistPicture } from '../elements/PsychologistPicture';
 import { ClaimButton } from '../elements/ClaimButton';
 import { useQuery } from 'styles/breakpoints';
 import { OUR_PROMISE_DATA } from '../utils';
-import { FlexWrapper, H2, ContainerSmall, Image, RegularText, TextWrapper, CaptionText, SmallText } from 'components';
+import {
+  FlexWrapper,
+  H2,
+  ContainerSmall,
+  Image,
+  RegularText,
+  TextWrapper,
+  CaptionText,
+  SmallText,
+  SmallBox,
+} from 'components';
 import { light_text } from 'styles/colors';
 
 export const OurPromise: React.FC = () => {
   const { name, job_title, signature_src, texts, disclaimer } = OUR_PROMISE_DATA;
-  const { isMobile } = useQuery();
+  const { isTablet } = useQuery();
 
   const SignatureSection = (
     <FlexWrapper padding='0'>
@@ -18,7 +28,9 @@ export const OurPromise: React.FC = () => {
         <TextWrapper fontSize='1.3rem'>{name}</TextWrapper>
         <RegularText margin='0.5rem 0'>{job_title}</RegularText>
       </FlexWrapper>
-      <Image src={signature_src} />
+      <SmallBox maxWidth='10rem'>
+        <Image src={signature_src} />
+      </SmallBox>
     </FlexWrapper>
   );
 
@@ -26,10 +38,10 @@ export const OurPromise: React.FC = () => {
     <StyledSection>
       <StyledFlexWrapper>
         <H2> Our promise </H2>
-        <FlexWrapper flexDirection={isMobile ? 'column' : 'row'} alignItems='flex-start'>
+        <FlexWrapper flexDirection={isTablet ? 'column' : 'row'} alignItems='flex-start'>
           <ContainerSmall padding='0' margin='0' maxWidth='23rem'>
             <PsychologistPicture />
-            {!isMobile && SignatureSection}
+            {!isTablet && SignatureSection}
           </ContainerSmall>
           <ContainerSmall padding='0' margin='0' maxWidth='23rem'>
             {texts.map((text: string, index: number) => (
@@ -38,12 +50,12 @@ export const OurPromise: React.FC = () => {
               </SmallText>
             ))}
           </ContainerSmall>
-          {isMobile && SignatureSection}
+          {isTablet && SignatureSection}
         </FlexWrapper>
         <Element name='page-end'>
           <ClaimButton />
         </Element>
-        <ContainerSmall maxWidth='50rem' textAlign={isMobile ? 'left' : 'center'}>
+        <ContainerSmall maxWidth='50rem' textAlign={isTablet ? 'left' : 'center'}>
           <CaptionText color={light_text}>{disclaimer}</CaptionText>
         </ContainerSmall>
       </StyledFlexWrapper>

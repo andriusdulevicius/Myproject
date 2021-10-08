@@ -1,7 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { INTERMISSION_DATA } from './utils';
-import { Container, FlexWrapper, H4, Image, PrimaryButton, TextBase, RegularText } from 'components';
+import { Container, FlexWrapper, H4, Image, PrimaryButton, TextBase, RegularText, SmallBox } from 'components';
 import { blue, dark_text } from 'styles/colors';
 
 interface IProps {
@@ -15,7 +16,9 @@ export const IntermissionCard: React.FC<IProps> = ({ renderNextQuestion }) => {
   return (
     <Container maxWidth='25rem'>
       <FlexWrapper>
-        <Image src={imgSrc} />
+        <StyledSmallBox minWidth='5rem'>
+          <Image src={imgSrc} />
+        </StyledSmallBox>
         <H4>{title}</H4>
       </FlexWrapper>
       {texts.map((text: string, index: number) => (
@@ -33,3 +36,9 @@ export const IntermissionCard: React.FC<IProps> = ({ renderNextQuestion }) => {
     </Container>
   );
 };
+
+const StyledSmallBox = styled(SmallBox)`
+  border-radius: 50%;
+  max-width: 5rem;
+  overflow: hidden;
+`;

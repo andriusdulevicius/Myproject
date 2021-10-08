@@ -6,16 +6,16 @@ import { useQuery } from 'styles/breakpoints';
 import { Container, FlexWrapper, H1, H2, RegularText, Svg } from 'components';
 
 export const StatisticsSummary = () => {
-  const { isMobile } = useQuery();
+  const { isTablet } = useQuery();
   return (
     <StyledSummary>
-      <H1 textAlign={isMobile ? 'left' : 'center'}>{isMobile ? 'Fresh mind starts here' : 'Are you up for this?'}</H1>
-      <RegularText textAlign={isMobile ? 'left' : 'center'}>According to your answers, you may...</RegularText>
-      <Container maxWidth='51rem' textAlign={isMobile ? 'left' : 'center'}>
+      <H1 textAlign={isTablet ? 'left' : 'center'}>{isTablet ? 'Fresh mind starts here' : 'Are you up for this?'}</H1>
+      <RegularText textAlign={isTablet ? 'left' : 'center'}>According to your answers, you may...</RegularText>
+      <Container maxWidth='51rem' textAlign={isTablet ? 'left' : 'center'}>
         <YouMayCards />
         <H2 textAlign='center'>A natural way to reduce your anxiety</H2>
         <StyledUl>
-          <FlexWrapper justifyContent={isMobile ? 'flex-start' : 'center'} flexWrap='wrap' padding='0'>
+          <FlexWrapper justifyContent={isTablet ? 'flex-start' : 'center'} flexWrap='wrap' padding='0'>
             <StyledLi>
               <StyledFlexWrapper>
                 <Svg src='green_check_circle' />

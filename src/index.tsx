@@ -9,12 +9,16 @@ const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
+  
 }
 body {
     overflow: hidden auto;
+    min-height: 100%;
+
 }
 html {
     font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+    height: 100%;
 }
 `;
 

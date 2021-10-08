@@ -18,8 +18,11 @@ export const Footer: React.FC = () => {
 };
 
 const StyledFooter = styled.footer`
-  position: relative;
+  position: absolute;
+  bottom: 0;
   z-index: 5;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 80rem;
+  height: 100px;
+  padding: 1rem 0;
 `;

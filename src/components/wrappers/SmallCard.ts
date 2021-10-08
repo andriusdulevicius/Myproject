@@ -15,4 +15,5 @@ export const SmallCard = styled(Container)<Styles>`
   border-radius: ${({ borderRadius }) => borderRadius || '1.6rem'};
   background-color: ${({ backgroundColor }) => backgroundColor || white};
   box-shadow: 0 1rem 2rem ${dark_text + '10'};
+  overflow: hidden;
 `;

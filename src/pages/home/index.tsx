@@ -4,7 +4,7 @@ import { useRouter } from 'apis/history';
 import { useQuery } from 'styles/breakpoints';
 import { HomeBackground } from 'components/backgrounds/HomeBackground';
 import { Footer } from 'layouts/footer/Footer';
-import { Image, Container, H1, H4, RegularText, TextBaseBold, FlexWrapper, PrimaryButton } from 'components';
+import { Image, Container, H1, H4, RegularText, TextBaseBold, FlexWrapper, PrimaryButton, SmallBox } from 'components';
 import { blue, orange } from 'styles/colors';
 
 const LANDING_DATA = {
@@ -16,23 +16,25 @@ const LANDING_DATA = {
 
 const Landing: React.FC = () => {
   const { goToQuiz } = useRouter();
-  const { isMobileS, isMobile } = useQuery();
+  const { isMobileS, isMobile, isTablet, isLaptop } = useQuery();
   const { title, subtitle, text, caption } = LANDING_DATA;
 
   return (
     <LandingPage>
       <HomeBackground />
-      <Container zIndex={4} marginTop={isMobile ? '2rem' : '6rem'} padding='0 1rem'>
-        <FlexWrapper flexDirection={isMobile ? 'column' : 'row-reverse'} gap='3rem' maxWidth='80rem'>
-          <Image src={isMobile ? 'bgc_couple' : 'bgc_couple_laptop'} />
-          <Container maxWidth={isMobile ? '100%' : '50%'} textAlign={isMobile ? 'center' : 'left'}>
+      <Container zIndex={4} marginTop={isTablet ? '2rem' : '5%'} padding={isTablet ? '0 1rem' : '0 3rem'}>
+        <FlexWrapper flexDirection={isTablet ? 'column' : 'row-reverse'} gap={isTablet ? '0' : '3rem'}>
+          <SmallBox width={isTablet ? '100%' : '40%'}>
+            <Image src='bgc_couple_laptop' />
+          </SmallBox>
+          <Container maxWidth={isTablet ? '100%' : '50%'} textAlign={isTablet ? 'center' : 'left'}>
             <H1>{title}</H1>
             <H4>{subtitle}</H4>
             <RegularText>{text}</RegularText>
-            <TextBaseBold fontSize='0.9rem' textAlign={isMobile ? 'center' : 'left'}>
+            <TextBaseBold fontSize='0.9rem' textAlign={isTablet ? 'center' : 'left'}>
               {caption}
             </TextBaseBold>
-            <FlexWrapper padding='0rem' gap='0.5rem' justifyContent={isMobile ? 'center' : 'start'}>
+            <FlexWrapper padding='0rem' gap='0.5rem' justifyContent={isTablet ? 'center' : 'start'}>
               <PrimaryButton colorProp={blue} margin='0' width='50%' onClick={goToQuiz}>
                 Male
               </PrimaryButton>
@@ -52,4 +54,6 @@ export default Landing;
 
 const LandingPage = styled.div`
   position: 'relative';
+  width: '100%';
+  height: '100%';
 `;

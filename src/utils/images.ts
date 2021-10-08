@@ -2,7 +2,6 @@
 
 import ellipse_mobile from 'assets/images/ellipse_mobile.png';
 import ellipse_laptop from 'assets/images/ellipse_laptop.png';
-import bgc_couple from 'assets/images/bgc_couple.png';
 import bgc_couple_laptop from 'assets/images/bgc_couple_laptop.png';
 import bottom_cloud from 'assets/images/bottom_cloud.png';
 import bottom_cloud_small from 'assets/images/bottom_cloud_small.png';
@@ -13,11 +12,12 @@ import left_bottom_cloud from 'assets/images/left_bottom_cloud.png';
 import top_cloud from 'assets/images/top_cloud.png';
 import top_cloud_laptop from 'assets/images/top_cloud_laptop.png';
 import intermission_pic from 'assets/images/intermission_pic.png';
-import increased_stress from 'assets/images/statement_1.png';
-import fear_of_loosing_job from 'assets/images/statement_2.png';
-import responsibilities from 'assets/images/statement_3.png';
-import financial_troubles from 'assets/images/statement_4.png';
-import credits from 'assets/images/statement_5.png';
+import increased_stress from 'assets/images/increased_stress.png';
+import fear_of_loosing_job from 'assets/images/fear_of_loosing_job.png';
+import responsibilities from 'assets/images/responsibilities.png';
+import financial_troubles from 'assets/images/financial_troubles.png';
+import credits from 'assets/images/credits.png';
+import priorities_changes from 'assets/images/priorities_changes.jpg';
 import feel_less_drained from 'assets/images/feel_less_drained.png';
 import quality_of_life from 'assets/images/quality_of_life.png';
 import increased_stress_levels from 'assets/images/increased_stress_levels.png';
@@ -28,7 +28,6 @@ import healthline from 'assets/images/healthline.png';
 import bbc from 'assets/images/bbc.png';
 import amelia_marrow from 'assets/images/amelia_marrow.png';
 import amelia_signature from 'assets/images/amelia_signature.png';
-import checkout_heart from 'assets/images/checkout_heart.png';
 import checkout_heart_laptop from 'assets/images/checkout_heart_laptop.png';
 import safe_checkout from 'assets/images/safe_checkout.png';
 import break_free from 'assets/images/break_free.png';
@@ -40,12 +39,10 @@ import flying_man from 'assets/images/flying_man.png';
 import christine_ellis from 'assets/images/christine_ellis.png';
 import right_grey_cloud from 'assets/images/right_grey_cloud.png';
 import confetti from 'assets/images/confetti.png';
-import priorities_changes from 'assets/images/priorities_changes.jpg';
 
 export const images: Record<string, string> = {
   ellipse_mobile,
   ellipse_laptop,
-  bgc_couple,
   bgc_couple_laptop,
   top_cloud,
   top_cloud_laptop,
@@ -61,6 +58,7 @@ export const images: Record<string, string> = {
   responsibilities,
   financial_troubles,
   credits,
+  priorities_changes,
   feel_less_drained,
   quality_of_life,
   increased_stress_levels,
@@ -71,7 +69,6 @@ export const images: Record<string, string> = {
   bbc,
   amelia_marrow,
   amelia_signature,
-  checkout_heart,
   checkout_heart_laptop,
   safe_checkout,
   break_free,
@@ -83,5 +80,4 @@ export const images: Record<string, string> = {
   christine_ellis,
   right_grey_cloud,
   confetti,
-  priorities_changes,
 };

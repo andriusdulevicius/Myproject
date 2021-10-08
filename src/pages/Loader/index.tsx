@@ -25,5 +25,5 @@ export default Loader;
 const LoaderSection = styled.div`
   position: relative;
   background-color: ${grey_white};
-  height: 100vh;
+  height: 100%;
 `;

@@ -44,6 +44,7 @@ export const Navigation: React.FC<RouteComponentProps> = () => {
 const NavWrapper = styled.nav`
   position: relative;
   z-index: 10;
+  height: 3rem;
   background-color: ${white};
   box-shadow: 5px 5px 5px ${dark_text + '20'};
 

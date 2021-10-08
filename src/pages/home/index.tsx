@@ -22,7 +22,7 @@ const Landing: React.FC = () => {
   return (
     <LandingPage>
       <HomeBackground />
-      <Container zIndex={4} marginTop={isTablet ? '2rem' : '5%'} padding={isTablet ? '0 1rem' : '0 3rem'}>
+      <Container zIndex={4} padding={isTablet ? '2rem 1rem' : '4rem 3rem'} minHeight='calc(100vh - 9.25rem)'>
         <FlexWrapper flexDirection={isTablet ? 'column' : 'row-reverse'} gap={isTablet ? '0' : '3rem'}>
           <SmallBox width={isTablet ? '100%' : '40%'}>
             <Image src='bgc_couple_laptop' />

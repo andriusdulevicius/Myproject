@@ -5,6 +5,7 @@ import { Container, QuizBackground } from 'components';
 import { LoadingCard } from './sections/LoadingCard';
 import { TransparentNav } from 'layouts/navigations/TransparentNav';
 import { grey_white } from 'styles/colors';
+import { QuizFooter } from 'layouts/footer/QuizFooter';
 
 const Loader: React.FC = () => {
   const { isMobile } = useQuery();
@@ -16,6 +17,7 @@ const Loader: React.FC = () => {
       <Container zIndex={2} padding='3rem 1rem' textAlign='center'>
         <LoadingCard />
       </Container>
+      <QuizFooter />
     </LoaderSection>
   );
 };

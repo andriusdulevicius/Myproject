@@ -75,7 +75,7 @@ const Quiz: React.FC<DataTypes> = () => {
         questions.slice(question - 1, question).map((q: DataTypes) => {
           const { type, key, label, custom, options } = q;
           return (
-            <Container key={key} zIndex={2}>
+            <Container key={key} zIndex={2} minHeight='calc(100vh - 6.25rem)'>
               <FlexWrapper justifyContent='space-between' padding='1rem' maxWidth='80rem'>
                 <Svg src='go_back' onClick={renderPreviousQuestion} />
                 <TextWrapper fontWeight={isLaptop ? 700 : 400}>
@@ -118,6 +118,5 @@ export default Quiz;
 
 const QuizPage = styled.div`
   position: relative;
-  min-height: 100%;
   background-color: ${grey_white};
 `;

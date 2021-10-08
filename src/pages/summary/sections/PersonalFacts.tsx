@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PersonalFactsCard } from '../elements/PersonalFactsCard';
-import { PERSONAL_FACTS, PROMOTER_LOGOS } from '../utils';
+import { PERSONAL_FACTS, PROMOTER_LOGOS } from './utils';
 import { useQuery, tablet } from 'styles/breakpoints';
 import { FlexWrapper, H2, Container, H5, Image, SmallBox } from 'components';
 import { dark_text } from 'styles/colors';

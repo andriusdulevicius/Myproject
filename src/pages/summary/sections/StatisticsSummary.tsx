@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ClaimButton } from '../elements/ClaimButton';
+import { useRouter } from 'apis/history';
 import { YouMayCards } from '../elements/YouMayCards';
 import { useQuery } from 'styles/breakpoints';
-import { Container, FlexWrapper, H1, H2, RegularText, Svg } from 'components';
+import { Container, FlexWrapper, H1, H2, RegularText, Svg, PrimaryButton } from 'components';
+import { blue } from 'styles/colors';
 
 export const StatisticsSummary = () => {
   const { isTablet } = useQuery();
+  const { goToCheckout } = useRouter();
   return (
     <StyledSummary>
       <H1 textAlign={isTablet ? 'left' : 'center'}>{isTablet ? 'Fresh mind starts here' : 'Are you up for this?'}</H1>
@@ -18,19 +20,21 @@ export const StatisticsSummary = () => {
           <FlexWrapper justifyContent={isTablet ? 'flex-start' : 'center'} flexWrap='wrap' padding='0'>
             <StyledLi>
               <StyledFlexWrapper>
-                <Svg src='green_check_circle' />
+                <Svg src='green_check_outline' />
                 <RegularText margin='0'>No expensive treatments</RegularText>
               </StyledFlexWrapper>
             </StyledLi>
             <StyledLi>
               <StyledFlexWrapper>
-                <Svg src='green_check_circle' />
+                <Svg src='green_check_outline' />
                 <RegularText margin='0'>No harmful side effects</RegularText>
               </StyledFlexWrapper>
             </StyledLi>
           </FlexWrapper>
         </StyledUl>
-        <ClaimButton />
+        <PrimaryButton colorProp={blue} maxWidth='24rem' margin='1.5rem 0' onClick={goToCheckout}>
+          Claim your fresh mind back
+        </PrimaryButton>
       </Container>
     </StyledSummary>
   );

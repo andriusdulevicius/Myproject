@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PlanListEl } from '../elements/PlanListEl';
-import { PLAN_DATA_EXPLAINED } from '../utils';
+import { PLAN_DATA_EXPLAINED } from './utils';
 import { useQuery } from 'styles/breakpoints';
 import { CaptionText, Container, ContainerSmall, FlexWrapper, H4, Image, Svg, SmallText, SmallBox } from 'components';
 import { dark_green, white } from 'styles/colors';

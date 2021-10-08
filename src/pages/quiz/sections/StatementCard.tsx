@@ -14,18 +14,18 @@ interface IProps {
 }
 
 export const StatementCard: React.FC<IProps> = ({ statementKey, custom, renderNextQuestion }) => {
-  const { isTablet } = useQuery();
+  const { isLaptop } = useQuery();
   return (
-    <Container maxWidth={isTablet ? '28rem' : '36rem'}>
+    <Container maxWidth={isLaptop ? '25rem' : '36rem'}>
       <SmallBox>
         <Image src={statementKey} />
       </SmallBox>
       <RegularText textAlign='center'>{custom && custom.text}</RegularText>
       <FlexWrapper>
-        <PrimaryButton colorProp={orange} minWidth='50%' onClick={renderNextQuestion}>
+        <PrimaryButton colorProp={orange} minWidth='50%' padding='0.5rem' onClick={renderNextQuestion}>
           No
         </PrimaryButton>
-        <PrimaryButton colorProp={blue} minWidth='50%' onClick={renderNextQuestion}>
+        <PrimaryButton colorProp={blue} minWidth='50%' padding='0.5rem' onClick={renderNextQuestion}>
           Yes
         </PrimaryButton>
       </FlexWrapper>

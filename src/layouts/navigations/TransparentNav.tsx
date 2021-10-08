@@ -9,8 +9,12 @@ interface Props {
 
 export const TransparentNav: React.FC<Props> = ({ align }) => {
   return (
-    <Container padding='1rem' textAlign={align} backgroundColor='transparent'>
+    <StyledtNav textAlign={align}>
       <Svg src='anxietless_logo' />
-    </Container>
+    </StyledtNav>
   );
 };
+
+const StyledtNav = styled(Container).attrs({ padding: '1rem', backgroundColor: 'transparent' })`
+  max-height: 3rem;
+`;

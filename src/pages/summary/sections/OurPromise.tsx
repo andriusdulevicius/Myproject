@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Element } from 'react-scroll';
 import { PsychologistPicture } from '../elements/PsychologistPicture';
-import { ClaimButton } from '../elements/ClaimButton';
-import { useQuery } from 'styles/breakpoints';
-import { OUR_PROMISE_DATA } from '../utils';
+import { useRouter } from 'apis/history';
+import { useQuery, mobile } from 'styles/breakpoints';
+import { OUR_PROMISE_DATA } from './utils';
 import {
   FlexWrapper,
   H2,
@@ -15,12 +15,14 @@ import {
   CaptionText,
   SmallText,
   SmallBox,
+  PrimaryButton,
 } from 'components';
-import { light_text } from 'styles/colors';
+import { light_text, blue } from 'styles/colors';
 
 export const OurPromise: React.FC = () => {
   const { name, job_title, signature_src, texts, disclaimer } = OUR_PROMISE_DATA;
   const { isTablet } = useQuery();
+  const { goToCheckout } = useRouter();
 
   const SignatureSection = (
     <FlexWrapper padding='0'>
@@ -52,9 +54,11 @@ export const OurPromise: React.FC = () => {
           </ContainerSmall>
           {isTablet && SignatureSection}
         </FlexWrapper>
-        <Element name='page-end'>
-          <ClaimButton />
-        </Element>
+        <StyledElement name='page-end'>
+          <PrimaryButton colorProp={blue} maxWidth='24rem' margin='1.5rem 0' onClick={goToCheckout}>
+            Claim your fresh mind back
+          </PrimaryButton>
+        </StyledElement>
         <ContainerSmall maxWidth='50rem' textAlign={isTablet ? 'left' : 'center'}>
           <CaptionText color={light_text}>{disclaimer}</CaptionText>
         </ContainerSmall>
@@ -62,6 +66,14 @@ export const OurPromise: React.FC = () => {
     </StyledSection>
   );
 };
+
+const StyledElement = styled(Element)`
+  width: 24rem;
+
+  @media ${mobile} {
+    width: 100%;
+  }
+`;
 
 const StyledSection = styled.section`
   position: relative;

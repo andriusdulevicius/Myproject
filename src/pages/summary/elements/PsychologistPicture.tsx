@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { OUR_PROMISE_DATA } from '../utils';
+import { OUR_PROMISE_DATA } from '../sections/utils';
 import { ContainerSmall, Image } from 'components';
 
 export const PsychologistPicture: React.FC = () => {

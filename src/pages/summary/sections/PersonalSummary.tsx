@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PERSONAL_SUMMARY } from '../utils';
+import { PERSONAL_SUMMARY } from './utils';
 import { useQuery } from 'styles/breakpoints';
 import { StatsCard } from '../elements/StatsCard';
 import { ResultsCard } from '../elements/ResultsCard';

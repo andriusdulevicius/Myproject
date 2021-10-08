@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useRouter } from 'apis/history';
 import { RegularText, H3, TextBaseBold, SmallText, SmallCard, PrimaryButton, FlexWrapper } from 'components';
 import { blue, orange, dark_text } from 'styles/colors';
+import { mobile } from 'styles/breakpoints';
 
 export const LoadingCard: React.FC = () => {
   const { goToSummary } = useRouter();
@@ -18,7 +19,7 @@ export const LoadingCard: React.FC = () => {
 
   return (
     <>
-      <SmallCard padding='1rem' width='100%' maxWidth='35rem' textAlign='center'>
+      <SmallCard padding='0 1rem' width='100%' maxWidth='35rem' textAlign='center'>
         <H3>{dynamicNumber === 100 ? 'Finished calculating!' : 'Calculating your results'}</H3>
         <RegularText>
           {dynamicNumber === 100
@@ -47,8 +48,12 @@ const StyledSmallText = styled(SmallText)`
   position: absolute;
   left: 7.5rem;
   right: 7.5rem;
-  top: 13rem;
+  top: 12rem;
   color: ${dark_text + '80'};
+
+  @media ${mobile} {
+    top: 11rem;
+  }
 `;
 const StyledFlexWrapper = styled(FlexWrapper)`
   margin: 0 auto;

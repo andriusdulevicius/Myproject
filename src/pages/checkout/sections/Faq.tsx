@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
-import { QUESTIONS_ANSWERS } from '../utils';
+import { QUESTIONS_ANSWERS } from './utils';
 import { StyledContainer, StyledH2 } from '../elements/Styles';
 import { QACard } from '../elements/QACard';
 import { FlexWrapper, ContainerSmall, TextWrapper, SmallBox, Image, SmallText, AbsoluteBox } from 'components';

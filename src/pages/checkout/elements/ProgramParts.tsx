@@ -1,5 +1,5 @@
 import React from 'react';
-import { PLAN_PARTS } from '../utils';
+import { PLAN_PARTS } from '../sections/utils';
 import { useQuery } from 'styles/breakpoints';
 import { ContainerSmall, FlexWrapper, SmallBox, Svg, SmallText } from 'components';
 

@@ -14,10 +14,15 @@ const Loader: React.FC = () => {
     <LoaderSection>
       {!isMobile && <TransparentNav align='left' />}
       <QuizBackground />
-      <Container zIndex={2} padding='3rem 1rem' textAlign='center'>
+      <Container
+        zIndex={2}
+        padding='3rem 1rem 0'
+        minHeight={isMobile ? '100vh' : 'calc(100vh - 8.5rem)'}
+        textAlign='center'
+      >
         <LoadingCard />
       </Container>
-      <QuizFooter />
+      {!isMobile && <QuizFooter />}
     </LoaderSection>
   );
 };

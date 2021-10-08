@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GENUINE_PART_DATA } from '../utils';
+import { GENUINE_PART_DATA } from './utils';
 import { PsychologistPicture } from 'pages/summary/elements/PsychologistPicture';
 import { StyledContainer, GreenText, StyledH2 } from '../elements/Styles';
 import { useQuery } from 'styles/breakpoints';

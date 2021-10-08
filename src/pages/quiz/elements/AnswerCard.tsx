@@ -20,11 +20,11 @@ export const AnswerCard: React.FC<IProps> = ({ labelProp, type, renderNextQuesti
     <OptionCard isSelected={isSelected} onClick={type === 'multiple' ? handleState : renderNextQuestion}>
       <FlexWrapper padding='0.2rem'>
         {isSelected && (
-          <AbsoluteBox left='0.4rem' top='0.35rem'>
+          <AbsoluteBox left='0.2rem' top='0.1rem'>
             <Svg src='check_circle' />
           </AbsoluteBox>
         )}
-        <AbsoluteBox top={isSelected ? '0.45rem' : '0.5rem'}>{labelProp}</AbsoluteBox>
+        <AbsoluteBox top={isSelected ? '0.1rem' : '0.15rem'}>{labelProp}</AbsoluteBox>
       </FlexWrapper>
     </OptionCard>
   );
@@ -33,7 +33,7 @@ export const AnswerCard: React.FC<IProps> = ({ labelProp, type, renderNextQuesti
 const OptionCard = styled.div<{ isSelected: boolean }>`
   display: block;
   width: 100%;
-  height: 2.3rem;
+  height: 1.8rem;
   border: ${({ isSelected }) => (isSelected ? `1px solid ${dark_text}` : 'none')};
   border-radius: 2.3rem;
   background-color: ${white};

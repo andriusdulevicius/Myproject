@@ -53,6 +53,7 @@ export const SecondaryNav: React.FC<Props> = ({ text }) => {
 const NavWrapper = styled.nav`
   position: fixed;
   z-index: 100;
+  max-height: 3rem;
   width: 100%;
   background-color: ${white};
   box-shadow: 5px 5px 5px ${dark_text + '20'};

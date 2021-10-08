@@ -75,7 +75,7 @@ const Quiz: React.FC<DataTypes> = () => {
         questions.slice(question - 1, question).map((q: DataTypes) => {
           const { type, key, label, custom, options } = q;
           return (
-            <Container key={key} zIndex={2} minHeight='calc(100vh - 6.25rem)'>
+            <Container key={key} zIndex={2} minHeight={isMobile ? '100vh' : 'calc(100vh - 5.5rem)'}>
               <FlexWrapper justifyContent='space-between' padding='1rem' maxWidth='80rem'>
                 <Svg src='go_back' onClick={renderPreviousQuestion} />
                 <TextWrapper fontWeight={isLaptop ? 700 : 400}>
@@ -101,7 +101,13 @@ const Quiz: React.FC<DataTypes> = () => {
                   <StatementCard statementKey={key} custom={custom} renderNextQuestion={renderNextQuestion} />
                 )}
                 {type === 'multiple' && (
-                  <PrimaryButton colorProp={blue} minWidth='100%' margin='1rem 0' onClick={renderNextQuestion}>
+                  <PrimaryButton
+                    colorProp={blue}
+                    minWidth='100%'
+                    margin='1rem 0'
+                    padding='0.5rem'
+                    onClick={renderNextQuestion}
+                  >
                     Continue
                   </PrimaryButton>
                 )}

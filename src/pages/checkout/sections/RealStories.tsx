@@ -1,5 +1,5 @@
 import React from 'react';
-import { REAL_STORIES_DATA } from '../utils';
+import { REAL_STORIES_DATA } from './utils';
 import { RealStoryCard } from '../elements/RealStoryCard';
 import { ProgramParts } from '../elements/ProgramParts';
 import { StyledContainer, StyledH2, StyledFlexWrapper, GreenText } from '../elements/Styles';

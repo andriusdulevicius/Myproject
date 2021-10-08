@@ -17,6 +17,6 @@ const StyledFooter = styled.footer`
   margin: 0 auto;
   width: 100%;
   max-width: 80rem;
-  height: 6.25rem;
+  height: 5.5rem;
   padding: 1rem 0;
 `;

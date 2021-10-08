@@ -24,7 +24,7 @@ export const IntermissionCard: React.FC<IProps> = ({ renderNextQuestion }) => {
       {texts.map((text: string, index: number) => (
         <RegularText key={index}>{text}</RegularText>
       ))}
-      <PrimaryButton colorProp={blue} minWidth='100%' margin='1rem 0' onClick={renderNextQuestion}>
+      <PrimaryButton colorProp={blue} minWidth='100%' margin='1rem 0' padding='0.5rem' onClick={renderNextQuestion}>
         Continue
       </PrimaryButton>
 

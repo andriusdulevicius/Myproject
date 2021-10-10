@@ -45,7 +45,7 @@ const StyledLi = styled.li`
     height: 0.25rem;
     border-radius: 50%;
     background-color: ${dark_text};
-    margin-right: 8px;
+    margin-right: 0.5rem;
     content: ' ';
   }
 `;

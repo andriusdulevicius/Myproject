@@ -1,9 +1,9 @@
 import React from 'react';
+import { useQuery } from 'styles/breakpoints';
 import { REAL_STORIES_DATA } from './utils';
 import { RealStoryCard } from '../elements/RealStoryCard';
 import { ProgramParts } from '../elements/ProgramParts';
 import { StyledContainer, StyledH2, StyledFlexWrapper, GreenText } from '../elements/Styles';
-import { useQuery } from 'styles/breakpoints';
 import { Image, SmallBox, SmallText } from 'components';
 
 export const RealStories: React.FC = () => {

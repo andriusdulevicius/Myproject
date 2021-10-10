@@ -9,12 +9,11 @@ export const ProgramParts: React.FC = () => {
     <FlexWrapper
       flexDirection={isMobile ? 'column' : 'row'}
       flexWrap='nowarp'
-      maxWidth='80rem'
       alignItems={isMobile ? 'stretch' : 'center'}
     >
       {PLAN_PARTS.map(({ id, iconSrc, text }) => (
-        <ContainerSmall maxWidth='25rem' margin='0'>
-          <FlexWrapper key={id} flexWrap='nowarp' justifyContent='flex-start'>
+        <ContainerSmall key={id} maxWidth='25rem' margin='0'>
+          <FlexWrapper justifyContent='flex-start'>
             <SmallBox width='2.75rem'>
               <Svg src={iconSrc} />
             </SmallBox>

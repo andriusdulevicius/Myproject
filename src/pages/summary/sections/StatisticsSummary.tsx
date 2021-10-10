@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useQuery } from 'styles/breakpoints';
 import { useRouter } from 'apis/history';
 import { YouMayCards } from '../elements/YouMayCards';
-import { useQuery } from 'styles/breakpoints';
 import { Container, FlexWrapper, H1, H2, RegularText, Svg, PrimaryButton } from 'components';
 import { blue } from 'styles/colors';
 
@@ -19,16 +19,16 @@ export const StatisticsSummary = () => {
         <StyledUl>
           <FlexWrapper justifyContent={isTablet ? 'flex-start' : 'center'} flexWrap='wrap' padding='0'>
             <StyledLi>
-              <StyledFlexWrapper>
+              <FlexWrapper>
                 <Svg src='green_check_outline' />
                 <RegularText margin='0'>No expensive treatments</RegularText>
-              </StyledFlexWrapper>
+              </FlexWrapper>
             </StyledLi>
             <StyledLi>
-              <StyledFlexWrapper>
+              <FlexWrapper>
                 <Svg src='green_check_outline' />
                 <RegularText margin='0'>No harmful side effects</RegularText>
-              </StyledFlexWrapper>
+              </FlexWrapper>
             </StyledLi>
           </FlexWrapper>
         </StyledUl>
@@ -51,8 +51,3 @@ const StyledUl = styled.ul`
 `;
 
 const StyledLi = styled.li``;
-
-const StyledFlexWrapper = styled(FlexWrapper).attrs({
-  flexWrap: 'nowrap',
-  padding: '0',
-})``;

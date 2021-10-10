@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useQuery } from 'styles/breakpoints';
+import { SecondaryNav } from 'layouts/navigations/SecondaryNav';
 import { SummaryBackground } from 'components';
 import { StatisticsSummary } from './sections/StatisticsSummary';
 import { PersonalSummary } from './sections/PersonalSummary';
 import { PersonalFacts } from './sections/PersonalFacts';
 import { OurPromise } from './sections/OurPromise';
 import { grey_white } from 'styles/colors';
-import { useQuery } from 'styles/breakpoints';
-import { SecondaryNav } from 'layouts/navigations/SecondaryNav';
 
 const Summary: React.FC = () => {
   const { isMobile } = useQuery();

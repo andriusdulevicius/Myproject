@@ -1,8 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useRouter } from 'apis/history';
 import { useDispatch } from 'react-redux';
 import { setSelectedOption } from 'state/actions';
-import styled from 'styled-components';
 import { DataTypes } from '../sections/BillingSelection';
 import { H2, SmallCard, FlexWrapper, H5, Svg, TextWrapper, SmallText, PrimaryButton } from 'components';
 import { dark_text, green, purple, orange, blue } from 'styles/colors';
@@ -52,7 +52,7 @@ export const OptionCard: React.FC<DataTypes> = ({ product_key, original_price, f
   );
 };
 
-const BannerCard = styled.div<{ colorProp: any }>`
+const BannerCard = styled.div<{ colorProp: string }>`
   padding: 0.2rem 0.5rem;
   background-color: transparent;
   border: 0.0625rem solid ${({ colorProp }) => colorProp};
@@ -60,14 +60,14 @@ const BannerCard = styled.div<{ colorProp: any }>`
 `;
 
 const FullPrice = styled.span`
+  margin-right: 0.3rem;
   text-decoration: line-through;
   color: ${dark_text};
-  margin-right: 0.3rem;
 `;
 
 const DiscountedPrice = styled.span`
-  color: ${orange};
   font-weight: 700;
+  color: ${orange};
 `;
 
 const StyledTextWrapper = styled(TextWrapper)`

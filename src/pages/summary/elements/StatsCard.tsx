@@ -1,9 +1,8 @@
 import React from 'react';
-import { icons } from 'utils/icons';
-import { H5, FlexWrapper, SmallCard, Svg, SmallWrapper, CaptionText, SmallBox } from 'components';
+import { H5, FlexWrapper, SmallCard, Svg, ContainerSmall, CaptionText, SmallBox } from 'components';
 
 interface Props {
-  icon: keyof typeof icons;
+  icon: string;
   title: string;
   subtitle: string;
 }
@@ -14,10 +13,10 @@ export const StatsCard: React.FC<Props> = ({ title, icon, subtitle }) => (
       <SmallBox minWidth='4.5rem'>
         <Svg src={icon} />
       </SmallBox>
-      <SmallWrapper>
+      <ContainerSmall maxWidth='24rem'>
         <H5 margin='1rem 0 0.6rem '>{title}</H5>
         <CaptionText margin='0'>{subtitle}</CaptionText>
-      </SmallWrapper>
+      </ContainerSmall>
     </FlexWrapper>
   </SmallCard>
 );

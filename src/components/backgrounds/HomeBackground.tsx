@@ -6,7 +6,7 @@ import { useQuery } from 'styles/breakpoints';
 import { grey_white } from 'styles/colors';
 
 export const HomeBackground = () => {
-  const { isMobile, isTablet } = useQuery();
+  const { isTablet } = useQuery();
 
   return (
     <StyledBackground>

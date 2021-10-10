@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { tablet, useQuery } from 'styles/breakpoints';
 import { SmallCard, FlexWrapper, H1, CaptionText } from 'components';
 import { green } from 'styles/colors';
-import { mobile, useQuery } from 'styles/breakpoints';
 
 interface Props {
   percent: string;
@@ -21,14 +21,8 @@ export const MembersStatsCard: React.FC<Props> = ({ percent, text }) => {
   );
 };
 
-const StyledFlexWrapper = styled(FlexWrapper).attrs({
-  flexWrap: 'nowrap',
-  flexDirection: 'row',
-  alignItems: 'center',
-  gap: '1rem',
-  padding: '0 1rem',
-})`
-  @media ${mobile} {
+const StyledFlexWrapper = styled(FlexWrapper).attrs({ padding: '0 1rem' })`
+  @media ${tablet} {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;

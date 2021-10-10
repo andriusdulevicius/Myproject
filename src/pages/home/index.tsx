@@ -16,7 +16,7 @@ const LANDING_DATA = {
 
 const Landing: React.FC = () => {
   const { goToQuiz } = useRouter();
-  const { isMobileS, isMobile, isTablet, isLaptop } = useQuery();
+  const { isMobileS, isTablet, isLaptop } = useQuery();
   const { title, subtitle, text, caption } = LANDING_DATA;
 
   return (
@@ -35,12 +35,12 @@ const Landing: React.FC = () => {
               {caption}
             </TextBaseBold>
             <FlexWrapper padding='0rem' gap='0.5rem' justifyContent={isTablet ? 'center' : 'start'}>
-              <PrimaryButton colorProp={blue} margin='0' width='50%' onClick={goToQuiz}>
+              <StyledPrimaryButton colorProp={blue} onClick={goToQuiz}>
                 Male
-              </PrimaryButton>
-              <PrimaryButton colorProp={orange} margin='0' width='50%' onClick={goToQuiz}>
+              </StyledPrimaryButton>
+              <StyledPrimaryButton colorProp={orange} onClick={goToQuiz}>
                 Female
-              </PrimaryButton>
+              </StyledPrimaryButton>
             </FlexWrapper>
           </Container>
         </FlexWrapper>
@@ -57,3 +57,5 @@ const LandingPage = styled.div`
   width: 100%;
   height: 100%;
 `;
+
+const StyledPrimaryButton = styled(PrimaryButton).attrs({ margin: '0', width: '50%', maxWidth: '10rem' })``;

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useQuery } from 'styles/breakpoints';
 import { PlanListEl } from '../elements/PlanListEl';
 import { PLAN_DATA_EXPLAINED } from './utils';
-import { useQuery } from 'styles/breakpoints';
-import { CaptionText, Container, ContainerSmall, FlexWrapper, H4, Image, Svg, SmallText, SmallBox } from 'components';
+import { CaptionText, Container, ContainerSmall, FlexWrapper, H4, Image, SmallBox } from 'components';
 import { dark_green, white } from 'styles/colors';
 
 export const MonthlyPlanExplained: React.FC = () => {
@@ -15,8 +15,8 @@ export const MonthlyPlanExplained: React.FC = () => {
 
   return (
     <StyledSection>
-      <Container margin='0 auto'>
-        <FlexWrapper maxWidth='80rem' margin='2rem 0'>
+      <Container>
+        <FlexWrapper margin='2rem 0'>
           <SmallBox margin='0' maxWidth={isMobile ? '7.3rem' : '17.6rem'}>
             <Image src='checkout_heart_laptop' />
           </SmallBox>

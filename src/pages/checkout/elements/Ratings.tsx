@@ -9,8 +9,8 @@ export const Ratings: React.FC<Props> = ({ rating }) => {
   return (
     <FlexWrapper justifyContent='start' gap='0.3rem'>
       {[...Array(rating)].map((val, index: number) => (
-        <SmallBox minWidth='1.25rem' display='inline-block'>
-          <Svg src='star' key={index} />
+        <SmallBox key={index} minWidth='1.25rem' display='inline-block'>
+          <Svg src='star' />
         </SmallBox>
       ))}
     </FlexWrapper>

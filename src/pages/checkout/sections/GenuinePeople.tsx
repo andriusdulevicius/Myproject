@@ -1,10 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GENUINE_PART_DATA } from './utils';
-import { PsychologistPicture } from 'pages/summary/elements/PsychologistPicture';
-import { StyledContainer, GreenText, StyledH2 } from '../elements/Styles';
 import { useQuery } from 'styles/breakpoints';
-import { Container, ContainerSmall, FlexWrapper, SmallBox, SmallText, TextWrapper, CaptionText } from 'components';
+import { GENUINE_PART_DATA } from './utils';
+import { StyledContainer, GreenText, StyledH2 } from '../elements/Styles';
+import {
+  Container,
+  ContainerSmall,
+  FlexWrapper,
+  SmallBox,
+  SmallText,
+  TextWrapper,
+  CaptionText,
+  Image,
+} from 'components';
 
 export const GenuinePeople: React.FC = () => {
   const { isMobile } = useQuery();
@@ -34,7 +42,9 @@ export const GenuinePeople: React.FC = () => {
         >
           <StyledContainerSmall>
             <FlexWrapper flexDirection={isMobile ? 'row' : 'column'} alignItems={isMobile ? 'center' : 'start'}>
-              <PsychologistPicture />
+              <StyledBox>
+                <Image src='amelia_marrow' />
+              </StyledBox>
               <SmallBox minWidth='60%'>
                 <TextWrapper>{name}</TextWrapper>
                 <CaptionText margin='0.4rem 0'>{job_title}</CaptionText>
@@ -66,3 +76,8 @@ export const GenuinePeople: React.FC = () => {
 };
 
 const StyledContainerSmall = styled(ContainerSmall).attrs({ maxWidth: '24rem', margin: '0' })``;
+
+const StyledBox = styled(ContainerSmall).attrs({ maxWidth: '24rem', margin: '0', padding: '0' })`
+  border-radius: 1rem;
+  overflow: hidden;
+`;

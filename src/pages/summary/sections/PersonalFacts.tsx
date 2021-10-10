@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useQuery, tablet } from 'styles/breakpoints';
 import { PersonalFactsCard } from '../elements/PersonalFactsCard';
 import { PERSONAL_FACTS, PROMOTER_LOGOS } from './utils';
-import { useQuery, tablet } from 'styles/breakpoints';
 import { FlexWrapper, H2, Container, H5, Image, SmallBox } from 'components';
 import { dark_text } from 'styles/colors';
 
@@ -36,7 +36,6 @@ const StyledSection = styled.section`
 `;
 
 const StyledFlexWrapper = styled(FlexWrapper).attrs({ gap: '1rem', alignItems: 'start' })`
-  max-width: 80rem;
   border: 0.0625rem solid ${dark_text + '15'};
   border-radius: 0.8rem;
 

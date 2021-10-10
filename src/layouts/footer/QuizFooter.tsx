@@ -15,8 +15,8 @@ export const QuizFooter: React.FC = () => {
 const StyledFooter = styled.footer`
   z-index: 5;
   margin: 0 auto;
+  padding: 1rem 0;
   width: 100%;
   max-width: 80rem;
   height: 5.5rem;
-  padding: 1rem 0;
 `;

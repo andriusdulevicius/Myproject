@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { YOU_WILL_DATA } from './utils';
 import { useQuery, mobile } from 'styles/breakpoints';
+import { YOU_WILL_DATA } from './utils';
 import { StyledH2, StyledContainer } from '../elements/Styles';
 import {
   ContainerSmall,
@@ -57,10 +57,11 @@ export const YouWill: React.FC = () => {
   );
 };
 
-const StyledContainerSmall = styled(ContainerSmall)`
-  margin: 1rem auto 3rem;
-  padding: 2rem;
-  max-width: 50rem;
+const StyledContainerSmall = styled(ContainerSmall).attrs({
+  margin: '1rem auto 3rem',
+  padding: '2rem',
+  maxWidth: '50rem',
+})`
   border: 1px solid ${grey_white};
   border-radius: 1rem;
 

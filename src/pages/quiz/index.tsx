@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useQuery } from 'styles/breakpoints';
+import { getQuizQuestions } from 'apis/fetch';
+import { useRouter } from 'apis/history';
 import { useDispatch } from 'react-redux';
 import { setQuizAnswers } from 'state/actions';
-import { useRouter } from 'apis/history';
-import { getQuizQuestions } from 'apis/fetch';
 import { IntermissionCard } from './sections/IntermissionCard';
 import { StatementCard } from './sections/StatementCard';
 import { AnswerCard } from './elements/AnswerCard';
 import { QuizFooter } from 'layouts/footer/QuizFooter';
-import { useQuery, mobile, tablet, laptop } from 'styles/breakpoints';
 import {
   Svg,
   Container,
@@ -49,11 +49,11 @@ export interface Answer {
 const Quiz: React.FC<DataTypes> = () => {
   const dispatch = useDispatch();
   const { goBack, goToLoader } = useRouter();
-  const { isMobile, isTablet, isLaptop } = useQuery();
   const [questions, setQuestions] = useState<DataTypes[] | []>([]);
   const [question, setQuestion] = useState<number>(0);
   const [answer, setAnswer] = useState<string[]>([]);
-  const [cardAnswers, setCardAnswers] = useState<Answer[]>([]);
+  const [allAnswers, setAllAnswers] = useState<Answer[]>([]);
+  const { isMobile, isTablet, isLaptop } = useQuery();
 
   useEffect(() => {
     (async () => {
@@ -64,15 +64,15 @@ const Quiz: React.FC<DataTypes> = () => {
 
   const renderNextQuestion = async (value: string = '') => {
     if (question < questions.length - 1) {
-      setCardAnswers([
-        ...cardAnswers,
+      setAllAnswers([
+        ...allAnswers,
         { question: questions[question].key, answer: answer.length > 1 ? answer : [value] },
       ]);
       setQuestion(question + 1);
       setAnswer([]);
     }
     if (question === questions.length - 1) {
-      dispatch(setQuizAnswers(cardAnswers));
+      dispatch(setQuizAnswers(allAnswers));
       goToLoader();
     }
   };
@@ -94,7 +94,7 @@ const Quiz: React.FC<DataTypes> = () => {
         [questions[question]].map((q) => {
           const { type, key, label, custom, options } = q;
           return (
-            <Container key={key} zIndex={2} minHeight={isMobile ? '100vh' : 'calc(100vh - 5.5rem)'}>
+            <Container key={key} zIndex={2} minHeight={isLaptop ? '100vh' : 'calc(100vh - 5.5rem)'}>
               <FlexWrapper justifyContent='space-between' padding='1rem' maxWidth='80rem'>
                 <Svg src='go_back' onClick={renderPreviousQuestion} />
                 <TextWrapper fontWeight={isLaptop ? 700 : 400}>
@@ -126,7 +126,7 @@ const Quiz: React.FC<DataTypes> = () => {
                 {type === 'statement' && (
                   <StatementCard statementKey={key} custom={custom} renderNextQuestion={renderNextQuestion} />
                 )}
-                {type === 'multiple' && (
+                {answer.length >= 1 && type === 'multiple' && (
                   <PrimaryButton
                     colorProp={blue}
                     minWidth='100%'
@@ -134,6 +134,11 @@ const Quiz: React.FC<DataTypes> = () => {
                     padding='0.5rem'
                     onClick={() => renderNextQuestion()}
                   >
+                    Continue
+                  </PrimaryButton>
+                )}
+                {type === 'multiple' && answer.length === 0 && (
+                  <PrimaryButton colorProp={blue} minWidth='100%' margin='1rem 0' padding='0.5rem' disabled>
                     Continue
                   </PrimaryButton>
                 )}

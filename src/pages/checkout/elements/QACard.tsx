@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ContainerSmall, FlexWrapper, SmallText, H4, Svg, H5, SmallBox } from 'components';
+import { ContainerSmall, FlexWrapper, SmallText, Svg, H5, SmallBox } from 'components';
 import { grey_white } from 'styles/colors';
 
-interface IProps {
+interface Props {
   QA: {
     question: string;
     answer: string;
   };
 }
 
-export const QACard: React.FC<IProps> = ({ QA }) => {
+export const QACard: React.FC<Props> = ({ QA }) => {
   const [answerState, setAnswerState] = useState<boolean>(false);
   const { question, answer } = QA;
 

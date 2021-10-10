@@ -35,7 +35,5 @@ export const Container = styled.div<Styles>`
 `;
 
 export const ContainerSmall = styled(Container)`
-  position: ${({ position }) => position || 'relative'};
-  display: ${({ display }) => display || 'block'};
-  padding: ${({ padding }) => padding || '0'};
+  max-width: ${({ maxWidth }) => maxWidth || '35rem'};
 `;

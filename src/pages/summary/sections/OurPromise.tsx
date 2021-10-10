@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Element } from 'react-scroll';
-import { PsychologistPicture } from '../elements/PsychologistPicture';
-import { useRouter } from 'apis/history';
 import { useQuery, mobile } from 'styles/breakpoints';
+import { Element } from 'react-scroll';
+import { useRouter } from 'apis/history';
 import { OUR_PROMISE_DATA } from './utils';
 import {
   FlexWrapper,
@@ -25,8 +24,8 @@ export const OurPromise: React.FC = () => {
   const { goToCheckout } = useRouter();
 
   const SignatureSection = (
-    <FlexWrapper padding='0'>
-      <FlexWrapper flexDirection='column' gap='0' alignItems='flex-start' padding='0'>
+    <FlexWrapper>
+      <FlexWrapper flexDirection='column' gap='0' alignItems='flex-start'>
         <TextWrapper fontSize='1.3rem'>{name}</TextWrapper>
         <RegularText margin='0.5rem 0'>{job_title}</RegularText>
       </FlexWrapper>
@@ -41,11 +40,13 @@ export const OurPromise: React.FC = () => {
       <StyledFlexWrapper>
         <H2> Our promise </H2>
         <FlexWrapper flexDirection={isTablet ? 'column' : 'row'} alignItems='flex-start'>
-          <ContainerSmall padding='0' margin='0' maxWidth='23rem'>
-            <PsychologistPicture />
+          <ContainerSmall margin='0' maxWidth='23rem'>
+            <StyledBox>
+              <Image src='amelia_marrow' />
+            </StyledBox>
             {!isTablet && SignatureSection}
           </ContainerSmall>
-          <ContainerSmall padding='0' margin='0' maxWidth='23rem'>
+          <ContainerSmall margin='0' maxWidth='23rem'>
             {texts.map((text: string, index: number) => (
               <SmallText key={index} margin='0 0 1rem'>
                 {text}
@@ -85,5 +86,9 @@ const StyledSection = styled.section`
 const StyledFlexWrapper = styled(FlexWrapper).attrs({
   flexDirection: 'column',
   gap: '0',
-  maxWidth: '80rem',
 })``;
+
+const StyledBox = styled(ContainerSmall).attrs({ maxWidth: '24rem', margin: '0', padding: '0' })`
+  border-radius: 1rem;
+  overflow: hidden;
+`;

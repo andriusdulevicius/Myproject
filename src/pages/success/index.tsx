@@ -1,26 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  AbsoluteBox,
-  FlexWrapper,
-  Container,
-  ContainerSmall,
-  H2,
-  H4,
-  Image,
-  SmallBox,
-  SmallText,
-  Svg,
-  TextWrapper,
-  RegularText,
-  CaptionText,
-} from 'components';
-import { TransparentNav } from 'layouts/navigations/TransparentNav';
+import { useQuery, mobile } from 'styles/breakpoints';
 import { useSelector } from 'react-redux';
 import { checkoutOptionSelector } from 'state/reducers';
+import { TransparentNav } from 'layouts/navigations/TransparentNav';
 import { Link } from 'gatsby';
+import {
+  Container,
+  ContainerSmall,
+  AbsoluteBox,
+  FlexWrapper,
+  TextWrapper,
+  SmallBox,
+  H2,
+  H4,
+  RegularText,
+  SmallText,
+  CaptionText,
+  Image,
+  Svg,
+} from 'components';
 import { blue, dark_text, green, grey_white } from 'styles/colors';
-import { useQuery, mobile } from 'styles/breakpoints';
 
 const HOW_TO_START_DATA = {
   title: 'How to start the Anxietless program?',
@@ -94,11 +94,7 @@ const Success: React.FC = () => {
 
 export default Success;
 
-const StyledWrapper = styled(Container)`
-  padding: 0;
-  position: relative;
-  max-width: 37rem;
-
+const StyledWrapper = styled(Container).attrs({ maxWidth: '37rem' })`
   a {
     text-decoration: none;
     color: inherit;
@@ -121,8 +117,7 @@ const StyledContainer = styled(Container).attrs({
   }
 `;
 
-const StyledFlexWrapper = styled(FlexWrapper)`
-  justify-content: space-between;
+const StyledFlexWrapper = styled(FlexWrapper).attrs({ justifyContent: 'space-between' })`
   border-bottom: 1px solid ${dark_text + '20'};
   :last-of-type {
     padding: 1rem 0;

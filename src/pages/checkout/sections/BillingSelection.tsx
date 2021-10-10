@@ -35,7 +35,7 @@ export const BillingSelection: React.FC = () => {
         {isMobile ? <H3>Chose your personal 3-month plan:</H3> : <H2>Select billing option</H2>}
         <FlexWrapper flexDirection={isMobile ? 'column' : 'row'}>
           {plans.map((plan) => (
-            <OptionCard {...plan} />
+            <OptionCard key={plan.product_key} {...plan} />
           ))}
         </FlexWrapper>
         <ContainerSmall margin='0 auto' maxWidth='70%'>

@@ -3,7 +3,7 @@ import { useQuery } from 'styles/breakpoints';
 import { Container, FlexWrapper, Image, RegularText, PrimaryButton, SmallBox } from 'components';
 import { blue, orange } from 'styles/colors';
 
-interface IProps {
+interface Props {
   statementKey: string;
   custom?: {
     sublabel?: string;
@@ -13,7 +13,7 @@ interface IProps {
   renderNextQuestion: (value: string) => void;
 }
 
-export const StatementCard: React.FC<IProps> = ({ statementKey, custom, renderNextQuestion }) => {
+export const StatementCard: React.FC<Props> = ({ statementKey, custom, renderNextQuestion }) => {
   const { isLaptop } = useQuery();
   return (
     <Container maxWidth={isLaptop ? '25rem' : '36rem'}>

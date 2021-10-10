@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { mobile } from 'styles/breakpoints';
 import { useRouter } from 'apis/history';
 import { RegularText, H3, TextBaseBold, SmallText, SmallCard, PrimaryButton, FlexWrapper } from 'components';
 import { blue, orange, dark_text } from 'styles/colors';
-import { mobile } from 'styles/breakpoints';
 
 export const LoadingCard: React.FC = () => {
   const { goToSummary } = useRouter();

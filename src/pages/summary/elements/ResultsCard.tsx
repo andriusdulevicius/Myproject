@@ -16,11 +16,11 @@ export const ResultsCard: React.FC<Result> = ({ resultObj }) => {
   return (
     <SmallCard margin='0'>
       <Image src={imgSrc} />
-      <ContainerSmall position='relative' padding='0 1rem'>
+      <ContainerSmall padding='0 1rem'>
         {indication && <SmallText color={yellow}>Your results indicate that</SmallText>}
         <H4>{result}</H4>
         {info && (
-          <FlexWrapper onClick={handleModal} justifyContent='start' gap='0.4rem' padding='0' margin='0.5rem 0'>
+          <FlexWrapper onClick={handleModal} justifyContent='start' gap='0.4rem' margin='0.5rem 0'>
             <Svg src='info' />
             <SmallText color={blue} margin='0'>
               {info}

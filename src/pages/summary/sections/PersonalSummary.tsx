@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PERSONAL_SUMMARY } from './utils';
 import { useQuery } from 'styles/breakpoints';
+import { PERSONAL_SUMMARY } from './utils';
 import { StatsCard } from '../elements/StatsCard';
 import { ResultsCard } from '../elements/ResultsCard';
 import { Container, FlexWrapper, H2, RegularText } from 'components';
@@ -20,7 +20,6 @@ export const PersonalSummary: React.FC = () => {
           justifyContent='center'
           alignItems='stretch'
           gap='1rem'
-          maxWidth='80rem'
         >
           {stats.map(({ icon, title, subtitle }, index: number) => (
             <StatsCard icon={icon} title={title} subtitle={subtitle} key={index} />
@@ -28,7 +27,7 @@ export const PersonalSummary: React.FC = () => {
         </FlexWrapper>
         <RegularText>{sublabel1}</RegularText>
         <RegularText>{sublabel2}</RegularText>
-        <FlexWrapper flexDirection={isTablet ? 'column' : 'row'} alignItems='stretch' maxWidth='80rem'>
+        <FlexWrapper flexDirection={isTablet ? 'column' : 'row'} alignItems='stretch'>
           {results.map((result, index: number) => (
             <ResultsCard key={index} resultObj={result} />
           ))}

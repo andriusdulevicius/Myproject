@@ -17,6 +17,4 @@ export const QuizBackground = () => {
   );
 };
 
-const StyledBackground = styled.div`
-  min-height: 100%;
-`;
+const StyledBackground = styled.div``;

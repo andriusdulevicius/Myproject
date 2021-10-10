@@ -11,11 +11,13 @@ export const PersonalFactsCard: React.FC<Props> = ({ fact }) => {
   const { isMobile } = useQuery();
   return (
     <ContainerSmall padding={isMobile ? '0 1rem' : '1rem'} maxWidth={isMobile ? '100%' : '24%'}>
-      <FlexWrapper padding='0' gap='0.5rem' justifyContent='start' alignItems='center'>
+      <FlexWrapper padding='1rem 0' gap='0.5rem' justifyContent='start' alignItems='flex-start'>
         <SmallBox minWidth='2rem'>
           <Svg src={imgSrc} />
         </SmallBox>
-        <H4 textAlign='left'>{title}</H4>
+        <H4 margin='0' textAlign='left'>
+          {title}
+        </H4>
       </FlexWrapper>
       <ContainerSmall>
         <TextWrapper>{subtitle}</TextWrapper>

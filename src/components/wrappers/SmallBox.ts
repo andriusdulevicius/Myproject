@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { white, dark_text } from 'styles/colors';
 import { Container } from './Container';
 
 interface Styles {

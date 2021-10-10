@@ -25,5 +25,4 @@ export const SummaryBackground: React.FC = () => (
 
 const StyledBackground = styled.div`
   position: relative;
-  background-color: ${grey_white};
 `;

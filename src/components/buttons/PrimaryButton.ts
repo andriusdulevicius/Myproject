@@ -14,5 +14,6 @@ export const PrimaryButton = styled(Button)<{ colorProp?: string }>`
   }
   :disabled {
     background-color: ${disabled};
+    box-shadow: none;
   }
 `;

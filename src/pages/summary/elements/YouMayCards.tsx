@@ -1,15 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-import { MembersStatsCard } from './MembersStatsCard';
 import { useQuery } from 'styles/breakpoints';
+import { MembersStatsCard } from './MembersStatsCard';
 import {
   ContainerSmall,
   FlexWrapper,
   SmallCard,
   SmallBox,
+  TextWrapper,
   H1,
   H3,
-  TextWrapper,
   RegularText,
   SmallText,
   Image,
@@ -17,7 +16,7 @@ import {
 } from 'components';
 import { light_text, orange } from 'styles/colors';
 
-export const YouMayCards = () => {
+export const YouMayCards: React.FC = () => {
   const { isMobile } = useQuery();
   return (
     <FlexWrapper flexWrap='wrap' alignItems='stretch'>
@@ -27,9 +26,9 @@ export const YouMayCards = () => {
             <H3>Feel less drained</H3>
             <SmallText color={light_text}>Your anxiety level will drop in 28 days</SmallText>
           </ContainerSmall>
-          <StyledSmallBox>
+          <SmallBox>
             <Image src='feel_less_drained' />
-          </StyledSmallBox>
+          </SmallBox>
         </FlexWrapper>
       </SmallCard>
       <SmallCard margin='0' textAlign='left'>
@@ -71,9 +70,3 @@ export const YouMayCards = () => {
     </FlexWrapper>
   );
 };
-
-const StyledSmallBox = styled(SmallBox)`
-  align-self: flex-end;
-  width: 100%;
-  padding-bottom: -1rem;
-`;

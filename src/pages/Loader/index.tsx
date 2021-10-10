@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
-import { Container, QuizBackground } from 'components';
 import { LoadingCard } from './sections/LoadingCard';
 import { TransparentNav } from 'layouts/navigations/TransparentNav';
-import { grey_white } from 'styles/colors';
 import { QuizFooter } from 'layouts/footer/QuizFooter';
+import { Container, QuizBackground } from 'components';
+import { grey_white } from 'styles/colors';
 
 const Loader: React.FC = () => {
   const { isMobile } = useQuery();
@@ -29,8 +29,7 @@ const Loader: React.FC = () => {
 
 export default Loader;
 
-const LoaderSection = styled.div`
+const LoaderSection = styled.section`
   position: relative;
   background-color: ${grey_white};
-  height: 100%;
 `;

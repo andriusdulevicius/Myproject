@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { QUESTIONS_ANSWERS } from './utils';
-import { StyledContainer, StyledH2 } from '../elements/Styles';
 import { QACard } from '../elements/QACard';
+import { StyledContainer, StyledH2 } from '../elements/Styles';
 import { FlexWrapper, ContainerSmall, TextWrapper, SmallBox, Image, SmallText, AbsoluteBox } from 'components';
 import { grey_white } from 'styles/colors';
 
@@ -44,10 +44,11 @@ export const Faq: React.FC = () => {
   );
 };
 
-const StyledContainerSmall = styled(ContainerSmall)`
-  margin: 3rem auto;
-  padding: 1rem;
-  max-width: 36.75rem;
+const StyledContainerSmall = styled(ContainerSmall).attrs({
+  margin: '3rem auto',
+  padding: '1rem',
+  maxWidth: '36.75rem',
+})`
   border: 0.0625rem solid ${grey_white};
   border-radius: 1rem;
 `;

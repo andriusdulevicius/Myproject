@@ -5,11 +5,11 @@ import { INTERMISSION_DATA } from './utils';
 import { Container, FlexWrapper, H4, Image, PrimaryButton, TextBase, RegularText, SmallBox } from 'components';
 import { blue, dark_text } from 'styles/colors';
 
-interface IProps {
+interface Props {
   renderNextQuestion: () => void;
 }
 
-export const IntermissionCard: React.FC<IProps> = ({ renderNextQuestion }) => {
+export const IntermissionCard: React.FC<Props> = ({ renderNextQuestion }) => {
   const { isMobile } = useQuery();
   const { title, imgSrc, texts, disclaimer } = INTERMISSION_DATA;
 

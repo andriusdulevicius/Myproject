@@ -78,8 +78,8 @@ const Quiz: React.FC<DataTypes> = () => {
   };
 
   const renderPreviousQuestion = async () => {
-    if (question > 1) setQuestion(question - 1);
-    if (question === 1) goBack();
+    if (question > 0) setQuestion(question - 1);
+    if (question === 0) goBack();
   };
 
   return (

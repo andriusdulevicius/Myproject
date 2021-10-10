@@ -20,8 +20,8 @@ export const PersonalFacts: React.FC = () => {
         <H5 margin='2rem 0'>Anxiety reduction techniques covered in</H5>
         <FlexWrapper flexWrap='wrap' gap={isTablet ? '1rem' : '2rem'} padding='0' maxWidth='80rem'>
           {PROMOTER_LOGOS.map((logo: string, index: number) => (
-            <SmallBox maxWidth='10rem'>
-              <Image key={index} src={logo} />
+            <SmallBox key={index} maxWidth='10rem'>
+              <Image src={logo} />
             </SmallBox>
           ))}
         </FlexWrapper>

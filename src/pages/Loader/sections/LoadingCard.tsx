@@ -11,13 +11,16 @@ export const LoadingCard: React.FC = () => {
   const [breathIn, setBreathIn] = useState<boolean>(true);
 
   useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
     if (dynamicNumber < 100) {
-      setTimeout(() => setDynamicNumber((prevState: number) => prevState + 1), 50);
+      timeout = setTimeout(() => setDynamicNumber((prevState: number) => prevState + 1), 50);
     }
+    return () => clearTimeout(timeout);
   }, [dynamicNumber]);
 
   useEffect(() => {
-    setTimeout(() => setBreathIn((prevState) => !prevState), 4000);
+    const timeout = setTimeout(() => setBreathIn((prevState) => !prevState), 4000);
+    return () => clearTimeout(timeout);
   }, [breathIn]);
 
   return (

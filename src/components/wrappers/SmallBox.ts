@@ -3,6 +3,7 @@ import { Container } from './Container';
 
 interface Styles {
   minHeight?: string;
+  maxHeight?: string;
   minWidth?: string;
 }
 
@@ -12,4 +13,5 @@ export const SmallBox = styled(Container)<Styles>`
   min-width: ${({ minWidth }) => minWidth || ''};
   width: ${({ width }) => width || ''};
   min-height: ${({ minHeight }) => minHeight || 'auto'};
+  max-height: ${({ maxHeight }) => maxHeight || 'auto'};
 `;

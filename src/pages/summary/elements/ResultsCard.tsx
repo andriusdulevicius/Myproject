@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import { AbsoluteBox, ContainerSmall, FlexWrapper, SmallCard, H4, H5, SmallText, Svg, Image } from 'components';
+import {
+  AbsoluteBox,
+  ContainerSmall,
+  FlexWrapper,
+  SmallCard,
+  H4,
+  H5,
+  SmallText,
+  Svg,
+  Image,
+  SmallBox,
+} from 'components';
 import { yellow, blue } from 'styles/colors';
 
 interface Result {
@@ -15,7 +26,9 @@ export const ResultsCard: React.FC<Result> = ({ resultObj }) => {
   };
   return (
     <SmallCard margin='0'>
-      <Image src={imgSrc} />
+      <SmallBox>
+        <Image src={imgSrc} />
+      </SmallBox>
       <ContainerSmall padding='0 1rem'>
         {indication && <SmallText color={yellow}>Your results indicate that</SmallText>}
         <H4>{result}</H4>

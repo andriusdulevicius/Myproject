@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
-import { RouteComponentProps } from '@reach/router';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
-
-import { white, dark_text } from 'styles/colors';
-import { Container, FlexWrapper } from 'components';
+import { RouteComponentProps } from '@reach/router';
 import { Link } from 'gatsby';
-import { Svg } from 'components/images/Svg';
+import { Container, AbsoluteBox, FlexWrapper, Svg, SmallBox } from 'components';
+import { white, grey_white, dark_text } from 'styles/colors';
 
 const PAGES_LINKS = [
-  { title: 'FAQ', link: '/fax' },
+  { title: 'Home', link: '/' },
+  { title: 'FAQ', link: '/faq' },
   { title: 'Contacts', link: '/contacts' },
   { title: 'Privacy Policy', link: '/privacy-policy' },
   { title: 'Terms & Conditions', link: '/t&c' },
 ];
 
 export const Navigation: React.FC<RouteComponentProps> = () => {
-  const [burgerState, setBurgerState] = useState<boolean>(false);
-  const { isMobile } = useQuery();
+  const [openBurger, setOpenBurger] = useState<boolean>(false);
+  const { isTablet } = useQuery();
 
   return (
     <NavWrapper>
       <Container padding='0 1rem'>
         <FlexWrapper justifyContent='space-between' padding='0.5rem 0' maxWidth='80rem'>
-          <Svg src='anxietless_logo' />
-          {isMobile ? (
-            <Svg src='burger_menu' />
+          <Link to='/'>
+            <Svg src='anxietless_logo' />
+          </Link>
+          {isTablet ? (
+            <Svg src='burger_menu' onClick={() => setOpenBurger((prevState) => !prevState)} />
           ) : (
             <FlexWrapper justifyContent='flex-end'>
               {PAGES_LINKS.map((p, index: number) => (
@@ -34,6 +35,17 @@ export const Navigation: React.FC<RouteComponentProps> = () => {
                 </Link>
               ))}
             </FlexWrapper>
+          )}
+          {isTablet && openBurger && (
+            <StyledBurgerMenu>
+              <FlexWrapper flexDirection='column' gap='0.5rem' padding='0.5rem'>
+                {PAGES_LINKS.map((p, index: number) => (
+                  <StyledSmallBox key={index}>
+                    <Link to={p.link}>{p.title}</Link>
+                  </StyledSmallBox>
+                ))}
+              </FlexWrapper>
+            </StyledBurgerMenu>
           )}
         </FlexWrapper>
       </Container>
@@ -53,5 +65,20 @@ const NavWrapper = styled.nav`
     padding-left: 1rem;
     color: ${dark_text};
     font-size: 0.9rem;
+  }
+`;
+
+const StyledBurgerMenu = styled(AbsoluteBox).attrs({
+  top: '2.8rem',
+  right: '-1rem',
+  maxWidth: '10rem',
+  backgroundColor: white,
+})``;
+
+const StyledSmallBox = styled(SmallBox).attrs({ width: '100%' })`
+  border-bottom: 0.0625rem solid ${grey_white};
+  a {
+    padding: 0.5rem;
+    text-align: right;
   }
 `;

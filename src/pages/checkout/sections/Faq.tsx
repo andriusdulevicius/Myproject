@@ -24,10 +24,9 @@ export const Faq: React.FC = () => {
               <StyledSmallText>
                 ''87% patients significantly reduces anxiety by fallowing simple-guided steps''
               </StyledSmallText>
-              <SmallText>
-                <TextWrapper>Christine Ellis</TextWrapper>
-                <SmallText>Behavioural Psychologist </SmallText>
-              </SmallText>
+
+              <TextWrapper>Christine Ellis</TextWrapper>
+              <SmallText>Behavioural Psychologist</SmallText>
             </SmallBox>
             <SmallBox minWidth={!isMobile ? '6.875rem' : '5.125rem'}>
               <Image src='christine_ellis' />

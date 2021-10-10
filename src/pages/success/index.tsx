@@ -45,12 +45,12 @@ const Success: React.FC = () => {
             <Image src='confetti' />
           </AbsoluteBox>
         </ContainerSmall>
-        <SmallBox zIndex={5} padding={isMobile ? '4rem 1rem' : '7rem 0'} textAlign='center'>
+        <SmallBox zIndex={5} padding={isMobile ? '4rem 1rem' : '7rem 1rem'} textAlign='center'>
           {isMobile && <StyledSvg src='check_circle' />}
           <H2>Thank you for your order</H2>
           {!isMobile && <StyledSvg src='check_circle' />}
         </SmallBox>
-        <ContainerSmall padding={isMobile ? '1rem' : '5rem 0 3rem'}>
+        <ContainerSmall padding={isMobile ? '1rem' : '5rem 1rem 3rem'}>
           <H4>Order summary</H4>
           <StyledFlexWrapper>
             <SmallText>

@@ -6,18 +6,26 @@ import { white, dark_text } from 'styles/colors';
 interface IProps {
   labelProp?: string;
   type?: string;
-  renderNextQuestion: () => void;
+  renderNextQuestion: (value?: string) => void;
+  answer: string[];
+  setAnswer: (value: string[]) => void;
 }
 
-export const AnswerCard: React.FC<IProps> = ({ labelProp, type, renderNextQuestion }) => {
+export const AnswerCard: React.FC<IProps> = ({ labelProp = '', type, renderNextQuestion, answer, setAnswer }) => {
   const [isSelected, setIsSelected] = useState<boolean>(false);
 
-  const handleState = () => {
-    setIsSelected((prevState) => !prevState);
+  const onClick = () => {
+    if (type === 'multiple') {
+      setIsSelected((prevState) => !prevState);
+      const selectedAnswer = isSelected ? answer.filter((a) => a != labelProp) : [...answer, labelProp];
+      setAnswer(selectedAnswer);
+    } else {
+      renderNextQuestion(labelProp);
+    }
   };
 
   return (
-    <OptionCard isSelected={isSelected} onClick={type === 'multiple' ? handleState : renderNextQuestion}>
+    <OptionCard isSelected={isSelected} onClick={onClick}>
       <FlexWrapper padding='0.2rem'>
         {isSelected && (
           <AbsoluteBox left='0.2rem' top='0.1rem'>

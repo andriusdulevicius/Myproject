@@ -15,7 +15,10 @@ export const LoadingCard: React.FC = () => {
       setTimeout(() => setDynamicNumber((prevState: number) => prevState + 1), 50);
     }
   }, [dynamicNumber]);
-  setTimeout(() => setBreathIn((prevState) => !prevState), 2500);
+
+  useEffect(() => {
+    setTimeout(() => setBreathIn((prevState) => !prevState), 4000);
+  }, [breathIn]);
 
   return (
     <>
@@ -76,9 +79,8 @@ const StyledCircle = styled.div`
   height: 8rem;
   width: 8rem;
   border-radius: 50%;
-  mix-blend-mode: screen;
+  mix-blend-mode: color;
   transform: translate(0, 0);
-  animation: center 6s infinite;
 
   :nth-child(1) {
     animation: circle-1 4s ease alternate infinite;

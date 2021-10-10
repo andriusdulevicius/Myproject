@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { setQuizAnswers } from 'state/actions';
 import { useRouter } from 'apis/history';
 import { getQuizQuestions } from 'apis/fetch';
 import { IntermissionCard } from './sections/IntermissionCard';
@@ -39,12 +41,19 @@ interface DataTypes {
     }
   ];
 }
+export interface Answer {
+  question: string;
+  answer: string[];
+}
 
 const Quiz: React.FC<DataTypes> = () => {
+  const dispatch = useDispatch();
   const { goBack, goToLoader } = useRouter();
   const { isMobile, isTablet, isLaptop } = useQuery();
   const [questions, setQuestions] = useState<DataTypes[] | []>([]);
-  const [question, setQuestion] = useState<number>(1);
+  const [question, setQuestion] = useState<number>(0);
+  const [answer, setAnswer] = useState<string[]>([]);
+  const [cardAnswers, setCardAnswers] = useState<Answer[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -53,9 +62,19 @@ const Quiz: React.FC<DataTypes> = () => {
     })();
   }, []);
 
-  const renderNextQuestion = async () => {
-    if (question < 9) setQuestion(question + 1);
-    if (question === 9) goToLoader();
+  const renderNextQuestion = async (value: string = '') => {
+    if (question < questions.length - 1) {
+      setCardAnswers([
+        ...cardAnswers,
+        { question: questions[question].key, answer: answer.length > 1 ? answer : [value] },
+      ]);
+      setQuestion(question + 1);
+      setAnswer([]);
+    }
+    if (question === questions.length - 1) {
+      dispatch(setQuizAnswers(cardAnswers));
+      goToLoader();
+    }
   };
 
   const renderPreviousQuestion = async () => {
@@ -71,15 +90,15 @@ const Quiz: React.FC<DataTypes> = () => {
       <AbsoluteBox zIndex={1} bottom='0' right='0' maxWidth={isTablet ? '8rem' : '18rem'}>
         <Image src={isTablet ? 'bottom_cloud_small' : 'bottom_cloud'} />
       </AbsoluteBox>
-      {questions &&
-        questions.slice(question - 1, question).map((q: DataTypes) => {
+      {questions?.[question] &&
+        [questions[question]].map((q) => {
           const { type, key, label, custom, options } = q;
           return (
             <Container key={key} zIndex={2} minHeight={isMobile ? '100vh' : 'calc(100vh - 5.5rem)'}>
               <FlexWrapper justifyContent='space-between' padding='1rem' maxWidth='80rem'>
                 <Svg src='go_back' onClick={renderPreviousQuestion} />
                 <TextWrapper fontWeight={isLaptop ? 700 : 400}>
-                  {question} of {questions.length}
+                  {question + 1} of {questions.length}
                 </TextWrapper>
               </FlexWrapper>
               <Container
@@ -87,13 +106,20 @@ const Quiz: React.FC<DataTypes> = () => {
                 maxWidth='35rem'
                 textAlign={isLaptop ? 'left' : 'center'}
               >
-                {type === 'intermission' && <IntermissionCard renderNextQuestion={renderNextQuestion} />}
+                {type === 'intermission' && <IntermissionCard renderNextQuestion={() => renderNextQuestion('None')} />}
                 {label && <H2>{label}</H2>}
                 {custom && custom.sublabel && <RegularText>{custom.sublabel}</RegularText>}
                 {options && (
                   <FlexWrapper gap='0.6rem' flexWrap='wrap'>
                     {options.map(({ label, value }) => (
-                      <AnswerCard key={value} labelProp={label} type={type} renderNextQuestion={renderNextQuestion} />
+                      <AnswerCard
+                        key={value}
+                        labelProp={label}
+                        type={type}
+                        renderNextQuestion={renderNextQuestion}
+                        answer={answer}
+                        setAnswer={setAnswer}
+                      />
                     ))}
                   </FlexWrapper>
                 )}
@@ -106,7 +132,7 @@ const Quiz: React.FC<DataTypes> = () => {
                     minWidth='100%'
                     margin='1rem 0'
                     padding='0.5rem'
-                    onClick={renderNextQuestion}
+                    onClick={() => renderNextQuestion()}
                   >
                     Continue
                   </PrimaryButton>

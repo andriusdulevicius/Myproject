@@ -10,7 +10,7 @@ interface IProps {
     stressor?: string;
     text?: string;
   };
-  renderNextQuestion: () => void;
+  renderNextQuestion: (value: string) => void;
 }
 
 export const StatementCard: React.FC<IProps> = ({ statementKey, custom, renderNextQuestion }) => {
@@ -22,10 +22,10 @@ export const StatementCard: React.FC<IProps> = ({ statementKey, custom, renderNe
       </SmallBox>
       <RegularText textAlign='center'>{custom && custom.text}</RegularText>
       <FlexWrapper>
-        <PrimaryButton colorProp={orange} minWidth='50%' padding='0.5rem' onClick={renderNextQuestion}>
+        <PrimaryButton colorProp={orange} minWidth='50%' padding='0.5rem' onClick={() => renderNextQuestion('No')}>
           No
         </PrimaryButton>
-        <PrimaryButton colorProp={blue} minWidth='50%' padding='0.5rem' onClick={renderNextQuestion}>
+        <PrimaryButton colorProp={blue} minWidth='50%' padding='0.5rem' onClick={() => renderNextQuestion('Yes')}>
           Yes
         </PrimaryButton>
       </FlexWrapper>

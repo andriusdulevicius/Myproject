@@ -14,6 +14,7 @@ interface Styles {
   color?: string;
   fontSize?: string;
   fontWeight?: number;
+  onClick?: () => void;
 }
 
 export const Button = styled.button<Styles>`

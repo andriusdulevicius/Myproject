@@ -32,7 +32,7 @@ export const YouMayCards = () => {
           </StyledSmallBox>
         </FlexWrapper>
       </SmallCard>
-      <SmallCard margin='0' padding='0' textAlign='left'>
+      <SmallCard margin='0' textAlign='left'>
         <ContainerSmall margin='0' padding='0 1rem'>
           <H3>Improve your overall mood</H3>
           <SmallText color={light_text}>Your mood will drastically improve</SmallText>

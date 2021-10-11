@@ -16,13 +16,17 @@ const LANDING_DATA = {
 
 const Landing: React.FC = () => {
   const { goToQuiz } = useRouter();
-  const { isMobileS, isTablet, isLaptop } = useQuery();
+  const { isMobile, isTablet, isLaptop } = useQuery();
   const { title, subtitle, text, caption } = LANDING_DATA;
 
   return (
     <LandingPage>
       <HomeBackground />
-      <Container zIndex={4} padding={isLaptop ? '2rem 1rem' : '6rem 3rem'} minHeight='calc(100vh - 8.5rem)'>
+      <Container
+        zIndex={4}
+        padding={isLaptop ? '2rem 1rem' : '6rem 3rem'}
+        minHeight={isMobile ? 'calc(100vh - 3rem)' : 'calc(100vh - 8.5rem)'}
+      >
         <FlexWrapper flexDirection={isTablet ? 'column' : 'row-reverse'} gap={isTablet ? '0' : '3rem'}>
           <SmallBox width={isTablet ? '100%' : '40%'}>
             <Image src='bgc_couple_laptop' />
@@ -45,7 +49,7 @@ const Landing: React.FC = () => {
           </Container>
         </FlexWrapper>
       </Container>
-      {!isMobileS && <Footer />}
+      {!isMobile && <Footer />}
     </LandingPage>
   );
 };

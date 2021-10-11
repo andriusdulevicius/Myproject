@@ -7,7 +7,11 @@ import { StyledContainer, StyledH2 } from '../elements/Styles';
 import { FlexWrapper, ContainerSmall, TextWrapper, SmallBox, Image, SmallText, AbsoluteBox } from 'components';
 import { grey_white } from 'styles/colors';
 
-export const Faq: React.FC = () => {
+interface Props {
+  navPage?: any;
+}
+
+export const Faq: React.FC<Props> = ({ navPage }) => {
   const { isMobile } = useQuery();
 
   return (
@@ -18,24 +22,26 @@ export const Faq: React.FC = () => {
           <QACard QA={QAObj} key={QAObj.id} />
         ))}
 
-        <StyledContainerSmall>
-          <FlexWrapper>
-            <SmallBox>
-              <StyledSmallText>
-                ''87% patients significantly reduces anxiety by fallowing simple-guided steps''
-              </StyledSmallText>
+        {!navPage && (
+          <StyledContainerSmall>
+            <FlexWrapper>
+              <SmallBox>
+                <StyledSmallText>
+                  ''87% patients significantly reduces anxiety by fallowing simple-guided steps''
+                </StyledSmallText>
 
-              <TextWrapper>Christine Ellis</TextWrapper>
-              <SmallText>Behavioural Psychologist</SmallText>
-            </SmallBox>
-            <SmallBox minWidth={!isMobile ? '6.875rem' : '5.125rem'}>
-              <Image src='christine_ellis' />
-            </SmallBox>
-          </FlexWrapper>
-        </StyledContainerSmall>
+                <TextWrapper>Christine Ellis</TextWrapper>
+                <SmallText>Behavioural Psychologist</SmallText>
+              </SmallBox>
+              <SmallBox minWidth={!isMobile ? '6.875rem' : '5.125rem'}>
+                <Image src='christine_ellis' />
+              </SmallBox>
+            </FlexWrapper>
+          </StyledContainerSmall>
+        )}
       </StyledContainer>
-      {!isMobile && (
-        <AbsoluteBox right='0' top='320rem'>
+      {!isMobile && !navPage && (
+        <AbsoluteBox right='0' top='324rem'>
           <Image src='right_grey_cloud' />
         </AbsoluteBox>
       )}

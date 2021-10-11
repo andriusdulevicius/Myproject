@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
+import { useRouter } from 'apis/history';
 import { RouteComponentProps } from '@reach/router';
 import { Link } from 'gatsby';
 import { Container, AbsoluteBox, FlexWrapper, Svg, SmallBox } from 'components';
@@ -17,14 +18,13 @@ const PAGES_LINKS = [
 export const Navigation: React.FC<RouteComponentProps> = () => {
   const [openBurger, setOpenBurger] = useState<boolean>(false);
   const { isTablet } = useQuery();
+  const { goToLanding } = useRouter();
 
   return (
     <NavWrapper>
       <Container padding='0 1rem'>
         <FlexWrapper justifyContent='space-between' padding='0.5rem 0' maxWidth='80rem'>
-          <Link to='/'>
-            <Svg src='anxietless_logo' />
-          </Link>
+          <StyledSvg src='anxietless_logo' onClick={goToLanding} />
           {isTablet ? (
             <Svg src='burger_menu' onClick={() => setOpenBurger((prevState) => !prevState)} />
           ) : (
@@ -81,4 +81,8 @@ const StyledSmallBox = styled(SmallBox).attrs({ width: '100%' })`
     padding: 0.5rem;
     text-align: right;
   }
+`;
+
+const StyledSvg = styled(Svg)`
+  cursor: pointer;
 `;

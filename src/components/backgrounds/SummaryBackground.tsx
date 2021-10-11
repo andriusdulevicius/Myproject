@@ -8,7 +8,7 @@ export const SummaryBackground: React.FC = () => (
     <AbsoluteBox right='0' top='90rem' zIndex={1}>
       <Image src='bottom_cloud_laptop' />
     </AbsoluteBox>
-    <AbsoluteBox left='0' top='185rem' zIndex={1}>
+    <AbsoluteBox left='0' top='180rem' zIndex={1}>
       <Image src='left_bottom_cloud' />
     </AbsoluteBox>
     <AbsoluteBox right='10rem' top='35rem' zIndex={1}>

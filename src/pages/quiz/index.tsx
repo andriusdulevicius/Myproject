@@ -46,7 +46,7 @@ export interface Answer {
   answer: string[];
 }
 
-const Quiz: React.FC<DataTypes> = () => {
+const Quiz: React.FC<DataTypes> = React.memo(() => {
   const dispatch = useDispatch();
   const { goBack, goToLoader } = useRouter();
   const [questions, setQuestions] = useState<DataTypes[] | []>([]);
@@ -149,7 +149,7 @@ const Quiz: React.FC<DataTypes> = () => {
       {!isLaptop && <QuizFooter />}
     </QuizPage>
   );
-};
+});
 
 export default Quiz;
 

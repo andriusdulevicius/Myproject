@@ -36,6 +36,9 @@ const Success: React.FC = () => {
   const selectedOptionData = useSelector(checkoutOptionSelector);
   const { title, text1, email, caption, text2, text3 } = HOW_TO_START_DATA;
 
+  const savedProduct: string | null = localStorage.getItem('product_key');
+  const savedPrice: string | null = localStorage.getItem('final_price');
+
   return (
     <>
       <StyledWrapper>
@@ -54,9 +57,11 @@ const Success: React.FC = () => {
           <H4>Order summary</H4>
           <StyledFlexWrapper>
             <SmallText>
-              {selectedOptionData.product_key.includes('monthly') ? 'Anxietless 28-day program' : 'One time payment'}
+              {selectedOptionData.product_key.includes('monthly') || savedProduct?.includes('monthly')
+                ? 'Anxietless 28-day program'
+                : 'One time payment'}
             </SmallText>
-            <SmallText>${selectedOptionData.final_price}</SmallText>
+            <SmallText>${selectedOptionData.final_price || savedPrice}</SmallText>
           </StyledFlexWrapper>
           <StyledFlexWrapper>
             <SmallText>Anxietless guided meditations </SmallText>
@@ -72,7 +77,7 @@ const Success: React.FC = () => {
           </FlexWrapper>
           <StyledFlexWrapper justifyContent='space-between'>
             <TextWrapper>Total </TextWrapper>
-            <TextWrapper>${selectedOptionData.final_price}</TextWrapper>
+            <TextWrapper>${selectedOptionData.final_price || savedPrice}</TextWrapper>
           </StyledFlexWrapper>
         </ContainerSmall>
       </StyledWrapper>

@@ -12,7 +12,10 @@ export const OptionCard: React.FC<DataTypes> = ({ product_key, original_price, f
   const { goToSuccess } = useRouter();
 
   const handlePlanSelection = () => {
+    localStorage.clear();
     dispatch(setSelectedOption({ product_key, final_price }));
+    localStorage.setItem('product_key', product_key);
+    localStorage.setItem('final_price', String(final_price));
     goToSuccess();
   };
   const discount = 100 - (final_price / original_price) * 100;

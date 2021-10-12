@@ -11,43 +11,38 @@ interface Props {
 }
 
 export const QACard: React.FC<Props> = ({ QA }) => {
-  const [answerState, setAnswerState] = useState<boolean>(false);
+  const [showAnswer, setShowAnswer] = useState<boolean>(false);
   const { question, answer } = QA;
 
-  const answerShowHandler = () => {
-    setAnswerState(!answerState);
-  };
-
   return (
-    <StyledContainerSmall answerState={answerState} onClick={answerShowHandler}>
+    <StyledContainerSmall showAnswer={showAnswer} onClick={() => setShowAnswer((prevState) => !prevState)}>
       <FlexWrapper justifyContent='space-between' alignItems='start'>
         <H5 margin='0' fontWeight={700}>
           {question}
         </H5>
         <SmallBox minWidth='0.46rem'>
-          <Svg src={!answerState ? 'expand_more' : 'expand_less'} />
+          <Svg src={!showAnswer ? 'expand_more' : 'expand_less'} />
         </SmallBox>
       </FlexWrapper>
-      <StyledSmallText answerState={answerState} margin='0'>
-        {answer}
-      </StyledSmallText>
+      <StyledSmallText showAnswer={showAnswer}>{answer}</StyledSmallText>
     </StyledContainerSmall>
   );
 };
 
-export const StyledContainerSmall = styled(ContainerSmall)<{ answerState: boolean }>`
+export const StyledContainerSmall = styled(ContainerSmall)<{ showAnswer: boolean }>`
   margin-top: 1rem;
   padding: 2rem;
   min-height: 5.5rem;
-  max-height: ${({ answerState }) => (answerState ? '40rem' : '4rem')};
+  max-height: ${({ showAnswer }) => (showAnswer ? '40rem' : '4rem')};
   max-width: 50rem;
   border: 0.0625rem solid ${grey_white};
   border-radius: 1rem;
   transition: all 1s ease;
 `;
 
-const StyledSmallText = styled(SmallText)<{ answerState: boolean }>`
-  opacity: ${({ answerState }) => (answerState ? 1 : 0)};
-  overflow: ${({ answerState }) => (answerState ? 'visible' : 'hidden')};
+const StyledSmallText = styled(SmallText)<{ showAnswer: boolean }>`
+  margin: 0;
+  opacity: ${({ showAnswer }) => (showAnswer ? 1 : 0)};
+  overflow: ${({ showAnswer }) => (showAnswer ? 'visible' : 'hidden')};
   transition: all 1s ease;
 `;

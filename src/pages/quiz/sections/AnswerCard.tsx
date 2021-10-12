@@ -3,24 +3,30 @@ import styled from 'styled-components';
 import { FlexWrapper, AbsoluteBox, Svg } from 'components';
 import { white, dark_text } from 'styles/colors';
 
-interface IProps {
-  labelProp?: string;
+interface Props {
+  answerLabel?: string;
   type?: string;
   renderNextQuestion: (value?: string) => void;
-  answer: string[];
-  setAnswer: (value: string[]) => void;
+  fullAnswer: string[];
+  setFullAnswer: (value: string[]) => void;
 }
 
-export const AnswerCard: React.FC<IProps> = ({ labelProp = '', type, renderNextQuestion, answer, setAnswer }) => {
+export const AnswerCard: React.FC<Props> = ({
+  answerLabel = '',
+  type,
+  renderNextQuestion,
+  fullAnswer,
+  setFullAnswer,
+}) => {
   const [isSelected, setIsSelected] = useState<boolean>(false);
 
   const onClick = () => {
     if (type === 'multiple') {
       setIsSelected((prevState) => !prevState);
-      const selectedAnswer = isSelected ? answer.filter((a) => a != labelProp) : [...answer, labelProp];
-      setAnswer(selectedAnswer);
+      const selectedAnswers = isSelected ? fullAnswer.filter((a) => a != answerLabel) : [...fullAnswer, answerLabel];
+      setFullAnswer(selectedAnswers);
     } else {
-      renderNextQuestion(labelProp);
+      renderNextQuestion(answerLabel);
     }
   };
 
@@ -32,7 +38,7 @@ export const AnswerCard: React.FC<IProps> = ({ labelProp = '', type, renderNextQ
             <Svg src='check_circle' />
           </AbsoluteBox>
         )}
-        <AbsoluteBox top={isSelected ? '0.1rem' : '0.15rem'}>{labelProp}</AbsoluteBox>
+        <AbsoluteBox top={isSelected ? '0.1rem' : '0.15rem'}>{answerLabel}</AbsoluteBox>
       </FlexWrapper>
     </OptionCard>
   );
@@ -46,4 +52,8 @@ const OptionCard = styled.div<{ isSelected: boolean }>`
   border-radius: 2.3rem;
   background-color: ${white};
   cursor: pointer;
+  :active {
+    transform: scale(1.02);
+    background-color: ${dark_text + '80'};
+  }
 `;

@@ -58,7 +58,7 @@ const Success: React.FC = () => {
           <StyledFlexWrapper>
             <SmallText>
               {selectedOptionData.product_key.includes('monthly') || savedProduct?.includes('monthly')
-                ? 'Anxietless 28-day program'
+                ? 'Monthly payment'
                 : 'One time payment'}
             </SmallText>
             <SmallText>${selectedOptionData.final_price || savedPrice}</SmallText>

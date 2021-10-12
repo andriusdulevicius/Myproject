@@ -4,7 +4,6 @@ import { useQuery } from 'styles/breakpoints';
 import { BREAK_FREE_DATA as data } from './utils';
 import { StyledFlexWrapper, StyledH2, GreenText } from '../elements/Styles';
 import { Container, ContainerSmall, FlexWrapper, H3, H5, Image, SmallBox, Svg, SmallCard, SmallText } from 'components';
-import { green } from 'styles/colors';
 
 export const BreakFree: React.FC = () => {
   const { isMobile } = useQuery();

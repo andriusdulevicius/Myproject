@@ -7,16 +7,16 @@ import { blue, orange, dark_text } from 'styles/colors';
 
 export const LoadingCard: React.FC = () => {
   const { goToSummary } = useRouter();
-  const [dynamicNumber, setDynamicNumber] = useState<number>(0);
+  const [loadingNumber, setLoadingNumber] = useState<number>(0);
   const [breathIn, setBreathIn] = useState<boolean>(true);
 
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
-    if (dynamicNumber < 100) {
-      timeout = setTimeout(() => setDynamicNumber((prevState: number) => prevState + 1), 50);
+    if (loadingNumber < 100) {
+      timeout = setTimeout(() => setLoadingNumber((prevState: number) => prevState + 1), 50);
     }
     return () => clearTimeout(timeout);
-  }, [dynamicNumber]);
+  }, [loadingNumber]);
 
   useEffect(() => {
     const timeout = setTimeout(() => setBreathIn((prevState) => !prevState), 4000);
@@ -26,9 +26,9 @@ export const LoadingCard: React.FC = () => {
   return (
     <>
       <SmallCard padding='0 1rem' width='100%' maxWidth='35rem' textAlign='center'>
-        <H3>{dynamicNumber === 100 ? 'Finished calculating!' : 'Calculating your results'}</H3>
+        <H3>{loadingNumber === 100 ? 'Finished calculating!' : 'Calculating your results'}</H3>
         <RegularText>
-          {dynamicNumber === 100
+          {loadingNumber === 100
             ? "Press 'Continue' to see your results"
             : 'Here is breathing exercise while you wait.'}
         </RegularText>
@@ -38,10 +38,10 @@ export const LoadingCard: React.FC = () => {
           ))}
         </StyledFlexWrapper>
         <StyledSmallText>{breathIn ? 'Breath in...' : 'Breath out..'}</StyledSmallText>
-        <TextBaseBold>{dynamicNumber}%</TextBaseBold>
-        <SmallText>{dynamicNumber === 100 ? 'Completed' : 'Calculating...'}</SmallText>
+        <TextBaseBold>{loadingNumber}%</TextBaseBold>
+        <SmallText>{loadingNumber === 100 ? 'Completed' : 'Calculating...'}</SmallText>
       </SmallCard>
-      {dynamicNumber > 99 && (
+      {loadingNumber > 99 && (
         <PrimaryButton onClick={goToSummary} colorProp={blue} margin='1rem auto' width='100%' maxWidth='35rem'>
           Continue
         </PrimaryButton>

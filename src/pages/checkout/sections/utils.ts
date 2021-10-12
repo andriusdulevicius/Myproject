@@ -128,7 +128,7 @@ export const QUESTIONS_ANSWERS = [
   {
     id: 'q1',
     question: 'I’m not sure what I’ll get',
-    answer: "I think after coding this project , I'll get a job!",
+    answer: 'If you are able to develop this project, you might get a job at Kilo Health!',
   },
   {
     id: 'q2',

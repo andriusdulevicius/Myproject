@@ -41,7 +41,7 @@ export const Faq: React.FC<Props> = ({ navPage }) => {
         )}
       </StyledContainer>
       {!isMobile && !navPage && (
-        <AbsoluteBox right='0' top='324rem'>
+        <AbsoluteBox right='0' top='326rem'>
           <Image src='right_grey_cloud' />
         </AbsoluteBox>
       )}

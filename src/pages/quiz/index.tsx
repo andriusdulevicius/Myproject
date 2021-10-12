@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { setQuizAnswers } from 'state/actions';
 import { IntermissionCard } from './sections/IntermissionCard';
 import { StatementCard } from './sections/StatementCard';
-import { AnswerCard } from './elements/AnswerCard';
+import { AnswerCard } from './sections/AnswerCard';
 import { QuizFooter } from 'layouts/footer/QuizFooter';
 import {
   Svg,
@@ -51,9 +51,9 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
   const { goBack, goToLoader } = useRouter();
   const [questions, setQuestions] = useState<DataTypes[] | []>([]);
   const [question, setQuestion] = useState<number>(0);
-  const [answer, setAnswer] = useState<string[]>([]);
+  const [fullAnswer, setFullAnswer] = useState<string[]>([]);
   const [allAnswers, setAllAnswers] = useState<Answer[]>([]);
-  const { isMobile, isTablet, isLaptop } = useQuery();
+  const { isTablet, isLaptop } = useQuery();
 
   useEffect(() => {
     (async () => {
@@ -62,14 +62,14 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
     })();
   }, []);
 
-  const renderNextQuestion = async (value: string = '') => {
+  const renderNextQuestion = async (oneAnswer: string = '') => {
     if (question < questions.length - 1) {
       setAllAnswers([
         ...allAnswers,
-        { question: questions[question].key, answer: answer.length > 1 ? answer : [value] },
+        { question: questions[question].key, answer: fullAnswer.length >= 1 ? fullAnswer : [oneAnswer] },
       ]);
       setQuestion(question + 1);
-      setAnswer([]);
+      setFullAnswer([]);
     }
     if (question === questions.length - 1) {
       dispatch(setQuizAnswers(allAnswers));
@@ -114,11 +114,11 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
                     {options.map(({ label, value }) => (
                       <AnswerCard
                         key={value}
-                        labelProp={label}
+                        answerLabel={label}
                         type={type}
                         renderNextQuestion={renderNextQuestion}
-                        answer={answer}
-                        setAnswer={setAnswer}
+                        fullAnswer={fullAnswer}
+                        setFullAnswer={setFullAnswer}
                       />
                     ))}
                   </FlexWrapper>
@@ -126,7 +126,7 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
                 {type === 'statement' && (
                   <StatementCard statementKey={key} custom={custom} renderNextQuestion={renderNextQuestion} />
                 )}
-                {answer.length >= 1 && type === 'multiple' && (
+                {fullAnswer.length >= 1 && type === 'multiple' && (
                   <PrimaryButton
                     colorProp={blue}
                     minWidth='100%'
@@ -137,7 +137,7 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
                     Continue
                   </PrimaryButton>
                 )}
-                {type === 'multiple' && answer.length === 0 && (
+                {type === 'multiple' && fullAnswer.length === 0 && (
                   <PrimaryButton colorProp={blue} minWidth='100%' margin='1rem 0' padding='0.5rem' disabled>
                     Continue
                   </PrimaryButton>

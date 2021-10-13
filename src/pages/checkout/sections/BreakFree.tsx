@@ -35,7 +35,7 @@ export const BreakFree: React.FC = () => {
         {data.journey_info.map((j) => (
           <SmallCard key={j.id} margin='0'>
             <Image src={j.imgSrc} />
-            <ContainerSmall margin='0' padding='1rem'>
+            <ContainerSmall margin='0' padding='1rem 2rem'>
               <H3>{j.title}</H3>
               <SmallText>{j.text}</SmallText>
             </ContainerSmall>

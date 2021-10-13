@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mobile } from 'styles/breakpoints';
+import { mobile, tablet } from 'styles/breakpoints';
 import { Container, FlexWrapper, H2 } from 'components';
 import { dark_green } from 'styles/colors';
 
@@ -14,9 +14,11 @@ export const StyledFlexWrapper = styled(FlexWrapper).attrs({
   alignItems: 'stretch',
   flexWrap: 'nowrap',
   maxWidth: '80rem',
+  gap: '1.3rem',
 })`
-  @media ${mobile} {
+  @media ${tablet} {
     flex-direction: column;
+    align-items: center;
   }
 `;
 

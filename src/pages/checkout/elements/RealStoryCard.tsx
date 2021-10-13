@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Ratings } from './Ratings';
 import { GreenText } from './Styles';
-import { mobile } from 'styles/breakpoints';
+import { mobile, tablet } from 'styles/breakpoints';
 import { FlexWrapper, SmallBox, SmallCard, SmallText, RegularText, TextWrapper } from 'components';
 import { grey_white } from 'styles/colors';
 interface Story {
@@ -13,25 +13,35 @@ export const RealStoryCard: React.FC<Story> = ({ story }) => {
   const { name, age, address, rating, journeyLength, comment } = story;
   return (
     <StyledSmallCard padding='1rem'>
-      <RegularText>
-        <StyledGreenText>
-          {name} {age}
-        </StyledGreenText>
-        <TextWrapper> ({journeyLength} week of journey)</TextWrapper>
-      </RegularText>
-      <StyledRegularText>{comment}</StyledRegularText>
-      <FlexWrapper justifyContent='start'>
-        <SmallBox width='8rem'>
-          <StyledSmallText fontSize='0.9rem'>{address}</StyledSmallText>
+      <FlexWrapper flexDirection='column' alignItems='start' gap='0'>
+        <SmallBox>
+          <RegularText>
+            <StyledGreenText>
+              {name} {age}
+            </StyledGreenText>
+            <TextWrapper> ({journeyLength} week of journey)</TextWrapper>
+          </RegularText>
+          <StyledRegularText>{comment}</StyledRegularText>
         </SmallBox>
-        <Ratings rating={rating} />
+        <FlexWrapper justifyContent='start'>
+          <SmallBox width='8rem'>
+            <StyledSmallText fontSize='0.9rem'>{address}</StyledSmallText>
+          </SmallBox>
+          <Ratings rating={rating} />
+        </FlexWrapper>
       </FlexWrapper>
     </StyledSmallCard>
   );
 };
 
 const StyledRegularText = styled(RegularText)`
+  min-height: 13rem;
+  line-height: 1.5rem;
   font-style: italic;
+
+  @media ${tablet} {
+    min-height: auto;
+  }
 `;
 const StyledSmallText = styled(SmallText)`
   font-style: italic;

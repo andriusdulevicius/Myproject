@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { tablet, useQuery } from 'styles/breakpoints';
-import { SmallCard, FlexWrapper, H1, CaptionText } from 'components';
+import { SmallCard, FlexWrapper, H2, CaptionText } from 'components';
 import { green } from 'styles/colors';
 
 interface Props {
@@ -14,7 +14,7 @@ export const MembersStatsCard: React.FC<Props> = ({ percent, text }) => {
   return (
     <SmallCard margin='0'>
       <StyledFlexWrapper>
-        <H1 color={green}>{percent}%</H1>
+        <H2 color={green}>{percent}%</H2>
         <CaptionText margin={isMobile ? '0 0 1rem' : '0'}>{text}</CaptionText>
       </StyledFlexWrapper>
     </SmallCard>

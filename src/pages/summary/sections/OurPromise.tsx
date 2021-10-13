@@ -39,7 +39,7 @@ export const OurPromise: React.FC = () => {
     <StyledSection>
       <StyledFlexWrapper>
         <H2> Our promise </H2>
-        <FlexWrapper flexDirection={isTablet ? 'column' : 'row'} alignItems='flex-start'>
+        <FlexWrapper flexDirection={isTablet ? 'column' : 'row'} alignItems={isTablet ? 'flex-start' : 'center'}>
           <ContainerSmall margin='0' maxWidth='23rem'>
             <StyledBox>
               <Image src='amelia_marrow' />

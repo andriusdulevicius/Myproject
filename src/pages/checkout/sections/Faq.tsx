@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const Faq: React.FC<Props> = ({ navPage }) => {
-  const { isMobile } = useQuery();
+  const { isMobile, isLaptop } = useQuery();
 
   return (
     <>
@@ -40,8 +40,8 @@ export const Faq: React.FC<Props> = ({ navPage }) => {
           </StyledContainerSmall>
         )}
       </StyledContainer>
-      {!isMobile && !navPage && (
-        <AbsoluteBox right='0' top='326rem'>
+      {!isLaptop && !navPage && (
+        <AbsoluteBox right='0' top='320rem'>
           <Image src='right_grey_cloud' />
         </AbsoluteBox>
       )}

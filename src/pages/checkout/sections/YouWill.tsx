@@ -20,10 +20,10 @@ import { blue, grey_white } from 'styles/colors';
 
 export const YouWill: React.FC = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const { isMobile } = useQuery();
+  const { isMobile, isLaptop } = useQuery();
   return (
     <>
-      {!isMobile && (
+      {!isLaptop && (
         <AbsoluteBox right='0' top='220rem'>
           <Image src='right_grey_cloud' />
         </AbsoluteBox>

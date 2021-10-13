@@ -96,7 +96,7 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
           return (
             <Container key={key} zIndex={2} minHeight={isLaptop ? '100vh' : 'calc(100vh - 5.5rem)'}>
               <FlexWrapper justifyContent='space-between' padding='1rem' maxWidth='80rem'>
-                <Svg src='go_back' onClick={renderPreviousQuestion} />
+                <StyledSvg src='go_back' onClick={renderPreviousQuestion} />
                 <TextWrapper fontWeight={isLaptop ? 700 : 400}>
                   {question + 1} of {questions.length}
                 </TextWrapper>
@@ -156,4 +156,8 @@ export default Quiz;
 const QuizPage = styled.div`
   position: relative;
   background-color: ${grey_white};
+`;
+
+const StyledSvg = styled(Svg)`
+  cursor: pointer;
 `;

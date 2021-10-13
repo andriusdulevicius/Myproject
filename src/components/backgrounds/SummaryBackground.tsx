@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AbsoluteBox, Image } from 'components';
-import { grey_white } from 'styles/colors';
 
 export const SummaryBackground: React.FC = () => (
   <StyledBackground>
     <AbsoluteBox right='0' top='90rem' zIndex={1}>
       <Image src='bottom_cloud_laptop' />
     </AbsoluteBox>
-    <AbsoluteBox left='0' top='180rem' zIndex={1}>
+    <AbsoluteBox left='0' top='176.8rem' zIndex={1}>
       <Image src='left_bottom_cloud' />
     </AbsoluteBox>
     <AbsoluteBox right='10rem' top='35rem' zIndex={1}>

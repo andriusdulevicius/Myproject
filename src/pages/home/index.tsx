@@ -24,11 +24,11 @@ const Landing: React.FC = () => {
       <HomeBackground />
       <Container
         zIndex={4}
-        padding={isLaptop ? '2rem 1rem' : '6rem 3rem'}
+        padding={isLaptop ? '2rem 1rem' : '8rem 0 0 '}
         minHeight={isMobile ? 'calc(100vh - 3rem)' : 'calc(100vh - 8.5rem)'}
       >
         <FlexWrapper flexDirection={isTablet ? 'column' : 'row-reverse'} gap={isTablet ? '0' : '3rem'}>
-          <SmallBox width={isTablet ? '100%' : '50%'}>
+          <SmallBox width={isTablet ? '100%' : '40%'}>
             <Image src='bgc_couple_laptop' />
           </SmallBox>
           <Container maxWidth={isTablet ? '100%' : '50%'} textAlign={isTablet ? 'center' : 'left'}>

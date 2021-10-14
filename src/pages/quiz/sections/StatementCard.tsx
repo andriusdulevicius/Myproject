@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from 'styles/breakpoints';
 import { Container, FlexWrapper, Image, RegularText, PrimaryButton, SmallBox } from 'components';
-import { blue, orange, white } from 'styles/colors';
+import { blue, orange } from 'styles/colors';
 interface Props {
   statementKey: string;
   custom?: {

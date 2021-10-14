@@ -1,8 +1,7 @@
 import React from 'react';
 import { useQuery } from 'styles/breakpoints';
 import { Container, FlexWrapper, Image, RegularText, PrimaryButton, SmallBox } from 'components';
-import { blue, orange } from 'styles/colors';
-
+import { blue, orange, white } from 'styles/colors';
 interface Props {
   statementKey: string;
   custom?: {
@@ -17,7 +16,7 @@ export const StatementCard: React.FC<Props> = ({ statementKey, custom, renderNex
   const { isLaptop } = useQuery();
   return (
     <Container maxWidth={isLaptop ? '25rem' : '36rem'}>
-      <SmallBox>
+      <SmallBox minHeight='22rem'>
         <Image src={statementKey} />
       </SmallBox>
       <RegularText textAlign='center'>{custom && custom.text}</RegularText>

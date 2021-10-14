@@ -28,7 +28,7 @@ const Landing: React.FC = () => {
         minHeight={isMobile ? 'calc(100vh - 3rem)' : 'calc(100vh - 8.5rem)'}
       >
         <FlexWrapper flexDirection={isTablet ? 'column' : 'row-reverse'} gap={isTablet ? '0' : '3rem'}>
-          <SmallBox width={isTablet ? '100%' : '40%'}>
+          <SmallBox width={isTablet ? '100%' : '50%'}>
             <Image src='bgc_couple_laptop' />
           </SmallBox>
           <Container maxWidth={isTablet ? '100%' : '50%'} textAlign={isTablet ? 'center' : 'left'}>

@@ -1,5 +1,10 @@
 //Landing page
-
+import logo from 'assets/images/logo.png';
+import logo2 from 'assets/images/logo2.png';
+import home from 'assets/images/home.png';
+import bright_mind from 'assets/images/bright_mind.png';
+import good_company from 'assets/images/good_company.png';
+import my_pic from 'assets/images/my_pic.png';
 import ellipse_mobile from 'assets/images/ellipse_mobile.png';
 import ellipse_laptop from 'assets/images/ellipse_laptop.png';
 import bgc_couple_laptop from 'assets/images/bgc_couple_laptop.png';
@@ -41,6 +46,12 @@ import right_grey_cloud from 'assets/images/right_grey_cloud.png';
 import confetti from 'assets/images/confetti.png';
 
 export const images: Record<string, string> = {
+  logo,
+  logo2,
+  home,
+  my_pic,
+  bright_mind,
+  good_company,
   ellipse_mobile,
   ellipse_laptop,
   bgc_couple_laptop,

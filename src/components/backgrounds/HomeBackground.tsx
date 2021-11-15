@@ -10,24 +10,12 @@ export const HomeBackground = () => {
 
   return (
     <StyledBackground>
-      {!isTablet && (
-        <AbsoluteBox left='0' top='3rem' zIndex={1} maxWidth='10rem'>
-          <Image src='top_cloud_laptop' />
-        </AbsoluteBox>
-      )}
-      {!isTablet && (
-        <AbsoluteBox zIndex={2} right='0' bottom='0' maxWidth='20rem'>
-          <Image src='bottom_cloud_laptop' width='' />
-        </AbsoluteBox>
-      )}
-      <AbsoluteBox
-        zIndex={1}
-        bottom={isTablet ? '-3rem' : '0rem'}
-        left={isTablet ? '0' : ''}
-        right='0'
-        maxWidth='55rem'
-      >
-        <Image src={isTablet ? 'ellipse_mobile' : 'ellipse_laptop'} />
+      <AbsoluteBox left='0' top='3rem' zIndex={1} maxWidth='10rem'>
+        <Image src='top_cloud_laptop' />
+      </AbsoluteBox>
+
+      <AbsoluteBox zIndex={20} right='4rem' bottom='5rem' maxWidth='20rem'>
+        <Image src='bottom_cloud_laptop' width='' />
       </AbsoluteBox>
     </StyledBackground>
   );

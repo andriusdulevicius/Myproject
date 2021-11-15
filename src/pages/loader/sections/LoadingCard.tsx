@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { mobile } from 'styles/breakpoints';
 import { useRouter } from 'apis/history';
 import { RegularText, H3, TextBaseBold, SmallText, SmallCard, PrimaryButton, FlexWrapper } from 'components';
-import { blue, orange, dark_text } from 'styles/colors';
+import { violet, orange, dark_text } from 'styles/colors';
 
 export const LoadingCard: React.FC = () => {
-  const { goToSummary } = useRouter();
+  const { goToCheckout } = useRouter();
   const [loadingNumber, setLoadingNumber] = useState<number>(0);
   const [breathIn, setBreathIn] = useState<boolean>(true);
 
@@ -26,7 +26,7 @@ export const LoadingCard: React.FC = () => {
   return (
     <>
       <SmallCard padding='0 1rem' width='100%' maxWidth='35rem' textAlign='center'>
-        <H3>{loadingNumber === 100 ? 'Finished calculating!' : 'Calculating your results'}</H3>
+        <H3>{loadingNumber === 100 ? 'Finished calculating!' : 'Calculating results'}</H3>
         <RegularText>
           {loadingNumber === 100
             ? "Press 'Continue' to see your results"
@@ -42,7 +42,7 @@ export const LoadingCard: React.FC = () => {
         <SmallText>{loadingNumber === 100 ? 'Completed' : 'Calculating...'}</SmallText>
       </SmallCard>
       {loadingNumber > 99 && (
-        <PrimaryButton onClick={goToSummary} colorProp={blue} margin='1rem auto' width='100%' maxWidth='35rem'>
+        <PrimaryButton onClick={goToCheckout} colorProp={violet} margin='1rem auto' width='100%' maxWidth='35rem'>
           Continue
         </PrimaryButton>
       )}

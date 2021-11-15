@@ -6,7 +6,7 @@ export const QuizFooter: React.FC = () => {
   return (
     <StyledFooter>
       <CaptionText textAlign='center' margin='0'>
-        &copy; 2020 Anxietless. All rights reserved.
+        &copy; 2020 StressLess. All rights reserved.
       </CaptionText>
     </StyledFooter>
   );

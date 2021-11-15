@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
-import { getQuizQuestions } from 'apis/fetch';
 import { useRouter } from 'apis/history';
 import { useDispatch } from 'react-redux';
 import { setQuizAnswers } from 'state/actions';
@@ -9,18 +8,9 @@ import { IntermissionCard } from './sections/IntermissionCard';
 import { StatementCard } from './sections/StatementCard';
 import { AnswerCard } from './sections/AnswerCard';
 import { QuizFooter } from 'layouts/footer/QuizFooter';
-import {
-  Svg,
-  Container,
-  H2,
-  FlexWrapper,
-  PrimaryButton,
-  RegularText,
-  TextWrapper,
-  AbsoluteBox,
-  Image,
-} from 'components';
-import { blue, grey_white } from 'styles/colors';
+import { Svg, Container, H2, FlexWrapper, PrimaryButton, RegularText, TextWrapper } from 'components';
+import { violet, grey_white } from 'styles/colors';
+import { QUIZ_DATA } from './sections/utils';
 
 interface DataTypes {
   type: string;
@@ -53,13 +43,10 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
   const [question, setQuestion] = useState<number>(0);
   const [fullAnswer, setFullAnswer] = useState<string[]>([]);
   const [allAnswers, setAllAnswers] = useState<Answer[]>([]);
-  const { isTablet, isLaptop } = useQuery();
+  const { isLaptop } = useQuery();
 
   useEffect(() => {
-    (async () => {
-      const result = await getQuizQuestions();
-      setQuestions(result);
-    })();
+    setQuestions(QUIZ_DATA);
   }, []);
 
   const renderNextQuestion = async (oneAnswer: string = '') => {
@@ -84,12 +71,6 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
 
   return (
     <QuizPage>
-      <AbsoluteBox zIndex={1} left={isTablet ? '-9rem' : '15rem'} top={isTablet ? '-1.5rem' : '6rem'} maxWidth='13rem'>
-        <Image src='top_cloud' />
-      </AbsoluteBox>
-      <AbsoluteBox zIndex={1} bottom='0' right='0' maxWidth={isTablet ? '8rem' : '18rem'}>
-        <Image src={isTablet ? 'bottom_cloud_small' : 'bottom_cloud'} />
-      </AbsoluteBox>
       {questions?.[question] &&
         [questions[question]].map((q) => {
           const { type, key, label, custom, options } = q;
@@ -128,7 +109,7 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
                 )}
                 {fullAnswer.length >= 1 && type === 'multiple' && (
                   <PrimaryButton
-                    colorProp={blue}
+                    colorProp={violet}
                     minWidth='100%'
                     margin='1rem 0'
                     padding='0.5rem'
@@ -138,7 +119,7 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
                   </PrimaryButton>
                 )}
                 {type === 'multiple' && fullAnswer.length === 0 && (
-                  <PrimaryButton colorProp={blue} minWidth='100%' margin='1rem 0' padding='0.5rem' disabled>
+                  <PrimaryButton colorProp={violet} minWidth='100%' margin='1rem 0' padding='0.5rem' disabled>
                     Continue
                   </PrimaryButton>
                 )}

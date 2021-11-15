@@ -5,13 +5,13 @@ import { useQuery } from 'styles/breakpoints';
 import { HomeBackground } from 'components/backgrounds/HomeBackground';
 import { Footer } from 'layouts/footer/Footer';
 import { Image, Container, H1, H4, RegularText, TextBaseBold, FlexWrapper, PrimaryButton, SmallBox } from 'components';
-import { blue, orange } from 'styles/colors';
+import { violet, orange } from 'styles/colors';
 
 const LANDING_DATA = {
-  title: 'Find your Inner Peace',
-  subtitle: 'Calm mind. Better sleep. Confidence.',
-  text: 'It might be difficult times, but you’re not alone. Answer this simple quiz and take your life back, free of anxiety, depression & stress.',
-  caption: 'Start by selecting your gender',
+  title: 'A | D development',
+  subtitle: 'Where your ideas becomes reality',
+  text: 'Answer this simple quiz to see if I am developer you are looking for',
+  caption: 'Start by selecting what you are looking for',
 };
 
 const Landing: React.FC = () => {
@@ -21,7 +21,6 @@ const Landing: React.FC = () => {
 
   return (
     <LandingPage>
-      <HomeBackground />
       <Container
         zIndex={4}
         padding={isLaptop ? '2rem 1rem' : '8rem 0 0 '}
@@ -29,7 +28,7 @@ const Landing: React.FC = () => {
       >
         <FlexWrapper flexDirection={isTablet ? 'column' : 'row-reverse'} gap={isTablet ? '0' : '3rem'}>
           <SmallBox width={isTablet ? '100%' : '40%'}>
-            <Image src='bgc_couple_laptop' />
+            <Image src='home' />
           </SmallBox>
           <Container maxWidth={isTablet ? '100%' : '50%'} textAlign={isTablet ? 'center' : 'left'}>
             <H1>{title}</H1>
@@ -39,11 +38,11 @@ const Landing: React.FC = () => {
               {caption}
             </TextBaseBold>
             <FlexWrapper padding='0rem' gap='0.5rem' justifyContent={isTablet ? 'center' : 'start'}>
-              <StyledPrimaryButton colorProp={blue} onClick={goToQuiz}>
-                Male
+              <StyledPrimaryButton colorProp={violet} onClick={goToQuiz}>
+                Frontend developer
               </StyledPrimaryButton>
               <StyledPrimaryButton colorProp={orange} onClick={goToQuiz}>
-                Female
+                Backend developer
               </StyledPrimaryButton>
             </FlexWrapper>
           </Container>

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { Button } from './Button';
-import { blue, disabled } from 'styles/colors';
+import { violet, disabled } from 'styles/colors';
 
 export const PrimaryButton = styled(Button)<{ colorProp?: string }>`
-  background-color: ${({ colorProp }) => colorProp || blue};
-  box-shadow: ${({ colorProp }) => `0 1rem 2rem 0 ${colorProp + '30'}` || `0 1rem 2rem 0 ${blue + '30'}`};
+  background-color: ${({ colorProp }) => colorProp || violet};
+  box-shadow: ${({ colorProp }) => `0 1rem 2rem 0 ${colorProp + '30'}` || `0 1rem 2rem 0 ${violet + '30'}`};
 
   :hover {
     box-shadow: none;

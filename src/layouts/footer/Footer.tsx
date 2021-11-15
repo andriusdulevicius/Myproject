@@ -8,9 +8,8 @@ export const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <Container zIndex={999} padding='0 1rem'>
-        <FlexWrapper justifyContent={!isMobile ? 'space-between' : 'center'} padding='0.5rem 0' maxWidth='80rem'>
-          <CaptionText> &copy; 2020 Anxietless. All rights reserved.</CaptionText>
-          {!isMobile && <CaptionText>Disclaimer: Results may vary from person to person.</CaptionText>}
+        <FlexWrapper padding='0.5rem 0' maxWidth='80rem'>
+          <CaptionText> &copy; 2021 A | D development. All rights reserved.</CaptionText>
         </FlexWrapper>
       </Container>
     </StyledFooter>

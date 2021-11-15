@@ -20,21 +20,19 @@ import {
   Image,
   Svg,
 } from 'components';
-import { blue, dark_text, green, grey_white } from 'styles/colors';
+import { violet, dark_text, green, grey_white } from 'styles/colors';
 
-const HOW_TO_START_DATA = {
-  title: 'How to start the Anxietless program?',
-  text1: 'We have just sent out a letter to this email address:',
-  email: 'johndoe@mail.com',
-  caption: '(Please check your Spam folder, too)',
-  text2: 'Start your Anxietless journey right away!',
-  text3: 'P.S. If you ordered any additional services, check your email for a confirmation letter.',
+const INFO_DATA = {
+  title: 'What is happening next?',
+  text1: 'I will send my response to your given email address in next 3 working days',
+  caption: '(If you did not receive my answer, please check your Spam folder)',
+  text2: 'I hope you enjoyed going through my little website!',
+  text3: 'Best wishes, Andrius.',
 };
 
 const Success: React.FC = () => {
   const { isMobile } = useQuery();
-  const selectedOptionData = useSelector(checkoutOptionSelector);
-  const { title, text1, email, caption, text2, text3 } = HOW_TO_START_DATA;
+  const { title, text1, caption, text2, text3 } = INFO_DATA;
 
   const savedProduct: string | null = localStorage.getItem('product_key');
   const savedPrice: string | null = localStorage.getItem('final_price');
@@ -50,44 +48,14 @@ const Success: React.FC = () => {
         </ContainerSmall>
         <SmallBox zIndex={5} padding={isMobile ? '4rem 1rem' : '7rem 1rem'} textAlign='center'>
           {isMobile && <StyledSvg src='check_circle' />}
-          <H2>Thank you for your order</H2>
+          <H2>You have successfully submited the form!</H2>
           {!isMobile && <StyledSvg src='check_circle' />}
         </SmallBox>
-        <ContainerSmall padding={isMobile ? '1rem' : '5rem 1rem 3rem'}>
-          <H4>Order summary</H4>
-          <StyledFlexWrapper>
-            <SmallText>
-              {selectedOptionData.product_key.includes('monthly') || savedProduct?.includes('monthly')
-                ? 'Monthly payment'
-                : 'One time payment'}
-            </SmallText>
-            <SmallText>${selectedOptionData.final_price || savedPrice}</SmallText>
-          </StyledFlexWrapper>
-          <StyledFlexWrapper>
-            <SmallText>Anxietless guided meditations </SmallText>
-            <SmallText>Not ordered</SmallText>
-          </StyledFlexWrapper>
-          <FlexWrapper justifyContent='flex-end' padding='1rem 0'>
-            <TextWrapper color={dark_text + '80'}>
-              <Link to='/home'>Learn more</Link>
-            </TextWrapper>
-            <TextWrapper color={blue}>
-              <Link to='/checkout'>Upgrade</Link>
-            </TextWrapper>
-          </FlexWrapper>
-          <StyledFlexWrapper justifyContent='space-between'>
-            <TextWrapper>Total </TextWrapper>
-            <TextWrapper>${selectedOptionData.final_price || savedPrice}</TextWrapper>
-          </StyledFlexWrapper>
-        </ContainerSmall>
       </StyledWrapper>
       <StyledContainer>
-        <ContainerSmall margin={isMobile ? '1rem auto' : '2rem auto'} maxWidth='37rem'>
-          <H2>{title}</H2>
+        <ContainerSmall margin={isMobile ? '1rem auto' : '3rem auto'} maxWidth='37rem'>
+          <H2 textAlign='center'>{title}</H2>
           <RegularText>{text1}</RegularText>
-          <RegularText margin={isMobile ? '1rem 0 0' : '1rem 0 0.6rem'}>
-            <TextWrapper>{email}</TextWrapper>
-          </RegularText>
           <CaptionText margin={isMobile ? '0' : '1rem 0 0.6rem'}>{caption}</CaptionText>
           <RegularText>{text2}</RegularText>
           <RegularText margin={isMobile ? '2rem 0' : '0 0 2rem'}>{text3}</RegularText>
@@ -107,6 +75,7 @@ const StyledWrapper = styled(Container).attrs({ maxWidth: '37rem' })`
 `;
 
 const StyledContainer = styled(Container).attrs({
+  margin: '3rem 0',
   padding: '1rem',
   maxWidth: '100%',
   backgroundColor: grey_white,

@@ -4,7 +4,7 @@ import { useQuery } from 'styles/breakpoints';
 import { useRouter } from 'apis/history';
 import { RouteComponentProps } from '@reach/router';
 import { Link } from 'gatsby';
-import { Container, AbsoluteBox, FlexWrapper, Svg, SmallBox } from 'components';
+import { Container, AbsoluteBox, FlexWrapper, Svg, SmallBox, Image } from 'components';
 import { white, grey_white, dark_text } from 'styles/colors';
 
 const PAGES_LINKS = [
@@ -24,7 +24,7 @@ export const Navigation: React.FC<RouteComponentProps> = () => {
     <NavWrapper>
       <Container padding='0 1rem'>
         <FlexWrapper justifyContent='space-between' padding='0.5rem 0' maxWidth='80rem'>
-          <StyledSvg src='anxietless_logo' onClick={goToLanding} />
+          <StyledSvg src='logo2' onClick={goToLanding} />
           {isTablet ? (
             <Svg src='burger_menu' onClick={() => setOpenBurger((prevState) => !prevState)} />
           ) : (

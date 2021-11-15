@@ -10,7 +10,7 @@ interface Story {
 }
 
 export const RealStoryCard: React.FC<Story> = ({ story }) => {
-  const { name, age, address, rating, journeyLength, comment } = story;
+  const { name, age, address, rating, comment } = story;
   return (
     <StyledSmallCard padding='1rem'>
       <FlexWrapper flexDirection='column' alignItems='start' gap='0'>
@@ -19,7 +19,6 @@ export const RealStoryCard: React.FC<Story> = ({ story }) => {
             <StyledGreenText>
               {name} {age}
             </StyledGreenText>
-            <TextWrapper> ({journeyLength} week of journey)</TextWrapper>
           </RegularText>
           <StyledRegularText>{comment}</StyledRegularText>
         </SmallBox>

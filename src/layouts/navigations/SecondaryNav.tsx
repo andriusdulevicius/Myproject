@@ -4,13 +4,9 @@ import { useQuery } from 'styles/breakpoints';
 import { useRouter } from 'apis/history';
 import { scroller } from 'react-scroll';
 import { PrimaryButton, Container, FlexWrapper, Svg } from 'components';
-import { white, dark_text, orange } from 'styles/colors';
+import { white, dark_text, dark_violet } from 'styles/colors';
 
-interface Props {
-  text: string;
-}
-
-export const SecondaryNav: React.FC<Props> = ({ text }) => {
+export const SecondaryNav: React.FC = () => {
   const { goToLanding } = useRouter();
   const { isMobile } = useQuery();
 
@@ -22,26 +18,21 @@ export const SecondaryNav: React.FC<Props> = ({ text }) => {
     });
   };
 
-  const scrollToButton = async () => {
-    text === 'Start Now' && handleScroll('page-end');
-    text === 'Get my plan' && handleScroll('billing');
-  };
-
   return (
     <NavWrapper>
       <Container padding='0 1rem'>
         <FlexWrapper justifyContent='space-between' maxWidth='80rem'>
-          <StyledSvg src='anxietless_logo' onClick={goToLanding} />
+          <StyledSvg src='logo' onClick={goToLanding} />
           <PrimaryButton
-            colorProp={orange}
+            colorProp={dark_violet}
             margin='0.5rem 0'
             padding='0.6rem 0.8rem'
             width='auto'
             borderRadius='0.5rem'
             fontSize={isMobile ? '0.7rem' : '0.9rem'}
-            onClick={scrollToButton}
+            onClick={() => handleScroll('contact_form')}
           >
-            {text}
+            Contact Me
           </PrimaryButton>
         </FlexWrapper>
       </Container>

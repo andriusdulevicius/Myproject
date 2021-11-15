@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from 'styles/breakpoints';
 import { Container, FlexWrapper, Image, RegularText, PrimaryButton, SmallBox } from 'components';
-import { blue, orange } from 'styles/colors';
+import { violet, orange } from 'styles/colors';
 interface Props {
   statementKey: string;
   custom?: {
@@ -24,7 +24,7 @@ export const StatementCard: React.FC<Props> = ({ statementKey, custom, renderNex
         <PrimaryButton colorProp={orange} minWidth='50%' padding='0.5rem' onClick={() => renderNextQuestion('No')}>
           No
         </PrimaryButton>
-        <PrimaryButton colorProp={blue} minWidth='50%' padding='0.5rem' onClick={() => renderNextQuestion('Yes')}>
+        <PrimaryButton colorProp={violet} minWidth='50%' padding='0.5rem' onClick={() => renderNextQuestion('Yes')}>
           Yes
         </PrimaryButton>
       </FlexWrapper>

@@ -11,6 +11,7 @@ interface Styles {
   width?: string;
   height?: string;
   objectFit?: string;
+  onClick?: React.MouseEventHandler;
 }
 
 interface Props extends Styles {
@@ -25,7 +26,7 @@ const Img = styled.img<Styles>`
   min-width: ${({ minWidth }) => minWidth || ''};
   width: ${({ width }) => width || '100%'};
   height: ${({ height }) => height || '100%'};
-  object-fit: ${({ objectFit }) => objectFit || 'cover'};
+  object-fit: ${({ objectFit }) => objectFit || 'contain'};
 `;
 
 export const Image: React.FC<Props> = ({ src }) => {

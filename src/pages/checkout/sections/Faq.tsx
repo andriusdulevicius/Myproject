@@ -21,30 +21,7 @@ export const Faq: React.FC<Props> = ({ navPage }) => {
         {QUESTIONS_ANSWERS.map((QAObj) => (
           <QACard QA={QAObj} key={QAObj.id} />
         ))}
-
-        {!navPage && (
-          <StyledContainerSmall>
-            <FlexWrapper>
-              <SmallBox>
-                <StyledSmallText>
-                  ''87% patients significantly reduces anxiety by fallowing simple-guided steps''
-                </StyledSmallText>
-
-                <TextWrapper>Christine Ellis</TextWrapper>
-                <SmallText>Behavioural Psychologist</SmallText>
-              </SmallBox>
-              <SmallBox minWidth={!isMobile ? '6.875rem' : '5.125rem'}>
-                <Image src='christine_ellis' />
-              </SmallBox>
-            </FlexWrapper>
-          </StyledContainerSmall>
-        )}
       </StyledContainer>
-      {!isLaptop && !navPage && (
-        <AbsoluteBox right='0' top='320rem'>
-          <Image src='right_grey_cloud' />
-        </AbsoluteBox>
-      )}
     </>
   );
 };

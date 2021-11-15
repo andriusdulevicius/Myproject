@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { INTERMISSION_DATA } from './utils';
 import { Container, FlexWrapper, H4, Image, PrimaryButton, TextBase, RegularText, SmallBox } from 'components';
-import { blue, dark_text } from 'styles/colors';
+import { violet, dark_text } from 'styles/colors';
 
 interface Props {
   renderNextQuestion: () => void;
@@ -24,7 +24,7 @@ export const IntermissionCard: React.FC<Props> = ({ renderNextQuestion }) => {
       {texts.map((text: string, index: number) => (
         <RegularText key={index}>{text}</RegularText>
       ))}
-      <PrimaryButton colorProp={blue} minWidth='100%' margin='1rem 0' padding='0.5rem' onClick={renderNextQuestion}>
+      <PrimaryButton colorProp={violet} minWidth='100%' margin='1rem 0' padding='0.5rem' onClick={renderNextQuestion}>
         Continue
       </PrimaryButton>
 

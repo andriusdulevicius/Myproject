@@ -11,7 +11,7 @@ export const TransparentNav: React.FC<Props> = ({ align }) => {
   const { goToLanding } = useRouter();
   return (
     <StyledtNav textAlign={align}>
-      <StyledSvg src='anxietless_logo' onClick={goToLanding} />
+      <StyledSvg src='logo' onClick={goToLanding} />
     </StyledtNav>
   );
 };

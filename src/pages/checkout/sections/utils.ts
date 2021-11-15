@@ -1,48 +1,39 @@
 // Plan data explained section
-export const PLAN_DATA_EXPLAINED = {
-  plan_pros: [
-    { id: 1, title: 'Calm mind', subtitle: 'Simple ways to find and eliminate your anxiety triggers.' },
-    { id: 2, title: 'Better Sleep', subtitle: 'Calm mind, brings fresh and sunny mornings.' },
-    { id: 3, title: 'Confidence', subtitle: 'Get your life and inner peace back' },
+export const RESULTS_EXPLAINED = {
+  result_pros: [
+    { id: 1, title: 'Friendly', subtitle: 'To blend in your companies environment' },
+    { id: 2, title: 'Team player', subtitle: 'To work  well in a team' },
+    { id: 3, title: 'Quick learner', subtitle: 'Is a key quality to have a successful career' },
   ],
-  reduction_plan: [
-    '84 self-paced lessons from a personal behavioural psychologist that you can complete at your own pace',
-    'Simple 10-30 minutes tasks to complete each day. However, when repeated for a month, they will hugely impact your mood, reaction to stress, and overall mental health',
-    'Progress tracking sheet, that helps you fallow your achievements and see your improvement',
-    'Daily guidance that will make your journey easy',
-    'Personalized content about anxiety, to help you understand and manage your triggers',
-    'Tips on successful anxiety management so you always feel in control',
-    'Practical daily tasks delivered to your email, that you can follow any time of the day',
-    'In-depth and comprehensive information about anxiety and stress management',
+  compatibility: [
+    'The skillset I have is very compatible with the ones you mentioned as needed at the begining of the quiz',
+    'The experience I have "in years" may be not what you are looking for, but lets measure my skills based on what I can do, instead of how long I am doing this',
+    'Hunger to learn of course is what you need, and its the quality I have. Always learning new technologies and tips how to achieve the best results',
+    'Friendly, kind, responsible - are the key qualities of what every colleague wants, so bare in mind, I can relate to those as well',
   ],
 };
 
 // Break free section
 
-export const BREAK_FREE_DATA = {
-  break_free_pros: [
-    'No expensive therapy sessions.',
-    'Your own pace.',
-    'Less than a half of the daily take away coffe price.',
-  ],
-  journey_info: [
+export const MY_PERSONAL_DATA = {
+  personal_info: [
     {
       id: 1,
       imgSrc: 'your_rules',
-      title: 'Your plan - your rules',
-      text: 'Complete tasks at your own pace. If you skip a day or need some time off, you can pick up  right where you left off.',
+      title: 'Your rules',
+      text: 'I will follow employers rules of doing things, and always there to help if personal advice is needed.',
     },
     {
       id: 2,
       imgSrc: 'lifetime_results',
       title: 'Lifetime results',
-      text: 'Quickly learn new lasting habits to relieve your anxiety and manage stress and implement into your daily routine.',
+      text: 'I always intend to help achieve lifetime results for both: company and myself',
     },
     {
       id: 3,
-      imgSrc: 'daily_guidance',
-      title: 'Daily guidance',
-      text: 'Your are not alone. We will guide you step by step, using simple techniques to implement, positive changes on you daily routine. Which fits you.',
+      imgSrc: 'good_company',
+      title: 'Good company',
+      text: 'I promise to be the best colleague to all team and company members',
     },
   ],
 };
@@ -52,32 +43,31 @@ export const BREAK_FREE_DATA = {
 export const REAL_STORIES_DATA = [
   {
     id: 1,
-    name: 'Kaitlyn F.',
-    age: 29,
-    address: 'Los Angeles California',
+    name: 'Marius (lecturer at codeAcademy), ',
+    age: 34,
+    address: 'Vilnius, Lithuania',
     rating: 5,
-    journeyLength: '3rd',
-    comment: '“My mentor Amelia is amazing. She helped me to understand my stress patterns. Now I’m in control”',
+    comment:
+      '“Andrius was always a good student, first to finish given tasks. Always interactive during our lectures. Always present on time. Finished studies with honorous degree. Would definetly recommend as good developer.”',
   },
   {
     id: 2,
-    name: 'Sarah D.',
-    age: 37,
-    address: 'Delaware New Jersey',
+    name: 'Mindaugas (colleague), ',
+    age: 29,
+    address: 'Vilnius, Lithuania',
     rating: 5,
-    journeyLength: '7th',
     comment:
-      '“Thank you! I admit, I was sceptical and even delayed starting the plan. Christine thought me simple techniques, which now even I’m teaching my teen daughter”',
+      '“Thank you Andrius for all the help during studies! I would recommend Andrius as a very good colleague, he allways brings the best mood, he is very supportive, gives a lot of motivation. Even when somethings does not work out, he always explains how to do it and brings back motivation to study”',
   },
   {
     id: 3,
-    name: 'Olivia A.',
-    age: 26,
-    address: 'Sydney New South Wales',
+    name: 'Ieva (mentor), ',
+    age: 33,
+    address: 'Vilnius, Lithuania',
     rating: 5,
     journeyLength: '6th',
     comment:
-      '‘’I was very skeptical about this at first. Looked fake but I gave it a try anyway. The best choice I’ve made in a long time. I’ve been having anxiety issues and this was just what I need. If you follow steps it will surely help. It will feel funny but it is worth it. And if you don’t feel comfortable doing it with family or friends. This is the next best thing!! Give it a try ‘’',
+      '‘’He was a very active and good student during his internship at our company. He is competent enough to do the job as a Frontend developer. Would recommend him 100% for any company. I was very sorry that he was not selected to become our team member, hope to take him on board very soon.‘’',
   },
 ];
 
@@ -85,12 +75,12 @@ export const PLAN_PARTS = [
   {
     id: 1,
     iconSrc: 'one',
-    text: 'Getting to know your triggers and patterns of behavior.',
+    text: 'Getting to know your triggers.',
   },
   {
     id: 2,
     iconSrc: 'two',
-    text: 'Training your mind to notice and change irrational thoughts and beliefs.',
+    text: 'Training your mind to notice irrational beliefs.',
   },
   {
     id: 3,
@@ -100,60 +90,53 @@ export const PLAN_PARTS = [
 ];
 
 export const GENUINE_PART_DATA = {
-  name: 'Amelia Marrow',
-  job_title: 'Behavioral psychologist',
-  intro_text:
-    'I am a behavioural psychologist Amelia Morrow, and I will guide you through this entire journey. Together, we will manage to overcome any challenge that comes along the way.',
-  highlighted1: 'I will tailor small everyday tasks for you to help you feel better.',
-  middle_text:
-    'You will not get a one- size-fits-all template. Instead, this program will help you explore all the possible tools to manage your anxiety without medication.',
-  green_text:
-    'If you skip a day or need some time off, by all means, feel free to rest and recharge! You can pick up right where you left off.',
-  highlighted2: 'During this time, you should focus on the quality, not the quantity of the exercises.',
-  conclusion_text:
-    'I know that many things feel overwhelming right now, and it can be hard to get out of the current mindset. Don’t worry! We will figure this out together.',
+  name: 'Doctor Shilpa',
+  job_title: 'Psychologist',
+  intro_text: 'I am a behavioural psychologist Doctor Shilpa, and I will guide you through this entire journey. ',
+  highlighted1: 'I will give you everyday tasks to help you feel better.',
+  middle_text: 'You will not get a one- size-fits-all template.',
+  green_text: 'If you skip a day or need some time off, by all means, feel free to rest and recharge!',
+  highlighted2: 'During this time, you should focus on the quality.',
+  conclusion_text: 'IDon’t worry! We will figure this out together.',
   farewell: 'I hope, to hear from you soon!',
 };
 
 export const YOU_WILL_DATA = [
-  { id: 1, text: 'Complete inspiring and practical anxiety-reducing exercises.' },
-  { id: 2, text: 'Gradually but effectively reduce your stress levels.' },
-  { id: 3, text: 'Identify the most common triggers for you.' },
-  { id: 4, text: 'Take back control of your thoughts, emotions, and decisions.' },
-  { id: 5, text: 'Build effective routines and habits to resolve anxiety episodes quickly.' },
-  { id: 6, text: 'Streamline your environment for a calm and enjoyable life.' },
+  { id: 1, text: 'Complete inspiring and practical stress-reducing exercises.' },
+  { id: 2, text: 'Identify the most common triggers for you.' },
+  { id: 3, text: 'Take back control of your thoughts, emotions, and decisions.' },
+  { id: 4, text: 'Build effective routines and habits to resolve stress episodes quickly.' },
 ];
 
 export const QUESTIONS_ANSWERS = [
   {
     id: 'q1',
-    question: 'I’m not sure what I’ll get',
-    answer: 'If you are able to develop this project, you might get a job at Kilo Health!',
+    question: 'What education and experience you do you have?',
+    answer:
+      'I had a 7 month long full time intense courses at code Academy, where I gain valuable experience covering Computer Science topics, later on creating full stack applications, using pure Vanilla JS and eventually creating applications using React libary with funcional components. I also took part at Kilo.Health internship program where I was creating application similar to this one, using Gatsby, React, styled-components and Typescript.',
   },
   {
     id: 'q2',
-    question: 'What happens after I order?',
+    question: 'Who are you as a person?',
     answer:
-      'After you place your order, we get to work! Based on the questions you answered in the quiz, we’ll craft your plan to make sure it fits your exact personal requirements. All programs are double-verified — by the person making it and a supervisor. This way, you can be sure that the plan that you get is both effective and safe.',
+      'I am an ambitious person who works well in a team environment but has the ability to troubleshoot and problem solve individually. I absolutely enjoy looking for ways to improve existing features and implementing new technologies. Strong communication skills, ability to learn quickly and adapt to changing requirements are my strong suit, which helped me to make a big decision to change my career path.',
   },
   {
     id: 'q3',
-    question: 'Who will prepare my personalized program? ',
-    answer: 'Our best in the industry - kilo Health specialists',
+    question: 'Why and when you decided to start programming?',
+    answer:
+      'During the pandemic I have found a new passion in a very interesting and dynamic world of programming by watching tutorial videos online. Decided to take further studies to become a qualified Software Engineer and I am very excited about the future opportunities considering how fast I am able to adapt and learn. Looking forward to starting my professional career in this field.',
   },
   {
     id: 'q4',
-    question: 'What happens if I skip a day? Can I still continue my journey?',
-    answer: 'No skipping here! If you come here, you work your ass of to cure yourself from stress related problems!',
+    question: 'What hobbies do you have outside proffesional life?',
+    answer:
+      'I like to spend time with my family and friends. Travel, explore new places. Also I am into sports events, especially rugby.',
   },
   {
     id: 'q5',
-    question: 'What happens once I complete my journey?',
-    answer: 'You become a stress free person, and enjoy your life!',
-  },
-  {
-    id: 'q6',
-    question: 'Is this a one-time payment?',
-    answer: 'It depends on the product witch you chose.',
+    question: 'What field are you concentrated in IT sector?',
+    answer:
+      'I am experienced most at Front end development, using React, but I also have experience creating full stack applications, and always ready for new challenges.',
   },
 ];

@@ -2,32 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import { Element } from 'react-scroll';
 import { SecondaryNav } from 'layouts/navigations/SecondaryNav';
-import { BreakFree } from './sections/BreakFree';
-import { MonthlyPlanExplained } from './sections/MonthlyPlanExplained';
-import { BillingSelection } from './sections/BillingSelection';
+import { MyGoals } from './sections/MyGoals';
+import { ResultsExplained } from './sections/ResultsExplained';
+import { ContactForm } from './sections/ContactForm';
 import { RealStories } from './sections/RealStories';
 import { GenuinePeople } from './sections/GenuinePeople';
 import { YouWill } from './sections/YouWill';
 import { Faq } from './sections/Faq';
-import { AfterOrder } from './sections/AfterOrder';
 import { grey_white } from 'styles/colors';
 
 const Checkout: React.FC = () => {
   return (
     <>
-      <SecondaryNav text='Get my plan' />
+      <SecondaryNav />
       <SectionWrapper>
-        <MonthlyPlanExplained />
-        <Element name='billing'>
-          <BillingSelection />
-        </Element>
-        <BreakFree />
+        <ResultsExplained />
+        <MyGoals />
         <RealStories />
-        <GenuinePeople />
-        <YouWill />
+        <Element name='contact_form'>
+          <ContactForm />
+        </Element>
         <Faq />
-        <BillingSelection />
-        <AfterOrder />
       </SectionWrapper>
     </>
   );

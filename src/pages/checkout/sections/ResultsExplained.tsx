@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { PlanListEl } from '../elements/PlanListEl';
-import { PLAN_DATA_EXPLAINED } from './utils';
-import { CaptionText, Container, ContainerSmall, FlexWrapper, H4, Image, SmallBox } from 'components';
-import { dark_green, white } from 'styles/colors';
+import { RESULTS_EXPLAINED } from './utils';
+import { CaptionText, Container, ContainerSmall, FlexWrapper, H2, H4, Image, SmallBox } from 'components';
+import { dark_violet, white } from 'styles/colors';
 
-export const MonthlyPlanExplained: React.FC = () => {
+export const ResultsExplained: React.FC = () => {
   const { isMobile } = useQuery();
-  const plan_array = PLAN_DATA_EXPLAINED.reduction_plan;
+  const STATEMENTS = RESULTS_EXPLAINED.compatibility;
 
   const renderListInOneColumn = (array: Array<string>) =>
     array.map((li: string, index: number) => <PlanListEl key={index} li={li} />);
@@ -16,9 +16,13 @@ export const MonthlyPlanExplained: React.FC = () => {
   return (
     <StyledSection>
       <Container>
+        <H2 textAlign='center'>Here is your quiz results explained</H2>
+        <H4 textAlign='center'>
+          Qualities you are looking <StyledWrapper>FOR</StyledWrapper>
+        </H4>
         <FlexWrapper margin='2rem 0'>
           <SmallBox margin='0' maxWidth={isMobile ? '7.3rem' : '17.6rem'}>
-            <Image src='checkout_heart_laptop' />
+            <Image src='bright_mind' />
           </SmallBox>
           <FlexWrapper
             flexDirection='column'
@@ -27,9 +31,9 @@ export const MonthlyPlanExplained: React.FC = () => {
             justifyContent='space-between'
             maxWidth='20rem'
           >
-            {PLAN_DATA_EXPLAINED.plan_pros.map((p) => (
+            {RESULTS_EXPLAINED.result_pros.map((p) => (
               <ContainerSmall key={p.id} margin='0' width='50%'>
-                <H4 margin='0' fontWeight={700} color={dark_green}>
+                <H4 margin='0' fontWeight={700} color={dark_violet}>
                   {p.title}
                 </H4>
                 <CaptionText margin='0 0 0.4rem'>{p.subtitle}</CaptionText>
@@ -38,7 +42,7 @@ export const MonthlyPlanExplained: React.FC = () => {
           </FlexWrapper>
         </FlexWrapper>
         <H4 textAlign={isMobile ? 'left' : 'center'}>
-          Your <StyledWrapper>personal</StyledWrapper> 3-month Anxiety and Stress Reduction Plan
+          Your <StyledWrapper>answers</StyledWrapper> compatibility with my qualities
         </H4>
         <FlexWrapper
           flexDirection={isMobile ? 'column' : 'row'}
@@ -47,9 +51,9 @@ export const MonthlyPlanExplained: React.FC = () => {
           margin='1rem 0 2rem'
           maxWidth='80rem'
         >
-          {isMobile && renderListInOneColumn(plan_array)}
-          {!isMobile && <ContainerSmall margin='0'>{renderListInOneColumn(plan_array.slice(0, 4))}</ContainerSmall>}
-          {!isMobile && <ContainerSmall margin='0'>{renderListInOneColumn(plan_array.slice(4, 8))}</ContainerSmall>}
+          {isMobile && renderListInOneColumn(STATEMENTS)}
+          {!isMobile && <ContainerSmall margin='0'>{renderListInOneColumn(STATEMENTS.slice(0, 2))}</ContainerSmall>}
+          {!isMobile && <ContainerSmall margin='0'>{renderListInOneColumn(STATEMENTS.slice(2, 4))}</ContainerSmall>}
         </FlexWrapper>
       </Container>
     </StyledSection>
@@ -62,5 +66,5 @@ const StyledSection = styled.section`
 `;
 
 const StyledWrapper = styled.span`
-  color: ${dark_green};
+  color: ${dark_violet};
 `;

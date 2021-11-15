@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useQuery, mobile } from 'styles/breakpoints';
-import { useSelector } from 'react-redux';
-import { checkoutOptionSelector } from 'state/reducers';
+import { useRouter } from 'apis/history';
 import { TransparentNav } from 'layouts/navigations/TransparentNav';
 import { Link } from 'gatsby';
 import {
@@ -32,6 +31,7 @@ const INFO_DATA = {
 
 const Success: React.FC = () => {
   const { isMobile } = useQuery();
+  const { goToLanding } = useRouter();
   const { title, text1, caption, text2, text3 } = INFO_DATA;
 
   const savedProduct: string | null = localStorage.getItem('product_key');
@@ -59,6 +59,7 @@ const Success: React.FC = () => {
           <CaptionText margin={isMobile ? '0' : '1rem 0 0.6rem'}>{caption}</CaptionText>
           <RegularText>{text2}</RegularText>
           <RegularText margin={isMobile ? '2rem 0' : '0 0 2rem'}>{text3}</RegularText>
+          <Link to='/'>Go back to home page!</Link>
         </ContainerSmall>
       </StyledContainer>
     </>
@@ -83,20 +84,16 @@ const StyledContainer = styled(Container).attrs({
   p {
     text-align: center;
   }
+  a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
 
   @media ${mobile} {
     p {
       text-align: left;
     }
-  }
-`;
-
-const StyledFlexWrapper = styled(FlexWrapper).attrs({ justifyContent: 'space-between' })`
-  border-bottom: 1px solid ${dark_text + '20'};
-  :last-of-type {
-    padding: 1rem 0;
-    border-top: 1px solid ${dark_text + '20'};
-    border-bottom: none;
   }
 `;
 

@@ -4,8 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 import { MainNavigation } from 'layouts/navigations';
 import { Provider } from 'react-redux';
 import { storeConfig } from 'state/store';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { MainFooter } from 'layouts/footer';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -27,8 +26,8 @@ html {
 export const wrapRootElement: React.FC<WrapPageElementBrowserArgs> = ({ element }) => (
   <StrictMode>
     <GlobalStyle />
-    <ToastContainer />
     <MainNavigation />
     <Provider store={storeConfig().store}>{element}</Provider>
+    <MainFooter />
   </StrictMode>
 );

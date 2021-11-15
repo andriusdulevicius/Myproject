@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'apis/history';
 import styled from 'styled-components';
-import { toast } from 'react-toastify';
 import {
   Container,
   ContainerSmall,
@@ -25,6 +25,7 @@ export interface DataTypes {
 
 export const ContactForm: React.FC = () => {
   const { isMobile } = useQuery();
+  const { goToSuccess } = useRouter();
 
   const {
     value: enteredName,
@@ -80,7 +81,7 @@ export const ContactForm: React.FC = () => {
     resetLastNameInput();
     resetEmailInput();
     resetMessageInput();
-    toast.success('Thank you, your form has been submitted. You will get a reply in 3 working days!');
+    goToSuccess();
     console.log({ enteredName, enteredLastName, enteredEmail, enteredMessage });
   };
 

@@ -7,7 +7,6 @@ import { setQuizAnswers } from 'state/actions';
 import { IntermissionCard } from './sections/IntermissionCard';
 import { StatementCard } from './sections/StatementCard';
 import { AnswerCard } from './sections/AnswerCard';
-import { QuizFooter } from 'layouts/footer/QuizFooter';
 import { Svg, Container, H2, FlexWrapper, PrimaryButton, RegularText, TextWrapper } from 'components';
 import { violet, grey_white } from 'styles/colors';
 import { QUIZ_DATA } from './sections/utils';
@@ -127,7 +126,6 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
             </Container>
           );
         })}
-      {!isLaptop && <QuizFooter />}
     </QuizPage>
   );
 });

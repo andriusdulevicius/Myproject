@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
     <StyledFooter>
       <Container zIndex={999} padding='0 1rem'>
         <FlexWrapper padding='0.5rem 0' maxWidth='80rem'>
-          <CaptionText> &copy; 2021 A | D development. All rights reserved.</CaptionText>
+          <CaptionText> &copy; 2021 A | D development.</CaptionText>
         </FlexWrapper>
       </Container>
     </StyledFooter>
@@ -19,6 +19,7 @@ export const Footer: React.FC = () => {
 const StyledFooter = styled.footer`
   margin: 0 auto;
   padding: 1rem 0;
+  background-color: transparent;
   width: 100%;
   max-width: 80rem;
   height: 5.5rem;

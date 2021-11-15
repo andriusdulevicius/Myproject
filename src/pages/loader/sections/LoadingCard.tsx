@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { mobile } from 'styles/breakpoints';
 import { useRouter } from 'apis/history';
 import { RegularText, H3, TextBaseBold, SmallText, SmallCard, PrimaryButton, FlexWrapper } from 'components';
-import { violet, orange, dark_text } from 'styles/colors';
+import { dark_violet, violet, dark_text } from 'styles/colors';
 
 export const LoadingCard: React.FC = () => {
   const { goToCheckout } = useRouter();
@@ -105,10 +105,10 @@ const StyledCircle = styled.div`
   }
 
   :nth-child(odd) {
-    background: ${orange + '70'};
+    background: ${dark_violet + '40'};
   }
   :nth-child(even) {
-    background: ${orange + '80'};
+    background: ${dark_violet + '60'};
   }
 
   @keyframes circle-1 {

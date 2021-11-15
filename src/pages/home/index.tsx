@@ -48,7 +48,6 @@ const Landing: React.FC = () => {
           </Container>
         </FlexWrapper>
       </Container>
-      {!isMobile && <Footer />}
     </LandingPage>
   );
 };

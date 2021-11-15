@@ -71,24 +71,6 @@ export const REAL_STORIES_DATA = [
   },
 ];
 
-export const PLAN_PARTS = [
-  {
-    id: 1,
-    iconSrc: 'one',
-    text: 'Getting to know your triggers.',
-  },
-  {
-    id: 2,
-    iconSrc: 'two',
-    text: 'Training your mind to notice irrational beliefs.',
-  },
-  {
-    id: 3,
-    iconSrc: 'three',
-    text: 'Learn relaxation techniques.',
-  },
-];
-
 export const GENUINE_PART_DATA = {
   name: 'Doctor Shilpa',
   job_title: 'Psychologist',

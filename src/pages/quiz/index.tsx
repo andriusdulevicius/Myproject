@@ -10,6 +10,7 @@ import { AnswerCard } from './sections/AnswerCard';
 import { Svg, Container, H2, FlexWrapper, PrimaryButton, RegularText, TextWrapper } from 'components';
 import { violet, grey_white } from 'styles/colors';
 import { QUIZ_DATA } from './sections/utils';
+import { financial_troubles } from 'assets/images/financial_troubles.png';
 
 interface DataTypes {
   type: string;
@@ -17,7 +18,7 @@ interface DataTypes {
   label?: string;
   custom?: {
     sublabel?: string;
-    stressor?: string;
+    fact?: string;
     text?: string;
   };
   options?: [
@@ -74,7 +75,7 @@ const Quiz: React.FC<DataTypes> = React.memo(() => {
         [questions[question]].map((q) => {
           const { type, key, label, custom, options } = q;
           return (
-            <Container key={key} zIndex={2} minHeight={isLaptop ? '100vh' : 'calc(100vh - 5.5rem)'}>
+            <Container key={key} zIndex={2} minHeight='100vh'>
               <FlexWrapper justifyContent='space-between' padding='1rem' maxWidth='80rem'>
                 <StyledSvg src='go_back' onClick={renderPreviousQuestion} />
                 <TextWrapper fontWeight={isLaptop ? 700 : 400}>

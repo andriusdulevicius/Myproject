@@ -1,25 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useQuery, mobile } from 'styles/breakpoints';
-import { useRouter } from 'apis/history';
 import { TransparentNav } from 'layouts/navigations/TransparentNav';
 import { Link } from 'gatsby';
-import {
-  Container,
-  ContainerSmall,
-  AbsoluteBox,
-  FlexWrapper,
-  TextWrapper,
-  SmallBox,
-  H2,
-  H4,
-  RegularText,
-  SmallText,
-  CaptionText,
-  Image,
-  Svg,
-} from 'components';
-import { violet, dark_text, green, grey_white } from 'styles/colors';
+import { Container, ContainerSmall, AbsoluteBox, SmallBox, H2, RegularText, CaptionText, Image, Svg } from 'components';
+import { green, grey_white } from 'styles/colors';
 
 const INFO_DATA = {
   title: 'What is happening next?',
@@ -31,11 +16,7 @@ const INFO_DATA = {
 
 const Success: React.FC = () => {
   const { isMobile } = useQuery();
-  const { goToLanding } = useRouter();
   const { title, text1, caption, text2, text3 } = INFO_DATA;
-
-  const savedProduct: string | null = localStorage.getItem('product_key');
-  const savedPrice: string | null = localStorage.getItem('final_price');
 
   return (
     <>
@@ -76,8 +57,8 @@ const StyledWrapper = styled(Container).attrs({ maxWidth: '37rem' })`
 `;
 
 const StyledContainer = styled(Container).attrs({
-  margin: '3rem 0',
-  padding: '1rem',
+  margin: '3rem 0 0',
+  padding: '1rem 0 5rem',
   maxWidth: '100%',
   backgroundColor: grey_white,
 })`

@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 export const MainFooter: React.FC = () => {
   return (
     <>
-      <Router>{Route(['/', '/home', '/quiz', '/loader'], Footer)}</Router>
+      <Router>{Route(['/', '/home', '/faq', '/contacts', '/t&c'], Footer)}</Router>
     </>
   );
 };

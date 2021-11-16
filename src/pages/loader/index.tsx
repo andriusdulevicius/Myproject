@@ -13,7 +13,7 @@ const Loader: React.FC = () => {
       <Container
         zIndex={2}
         padding='3rem 1rem 0'
-        minHeight={isMobile ? '100vh' : 'calc(100vh - 8.5rem)'}
+        minHeight={isMobile ? '100vh' : 'calc(100vh - 3rem)'}
         textAlign='center'
       >
         <LoadingCard />

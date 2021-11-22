@@ -1,6 +1,5 @@
-import { combineReducers, createReducer } from '@reduxjs/toolkit';
+import { createReducer } from '@reduxjs/toolkit';
 import { setQuizAnswers } from 'state/actions';
-import { AppState } from './store';
 
 const INITIAL_STATE = {
   quizAnswers: [{ question: '', answer: [''] }],

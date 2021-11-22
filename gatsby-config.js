@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'https://www.AndriusIntro.tld',
     title: 'My Gatsby Site',
   },
   plugins: [

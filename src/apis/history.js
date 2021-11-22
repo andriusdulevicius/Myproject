@@ -11,9 +11,6 @@ export const useRouter = () => {
     goToLoader: () => {
       navigate('/loader');
     },
-    goToSummary: () => {
-      navigate('/summary');
-    },
     goToCheckout: () => {
       navigate('/checkout');
     },

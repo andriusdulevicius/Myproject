@@ -10,7 +10,6 @@ import { AnswerCard } from './sections/AnswerCard';
 import { Svg, Container, H2, FlexWrapper, PrimaryButton, RegularText, TextWrapper } from 'components';
 import { violet, grey_white } from 'styles/colors';
 import { QUIZ_DATA } from './sections/utils';
-import { financial_troubles } from 'assets/images/financial_troubles.png';
 
 interface DataTypes {
   type: string;
@@ -21,22 +20,20 @@ interface DataTypes {
     fact?: string;
     text?: string;
   };
-  options?: [
-    {
-      label?: string;
-      value?: string;
-      custom?: {
-        horizontal?: boolean;
-      };
-    }
-  ];
+  options?: {
+    label?: string;
+    value?: string;
+    custom?: {
+      horizontal?: boolean;
+    };
+  }[];
 }
 export interface Answer {
   question: string;
   answer: string[];
 }
 
-const Quiz: React.FC<DataTypes> = React.memo(() => {
+const Quiz: React.FC = React.memo(() => {
   const dispatch = useDispatch();
   const { goBack, goToLoader } = useRouter();
   const [questions, setQuestions] = useState<DataTypes[] | []>([]);

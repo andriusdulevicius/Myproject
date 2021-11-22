@@ -33,12 +33,6 @@ export * from './wrappers/SmallCard';
 export * from './wrappers/TextWrapper';
 export * from './wrappers/SmallBox';
 
-// Backgrounds
-
-export * from './backgrounds/HomeBackground';
-export * from './backgrounds/QuizBackground';
-export * from './backgrounds/SummaryBackground';
-
 // Routes
 
 export * from './Route';

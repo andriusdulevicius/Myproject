@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'apis/history';
 import { useQuery } from 'styles/breakpoints';
-import { HomeBackground } from 'components/backgrounds/HomeBackground';
-import { Footer } from 'layouts/footer/Footer';
 import { Image, Container, H1, H4, RegularText, TextBaseBold, FlexWrapper, PrimaryButton, SmallBox } from 'components';
 import { violet, orange } from 'styles/colors';
 

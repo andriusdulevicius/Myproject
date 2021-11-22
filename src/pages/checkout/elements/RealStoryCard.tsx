@@ -6,7 +6,7 @@ import { mobile, tablet } from 'styles/breakpoints';
 import { FlexWrapper, SmallBox, SmallCard, SmallText, RegularText, TextWrapper } from 'components';
 import { grey_white } from 'styles/colors';
 interface Story {
-  story: { name: string; age: number; address: string; rating: number; journeyLength: string; comment: string };
+  story: { name: string; age: number; address: string; rating: number; comment: string };
 }
 
 export const RealStoryCard: React.FC<Story> = ({ story }) => {

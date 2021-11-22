@@ -6,8 +6,6 @@ import { MyGoals } from './sections/MyGoals';
 import { ResultsExplained } from './sections/ResultsExplained';
 import { ContactForm } from './sections/ContactForm';
 import { RealStories } from './sections/RealStories';
-import { GenuinePeople } from './sections/GenuinePeople';
-import { YouWill } from './sections/YouWill';
 import { Faq } from './sections/Faq';
 import { grey_white } from 'styles/colors';
 

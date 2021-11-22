@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { MY_PERSONAL_DATA as data } from './utils';
 import { StyledFlexWrapper, StyledH2, GreenText } from '../elements/Styles';
-import { Container, ContainerSmall, FlexWrapper, H3, H5, Image, SmallBox, Svg, SmallCard, SmallText } from 'components';
+import { Container, ContainerSmall, H3, Image, SmallCard, SmallText } from 'components';
 
 export const MyGoals: React.FC = () => {
   const { isMobile } = useQuery();
@@ -27,5 +26,3 @@ export const MyGoals: React.FC = () => {
     </Container>
   );
 };
-
-const StyledContainerSmall = styled(ContainerSmall).attrs({ margin: '0', width: '50%' })``;

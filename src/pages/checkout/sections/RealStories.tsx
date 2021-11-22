@@ -3,7 +3,7 @@ import { useQuery } from 'styles/breakpoints';
 import { REAL_STORIES_DATA } from './utils';
 import { RealStoryCard } from '../elements/RealStoryCard';
 import { StyledContainer, StyledH2, StyledFlexWrapper, GreenText } from '../elements/Styles';
-import { Image, SmallBox, SmallText } from 'components';
+import { SmallText } from 'components';
 
 export const RealStories: React.FC = () => {
   const { isMobile } = useQuery();

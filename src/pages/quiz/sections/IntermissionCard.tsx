@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useQuery } from 'styles/breakpoints';
 import { INTERMISSION_DATA } from './utils';
 import { Container, FlexWrapper, H4, Image, PrimaryButton, TextBase, RegularText, SmallBox } from 'components';
-import { violet, dark_text } from 'styles/colors';
+import { violet } from 'styles/colors';
 
 interface Props {
   renderNextQuestion: () => void;
 }
 
 export const IntermissionCard: React.FC<Props> = ({ renderNextQuestion }) => {
-  const { isMobile } = useQuery();
-  const { title, imgSrc, texts, disclaimer } = INTERMISSION_DATA;
+  const { title, imgSrc, texts } = INTERMISSION_DATA;
 
   return (
     <Container maxWidth='25rem'>
@@ -27,12 +25,6 @@ export const IntermissionCard: React.FC<Props> = ({ renderNextQuestion }) => {
       <PrimaryButton colorProp={violet} minWidth='100%' margin='1rem 0' padding='0.5rem' onClick={renderNextQuestion}>
         Continue
       </PrimaryButton>
-
-      {isMobile && (
-        <TextBase margin='5rem 0 0 ' fontSize='0.85rem' color={dark_text + '80'}>
-          {disclaimer}
-        </TextBase>
-      )}
     </Container>
   );
 };

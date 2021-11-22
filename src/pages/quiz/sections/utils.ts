@@ -30,6 +30,18 @@ export const QUIZ_DATA = [
         value: 'javascript',
       },
       {
+        label: 'Node.js',
+        value: 'Node.js',
+      },
+      {
+        label: 'Next.js',
+        value: 'Next.js',
+      },
+      {
+        label: 'MongoDB',
+        value: 'MongoDB',
+      },
+      {
         label: 'React(or other library)',
         value: 'react',
       },

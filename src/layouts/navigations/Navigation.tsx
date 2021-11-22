@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { useRouter } from 'apis/history';
 import { RouteComponentProps } from '@reach/router';
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 import { Container, AbsoluteBox, FlexWrapper, Svg, SmallBox, Image } from 'components';
 import { white, grey_white, dark_text } from 'styles/colors';
 
@@ -30,7 +30,7 @@ export const Navigation: React.FC<RouteComponentProps> = () => {
           ) : (
             <FlexWrapper justifyContent='flex-end'>
               {PAGES_LINKS.map((p, index: number) => (
-                <Link to={p.link} key={index}>
+                <Link to={withPrefix(p.link)} key={index}>
                   {p.title}
                 </Link>
               ))}

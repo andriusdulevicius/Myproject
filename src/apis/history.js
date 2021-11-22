@@ -1,21 +1,21 @@
-import { navigate } from 'gatsby';
+import { navigate, withPrefix } from 'gatsby';
 
 export const useRouter = () => {
   return {
     goToLanding: () => {
-      navigate('/');
+      navigate(withPrefix('/'));
     },
     goToQuiz: () => {
-      navigate('/quiz');
+      navigate(withPrefix('/quiz'));
     },
     goToLoader: () => {
-      navigate('/loader');
+      navigate(withPrefix('/loader'));
     },
     goToCheckout: () => {
-      navigate('/checkout');
+      navigate(withPrefix('/checkout'));
     },
     goToSuccess: () => {
-      navigate('/success');
+      navigate(withPrefix('/success'));
     },
     goBack: () => {
       navigate(-1);

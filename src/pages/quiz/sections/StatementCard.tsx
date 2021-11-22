@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useQuery } from 'styles/breakpoints';
 import { Container, FlexWrapper, Image, RegularText, PrimaryButton, SmallBox } from 'components';
 import { violet, orange } from 'styles/colors';
@@ -15,11 +16,11 @@ interface Props {
 export const StatementCard: React.FC<Props> = ({ statementKey, custom, renderNextQuestion }) => {
   const { isLaptop } = useQuery();
   return (
-    <Container maxWidth={isLaptop ? '25rem' : '36rem'}>
+    <Container maxWidth={isLaptop ? '22rem' : '36rem'}>
       <SmallBox minHeight='22rem'>
         <Image src={statementKey} />
       </SmallBox>
-      <RegularText textAlign='center'>{custom && custom.text}</RegularText>
+      <StyledRegularText>{custom && custom.text}</StyledRegularText>
       <FlexWrapper>
         <PrimaryButton colorProp={orange} minWidth='50%' padding='0.5rem' onClick={() => renderNextQuestion('No')}>
           No
@@ -31,3 +32,7 @@ export const StatementCard: React.FC<Props> = ({ statementKey, custom, renderNex
     </Container>
   );
 };
+
+const StyledRegularText = styled(RegularText).attrs({ textAlign: 'center' })`
+  min-height: 5.5rem;
+`;

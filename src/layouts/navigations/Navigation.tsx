@@ -5,7 +5,7 @@ import { useRouter } from 'apis/history';
 import { RouteComponentProps } from '@reach/router';
 import { Link, withPrefix } from 'gatsby';
 import { Container, AbsoluteBox, FlexWrapper, Svg, SmallBox, Image } from 'components';
-import { white, grey_white, dark_text } from 'styles/colors';
+import { white, violet, grey_white, dark_text } from 'styles/colors';
 
 const PAGES_LINKS = [
   { title: 'Home', link: '/' },
@@ -65,6 +65,10 @@ const NavWrapper = styled.nav`
     padding-left: 1rem;
     color: ${dark_text};
     font-size: 0.9rem;
+  }
+  a:hover {
+    color: ${violet};
+    transform: scale(1.1);
   }
 `;
 

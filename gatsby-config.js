@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  pathPrefix: '/Myproject',
   siteMetadata: {
     siteUrl: 'https://www.AndriusIntro.tld',
     title: 'My Gatsby Site',
